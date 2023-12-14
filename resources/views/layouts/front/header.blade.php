@@ -241,22 +241,22 @@
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('about.about-us') }}" class="nav-link">About Us</a>
+                                        {{-- <a href="{{ route('about.about-us') }}" class="nav-link">About Us</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('about.patron') }}" class="nav-link">Our Patron</a>
+                                        {{-- <a href="{{ route('about.patron') }}" class="nav-link">Our Patron</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('about.logo') }}" class="nav-link">About Our Logo</a>
+                                        {{-- <a href="{{ route('about.logo') }}" class="nav-link">About Our Logo</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('about.history') }}" class="nav-link">Our History</a>
+                                        {{-- <a href="{{ route('about.history') }}" class="nav-link">Our History</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('about.journey') }}" class="nav-link">Our Journey</a>
+                                        {{-- <a href="{{ route('about.journey') }}" class="nav-link">Our Journey</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('about.awards') }}" class="nav-link">Awards</a>
+                                        {{-- <a href="{{ route('about.awards') }}" class="nav-link">Awards</a> --}}
                                     </li>
                                 </ul>
                             </li>
@@ -267,13 +267,13 @@
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('projects.index') }}" class="nav-link">All Projects</a>
+                                        {{-- <a href="{{ route('projects.index') }}" class="nav-link">All Projects</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('projects.index','ongoing') }}" class="nav-link">Ongoing</a>
+                                        {{-- <a href="{{ route('projects.index','ongoing') }}" class="nav-link">Ongoing</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('projects.index','completed') }}" class="nav-link">Completed</a>
+                                        {{-- <a href="{{ route('projects.index','completed') }}" class="nav-link">Completed</a> --}}
                                     </li>
 
                                 </ul>
@@ -284,16 +284,16 @@
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('teaching-in-braille') }}" class="nav-link">Teaching in Braille</a>
+                                        {{-- <a href="{{ route('teaching-in-braille') }}" class="nav-link">Teaching in Braille</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('teaching-in-sign-language') }}" class="nav-link">Teaching in sign language</a>
+                                        {{-- <a href="{{ route('teaching-in-sign-language') }}" class="nav-link">Teaching in sign language</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('education-for-disabled') }}" class="nav-link">Education For Disabled</a>
+                                        {{-- <a href="{{ route('education-for-disabled') }}" class="nav-link">Education For Disabled</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('education-for-children') }}" class="nav-link">Education For Children</a>
+                                        {{-- <a href="{{ route('education-for-children') }}" class="nav-link">Education For Children</a> --}}
                                     </li>
 
                                 </ul>
@@ -309,16 +309,16 @@
                                         <a href="#" class="nav-link">Events</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('volunteering') }}" class="nav-link">Volunteering</a>
+                                        {{-- <a href="{{ route('volunteering') }}" class="nav-link">Volunteering</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('sponsorship') }}" class="nav-link">Sponsorship</a>
+                                        {{-- <a href="{{ route('sponsorship') }}" class="nav-link">Sponsorship</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('our-pledge') }}" class="nav-link">Our Pledge</a>
+                                        {{-- <a href="{{ route('our-pledge') }}" class="nav-link">Our Pledge</a> --}}
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('amazonsmile') }}" class="nav-link">AmazonSmile</a>
+                                        {{-- <a href="{{ route('amazonsmile') }}" class="nav-link">AmazonSmile</a> --}}
                                     </li>
 
                                 </ul>
@@ -329,7 +329,7 @@
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('blogs.category') }}" class="nav-link">Blog</a>
+                                        {{-- <a href="{{ route('blogs.category') }}" class="nav-link">Blog</a> --}}
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">Accounts</a>
@@ -342,7 +342,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
+                                {{-- <a href="{{ route('contact') }}" class="nav-link">Contact Us</a> --}}
                             </li>
                             {{-- <li class="nav-item">
                                 <a href="#" class="nav-link dropdown-toggle">Donations <i
@@ -386,10 +386,10 @@
                         </ul>
                         <div class="side-nav">
 
-                            <a class="donate-btn" href="{{ route('donation') }}">
+                            {{-- <a class="donate-btn" href="{{ route('donation') }}">
                                <span>Donate</span>
                                 <i class="icofont-heart-alt"></i>
-                            </a>
+                            </a> --}}
 
                         </div>
 
