@@ -146,6 +146,7 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
             'League\\Csv\\' => 11,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
@@ -159,6 +160,7 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -472,8 +474,8 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -498,6 +500,10 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
         ),
         'Laravel\\Tinker\\' => 
         array (
@@ -528,6 +534,10 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
             2 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Conditionable',
+        ),
+        'Illuminate\\Foundation\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\' => 
         array (
@@ -685,6 +695,31 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Filament\\Resources\\EventResource' => __DIR__ . '/../..' . '/app/Filament/Resources/EventResource.php',
+        'App\\Filament\\Resources\\EventResource\\Pages\\CreateEvent' => __DIR__ . '/../..' . '/app/Filament/Resources/EventResource/Pages/CreateEvent.php',
+        'App\\Filament\\Resources\\EventResource\\Pages\\EditEvent' => __DIR__ . '/../..' . '/app/Filament/Resources/EventResource/Pages/EditEvent.php',
+        'App\\Filament\\Resources\\EventResource\\Pages\\ListEvents' => __DIR__ . '/../..' . '/app/Filament/Resources/EventResource/Pages/ListEvents.php',
+        'App\\Filament\\Resources\\EventResource\\Pages\\ViewEvent' => __DIR__ . '/../..' . '/app/Filament/Resources/EventResource/Pages/ViewEvent.php',
+        'App\\Filament\\Resources\\PostResource' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource.php',
+        'App\\Filament\\Resources\\PostResource\\Pages\\CreatePost' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/CreatePost.php',
+        'App\\Filament\\Resources\\PostResource\\Pages\\EditPost' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/EditPost.php',
+        'App\\Filament\\Resources\\PostResource\\Pages\\ListPosts' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/ListPosts.php',
+        'App\\Filament\\Resources\\PostResource\\Pages\\ViewPost' => __DIR__ . '/../..' . '/app/Filament/Resources/PostResource/Pages/ViewPost.php',
+        'App\\Filament\\Resources\\ProjectResource' => __DIR__ . '/../..' . '/app/Filament/Resources/ProjectResource.php',
+        'App\\Filament\\Resources\\ProjectResource\\Pages\\CreateProject' => __DIR__ . '/../..' . '/app/Filament/Resources/ProjectResource/Pages/CreateProject.php',
+        'App\\Filament\\Resources\\ProjectResource\\Pages\\EditProject' => __DIR__ . '/../..' . '/app/Filament/Resources/ProjectResource/Pages/EditProject.php',
+        'App\\Filament\\Resources\\ProjectResource\\Pages\\ListProjects' => __DIR__ . '/../..' . '/app/Filament/Resources/ProjectResource/Pages/ListProjects.php',
+        'App\\Filament\\Resources\\ProjectResource\\Pages\\ViewProject' => __DIR__ . '/../..' . '/app/Filament/Resources/ProjectResource/Pages/ViewProject.php',
+        'App\\Filament\\Resources\\TagResource' => __DIR__ . '/../..' . '/app/Filament/Resources/TagResource.php',
+        'App\\Filament\\Resources\\TagResource\\Pages\\CreateTag' => __DIR__ . '/../..' . '/app/Filament/Resources/TagResource/Pages/CreateTag.php',
+        'App\\Filament\\Resources\\TagResource\\Pages\\EditTag' => __DIR__ . '/../..' . '/app/Filament/Resources/TagResource/Pages/EditTag.php',
+        'App\\Filament\\Resources\\TagResource\\Pages\\ListTags' => __DIR__ . '/../..' . '/app/Filament/Resources/TagResource/Pages/ListTags.php',
+        'App\\Filament\\Resources\\TagResource\\Pages\\ViewTag' => __DIR__ . '/../..' . '/app/Filament/Resources/TagResource/Pages/ViewTag.php',
+        'App\\Filament\\Resources\\UserResource' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource.php',
+        'App\\Filament\\Resources\\UserResource\\Pages\\CreateUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/CreateUser.php',
+        'App\\Filament\\Resources\\UserResource\\Pages\\EditUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/EditUser.php',
+        'App\\Filament\\Resources\\UserResource\\Pages\\ListUsers' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/ListUsers.php',
+        'App\\Filament\\Resources\\UserResource\\Pages\\ViewUser' => __DIR__ . '/../..' . '/app/Filament/Resources/UserResource/Pages/ViewUser.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
@@ -709,6 +744,7 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\Filament\\AdminPanelProvider' => __DIR__ . '/../..' . '/app/Providers/Filament/AdminPanelProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'BladeUI\\Heroicons\\BladeHeroiconsServiceProvider' => __DIR__ . '/..' . '/blade-ui-kit/blade-heroicons/src/BladeHeroiconsServiceProvider.php',
@@ -3420,8 +3456,16 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         'Illuminate\\Foundation\\Application' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Application.php',
         'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
         'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
+        'Illuminate\\Foundation\\Auth\\AuthenticatesUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/AuthenticatesUsers.php',
+        'Illuminate\\Foundation\\Auth\\ConfirmsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ConfirmsPasswords.php',
         'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
+        'Illuminate\\Foundation\\Auth\\RedirectsUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RedirectsUsers.php',
+        'Illuminate\\Foundation\\Auth\\RegistersUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RegistersUsers.php',
+        'Illuminate\\Foundation\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ResetsPasswords.php',
+        'Illuminate\\Foundation\\Auth\\SendsPasswordResetEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/SendsPasswordResetEmails.php',
+        'Illuminate\\Foundation\\Auth\\ThrottlesLogins' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ThrottlesLogins.php',
         'Illuminate\\Foundation\\Auth\\User' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/User.php',
+        'Illuminate\\Foundation\\Auth\\VerifiesEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/VerifiesEmails.php',
         'Illuminate\\Foundation\\Bootstrap\\BootProviders' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php',
         'Illuminate\\Foundation\\Bootstrap\\HandleExceptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php',
         'Illuminate\\Foundation\\Bootstrap\\LoadConfiguration' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php',
@@ -4184,6 +4228,15 @@ class ComposerStaticInitd926a6046d509c7c24be2e1db4c521ca
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\AuthRouteMethods' => __DIR__ . '/..' . '/laravel/ui/src/AuthRouteMethods.php',
+        'Laravel\\Ui\\ControllersCommand' => __DIR__ . '/..' . '/laravel/ui/src/ControllersCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'League\\CommonMark\\CommonMarkConverter' => __DIR__ . '/..' . '/league/commonmark/src/CommonMarkConverter.php',
         'League\\CommonMark\\ConverterInterface' => __DIR__ . '/..' . '/league/commonmark/src/ConverterInterface.php',
         'League\\CommonMark\\Delimiter\\Delimiter' => __DIR__ . '/..' . '/league/commonmark/src/Delimiter/Delimiter.php',
