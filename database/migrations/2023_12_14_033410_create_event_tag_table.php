@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('event_tag', function (Blueprint $table) {
-            //
+            $table->id();
+            $table->unsignedBigInteger('event_id');
+            $table->unsignedBigInteger('tag_id');
+            $table->timestamps();
+
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+
+            // Add unique constraint to prevent duplicate event-tag relationships
+            $table->unique(['event_id', 'tag_id']);
         });
     }
 
@@ -22,7 +31,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('event_tag', function (Blueprint $table) {
-            //
+            
+            Schema::dropIfExists('event_tag');
         });
     }
 };
