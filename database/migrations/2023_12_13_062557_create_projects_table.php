@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
+            $table->unsignedBigInteger('user_id');
+            $table->string('slug')->unique()->nullable();
             $table->string('title');
             $table->longText('description');
             $table->string('featured_image')->nullable();
@@ -21,9 +22,14 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->decimal('project_amount', 10, 2);
             $table->decimal('expected_amount', 10, 2)->nullable();
-            $table->enum('status', ['pending', 'ongoing', 'completed'])->default('pending');
+            $table->string('status')->default('pending');
             $table->json('extra')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
