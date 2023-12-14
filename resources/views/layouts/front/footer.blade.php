@@ -61,28 +61,28 @@
                                 </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('about.about-us') }}">
+                                <a href="{{ route('about.about-us') }}">
                                     <i class="icofont-simple-right"></i>
                                     About us
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('projects.index') }}">
+                                <a href="{{ route('project') }}">
                                     <i class="icofont-simple-right"></i>
                                     Projects
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('contact') }}">
+                                <a href="{{ route('contact-us') }}">
                                     <i class="icofont-simple-right"></i>
                                     Contact Us
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('donation') }}">
+                                <a href="{{ route('donation') }}">
                                     <i class="icofont-simple-right"></i>
                                     Donate Now
-                                </a> --}}
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -123,35 +123,35 @@
                         <h3>Quick links</h3>
                         <ul>
                             <li>
-                                {{-- <a href="{{ route('about.logo') }}">
+                                <a href="{{ route('about.logo') }}">
                                     <i class="icofont-simple-right"></i>
                                     About our logo
-                                </a> --}}
+                                </a>
                             </li>
 
                             <li>
-                                {{-- <a href="{{ route('about.history') }}">
+                                <a href="{{ route('about.history') }}">
                                     <i class="icofont-simple-right"></i>
                                     Our History
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('donation') }}">
+                                <a href="{{ route('donation') }}">
                                     <i class="icofont-simple-right"></i>
                                     Donate Now
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('about.journey') }}">
+                                <a href="{{ route('about.journey') }}">
                                     <i class="icofont-simple-right"></i>
                                     Our Journey
-                                </a> --}}
+                                </a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('about.awards') }}">
+                                <a href="{{ route('about.awards') }}">
                                     <i class="icofont-simple-right"></i>
                                     Awards
-                                </a> --}}
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -162,7 +162,7 @@
                     <div class="footer-contact">
                         <h3>Why This Logo?</h3>
                         <div class="logo">
-                          {{-- <a href="{{ route('about.logo') }}"><img src="{{ asset('assets/front/img/vithu-logo.jpg') }}" alt="Vithu Trust Fund"></a> --}}
+                          <a href="{{ route('about.logo') }}"><img src="{{ asset('assets/front/img/vithu-logo.jpg') }}" alt="Vithu Trust Fund"></a>
 
                         </div>
                         {{-- <div class="contact-inner">
