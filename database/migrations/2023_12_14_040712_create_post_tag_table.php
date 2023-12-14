@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tag_user', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            // Add unique constraint to prevent duplicate tag-user relationships
-            $table->unique(['tag_id', 'user_id']);
+            // Add unique constraint to prevent duplicate post-tag relationships
+            $table->unique(['post_id', 'tag_id']);
         });
     }
 
@@ -30,9 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tag_user', function (Blueprint $table) {
-            
-            Schema::dropIfExists('tag_user');
-        });
+        Schema::dropIfExists('post_tag');
     }
 };
