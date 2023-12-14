@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('tag_user', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            // Add unique constraint to prevent duplicate tag-user relationships
+            $table->unique(['tag_id', 'user_id']);
         });
     }
 
