@@ -325,14 +325,22 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle ">Explore<i
-                                        class="icofont-simple-down"></i></a>
+                                <a href="#" class="nav-link dropdown-toggle ">Explore
+                                    <i class="icofont-simple-down"></i>
+                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="{{route('blog')}}" class="nav-link">Blog</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Accounts</a>
+                                    
+                                    {{-- <li>
+                                        <a href="#" class="nav-link">Stagic Plan</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link">Anual Report</a>
+                                    </li> --}}
+                                    <li>
+                                        <a href="{{ route('account')}}" class="nav-link">Accountablity</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">Our Partners</a>

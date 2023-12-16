@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccountChartController;
+use App\Http\Controllers\BarChartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LineChartController;
+use App\Models\LineChart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +69,16 @@ Route::view('/contact', 'frontend.contact-us')->name('contact-us');
 Route::view('/project', 'frontend.projects.index')->name('project');
 Route::view('/ongoing', 'frontend.projects.ongoing')->name('ongoing');
 Route::view('/complete', 'frontend.projects.completed')->name('complete');
-Route::view('/blog', 'frontend.blogs.index')->name('blog');
+
+Route::view('/account', 'frontend.explore.accounts')->name('account');
+
+Route::view('/blog', 'frontend.explore.blog')->name('blog');
+
+Route::get('/pie-chart', [AccountChartController::class, 'index']);
+Route::get('/bar-chart', [BarChartController::class, 'index']);
+Route::get('/line-chart', [LineChartController::class, 'index']);
+
+
+
 
 
