@@ -17,7 +17,8 @@ class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
+   // protected static ?string $slug = 'custom-url-slug';
 
     public static function form(Form $form): Form
     {
@@ -27,6 +28,7 @@ class ProjectResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('slug')
+                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('title')
                     ->required()

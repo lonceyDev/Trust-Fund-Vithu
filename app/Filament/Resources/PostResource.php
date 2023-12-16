@@ -17,7 +17,7 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
 
     public static function form(Form $form): Form
     {
@@ -27,6 +27,7 @@ class PostResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('slug')
+                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('title')
                     ->required()
