@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="csrf-token" content="1lXI4Jd7tamMKEDV3VnA2uy4afNQkKUwR3Ux3bkv">
 
     <title>Welcome to Vithu Trust Fund - Vithu Trust Fund</title>
@@ -751,7 +752,8 @@
         </div>
     </div>
 
- <section class="work-area pt-100 pb-70">
+
+    <section class="work-area pt-100 pb-70">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -795,7 +797,7 @@
     </section>
 
 
-    {{-- <section class="gallery-area two pt-100 pb-70">
+    <section class="gallery-area two pt-100 pb-70">
         <div class="container-fluid">
             <div class="section-title">
                 <span class="sub-title">Our gallery</span>
@@ -842,10 +844,10 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     
-    {{-- <section class="testimonial-area ptb-100">
+    <section class="testimonial-area ptb-100">
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Testimonials</span>
@@ -924,7 +926,7 @@
                 
             </div>
         </div>
-    </section> --}}
+    </section>
 
 
     <section class="blog-area three pt-100 pb-70">
