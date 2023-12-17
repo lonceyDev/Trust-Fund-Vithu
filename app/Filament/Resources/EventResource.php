@@ -2,16 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EventResource\Pages;
-use App\Filament\Resources\EventResource\RelationManagers;
-use App\Models\Event;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Event;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\EventResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\EventResource\RelationManagers;
 
 class EventResource extends Resource
 {
@@ -23,42 +26,55 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+               Section::make()->schema([
+            Forms\Components\Select::make('user_id')
+                ->relationship('user','name'),
+                Group::make()->schema([
+                    Forms\Components\TextInput::make('title')
                     ->required()
-                    ->numeric(),
+                    ->maxLength(255)
+                    ->reactive()
+                    ->afterStateUpdated(function($set, $state){ 
+                        $set('slug',Str::slug($state));
+                    }),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('location')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\FileUpload::make('featured_image')
-                    ->image(),
-                Forms\Components\DatePicker::make('events_at')
-                    ->required(),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('upcoming'),
-                Forms\Components\TextInput::make('extra'),
-            ]);
+              
+                ])->columnSpan(1)->Columns(2),
+           
+            Forms\Components\RichEditor::make('description')
+                ->required()
+                ->columnSpanFull(),
+            Forms\Components\TextInput::make('location')
+                ->required()
+                ->maxLength(255),
+            Forms\Components\SpatieMediaLibraryFileUpload::make('featured_image')
+                ->multiple(),
+                Group::make()->schema([
+                    Forms\Components\DatePicker::make('events_at')
+                        ->required(),
+                    Forms\Components\Select::make('status')
+                        ->required()
+                        ->options([
+                        'On going' => 'On going',
+                        'Complete' => 'Complete',
+                        'Pending' => 'Pending',
+                    ]),
+                ])->columnSpan(1)->Columns(2),
+           
+             ]),
+           
+            ])->Columns(2);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')
+                Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('location')
@@ -69,14 +85,7 @@ class EventResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                
             ])
             ->filters([
                 //
@@ -84,6 +93,8 @@ class EventResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
