@@ -2,16 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
-use App\Models\Post;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use App\Models\Post;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Card;
+use Filament\Tables\Columns\Column;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\PostResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\PostResource\RelationManagers;
+use Filament\Forms\Components\Group;
 
 class PostResource extends Resource
 {
@@ -23,79 +29,62 @@ class PostResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
+                Section::make()
+                    ->schema([
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user','name')->columnSpanFull(),
+                Forms\Components\TextInput::make('title')
                     ->required()
-                    ->numeric(),
+                    ->maxLength(255)
+                    ->reactive()
+                    ->afterStateUpdated(function($set, $state){ 
+                        $set('slug',Str::slug($state));
+                    }),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('content')
+             
+                Forms\Components\RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\FileUpload::make('featured_image')
-                    ->image(),
-                Forms\Components\DateTimePicker::make('publish_at'),
+
                 Forms\Components\Toggle::make('published')
-                    ->required(),
-                Forms\Components\Textarea::make('meta_description')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('views')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Forms\Components\TextInput::make('likes')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Forms\Components\TextInput::make('shares')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Forms\Components\TextInput::make('external_url')
-                    ->maxLength(255),
-            ]);
+                    ->required()->columnSpanFull(),
+                    ])->columnSpan(1)->Columns(2),
+               
+                Group::make()->schema([
+                    Section::make()->schema([
+                       Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
+                    ]),
+                    Section::make('Image Upload')->schema([
+                        Forms\Components\FileUpload::make('featured_image')
+                        ->image()->columnSpanFull(),
+                       ])->columnSpan(1),
+    
+                    Section::make('Tags')->schema([
+                            Select::make('tags')->relationship('tags','name')
+                        ])->columnSpan(1),
+                    ]),
+                
+              
+            ])->Columns(2);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('user.name'),
+                
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('featured_image'),
+                Tables\Columns\ImageColumn::make('featured_image')->circular(),
                 Tables\Columns\TextColumn::make('publish_at')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('published')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('views')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('likes')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('shares')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('external_url')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                
             ])
             ->filters([
                 //
@@ -103,6 +92,8 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

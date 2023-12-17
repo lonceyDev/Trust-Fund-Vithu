@@ -2,16 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Sluggable\HasSlug;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Project extends Model
+class Project extends Model implements HasMedia
+
 {
-    use HasFactory;
+    use HasFactory,HasSlug,InteractsWithMedia;
     protected $casts = [
         'extra' => 'json', 
     ];
-    protected $guarded=['extra'];
+    protected $guarded=[];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('featured_image');
+    }
+
+    public function getSlugOptions() :SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title') 
+            ->saveSlugsTo('slug');       
+    }
 
     public function user()
     {

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
+use Filament\Support\Enums\MaxWidth;
 
 class ViewPost extends ViewRecord
 {
@@ -16,4 +17,8 @@ class ViewPost extends ViewRecord
             Actions\EditAction::make(),
         ];
     }
+    public function getMaxContentWidth(): MaxWidth
+{
+    return MaxWidth::Full;
+}
 }
