@@ -49,8 +49,9 @@ class EventResource extends Resource
             Forms\Components\TextInput::make('location')
                 ->required()
                 ->maxLength(255),
-            Forms\Components\SpatieMediaLibraryFileUpload::make('featured_image')
-                ->multiple(),
+            Forms\Components\FileUpload::make('featured_image')
+                ->multiple()
+                ->directory('event_images'),
                 Group::make()->schema([
                     Forms\Components\DatePicker::make('events_at')
                         ->required(),

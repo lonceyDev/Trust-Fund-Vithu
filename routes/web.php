@@ -65,6 +65,13 @@ Route::view('/contact', 'frontend.contact-us')->name('contact-us');
 Route::view('/project', 'frontend.projects.index')->name('project');
 Route::view('/ongoing', 'frontend.projects.ongoing')->name('ongoing');
 Route::view('/complete', 'frontend.projects.completed')->name('complete');
-Route::view('/blog', 'frontend.blogs.index')->name('blog');
+
+Route::view('/blog', 'frontend.explore.blog')->name('blog');
+//Route::view('/account', 'frontend.explore.accounts')->name('account');
+
+
+Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');
+
+
 
 
