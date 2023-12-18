@@ -4,7 +4,7 @@ namespace App\Providers\app\Providers\Filament;
 
 use Illuminate\Support\ServiceProvider;
 
-class AdminPanelProvider.php extends ServiceProvider
+class AdminPanelProvider extends ServiceProvider
 {
     /**
      * Register services.

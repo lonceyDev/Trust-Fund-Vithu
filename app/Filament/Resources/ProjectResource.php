@@ -61,8 +61,9 @@ class ProjectResource extends Resource
                 ])->columnSpan(1),
             Group::make()->schema([  
                 Section::make()->schema([
-                    Forms\Components\SpatieMediaLibraryFileUpload::make('featured_image')
-                      ->multiple(),
+                    Forms\Components\FileUpload::make('featured_image')
+                      ->multiple()
+                      ->directory('project_images'),
                ]),
                
                Section::make()->schema([

@@ -332,7 +332,7 @@
                                         <a href="{{route('blog')}}" class="nav-link">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Accounts</a>
+                                        <a href="{{route('account')}}" class="nav-link">Accounts</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">Our Partners</a>
