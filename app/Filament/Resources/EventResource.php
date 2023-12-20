@@ -43,7 +43,7 @@ class EventResource extends Resource
               
                 ])->columnSpan(1)->Columns(2),
            
-            Forms\Components\RichEditor::make('description')
+            Forms\Components\MarkdownEditor::make('description')
                 ->required()
                 ->columnSpanFull(),
             Forms\Components\TextInput::make('location')

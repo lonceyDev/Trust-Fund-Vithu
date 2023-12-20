@@ -330,12 +330,12 @@
             </div>
         </div>
     </div> --}}
-<main wire:id="es1wN29HBrS0VyefMVZ5" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;es1wN29HBrS0VyefMVZ5&quot;,&quot;name&quot;:&quot;pages.home-component&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;660b384b&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;61a699591ce5e5f79723cabeb273019db773732df0fdaf04d0ebaa1ae9bbadc8&quot;}}">
+<main>
     <div class="video-banner-area">
         <div class="video-overlay"></div>
 
         <video loop="" muted="" autoplay="" poster="#" class="background-video">
-            <source src="https://dev.vithu.org/assets/front/img/home-screen.mp4" type="video/mp4">
+            <source src="{{asset('assets/front/img/home-screen.mp4')}}" type="video/mp4">
         </video>
 
 
@@ -347,8 +347,8 @@
                         <p>It is a long established fact that a reader will be page distracted by the readable content
                             of a pain</p>
                         <div class="banner-btn-area">
-                            <a class="common-btn banner-btn" href="https://dev.vithu.org/donation">Get Start A Fundraising</a>
-                            <a class="common-btn" href="https://dev.vithu.org/donation">Donate Now</a>
+                            <a class="common-btn banner-btn" href="{{route('donation')}}">Get Start A Fundraising</a>
+                            <a class="common-btn" href="{{route('donation')}}">Donate Now</a>
                         </div>
                     </div>
                 </div>
@@ -397,14 +397,14 @@
                             </li>
                         </ul>
                         <div class="about-btn-area">
-                            <a class="common-btn about-btn" href="https://dev.vithu.org/donation">Get Start A Fundraising</a>
-                            <a class="common-btn" href="https://dev.vithu.org/about/about-us">Read More</a>
+                            <a class="common-btn about-btn" href="{{route('donation')}}">Get Start A Fundraising</a>
+                            <a class="common-btn" href="{{route('donation')}}">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="https://dev.vithu.org/assets/front/img/about/about-main2.jpg" alt="About">
+                        <img src="{{asset('assets/front/img/about/about-main2.jpg')}}" alt="About">
                         <div class="video-wrap">
                             <button class="js-modal-btn" data-video-id="WkE5shDSrQw">
                                 <i class="icofont-ui-play"></i>
@@ -424,33 +424,33 @@
                     <div class="feature-item">
                         <i class="flaticon-solidarity"></i>
                         <h3>
-                            <a href="https://dev.vithu.org/volunteering">Be a volunteer</a>
+                            <a href="{{route('volunteering')}}">Be a volunteer</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                             not simply.</p>
-                        <a class="feature-btn" href="https://dev.vithu.org/volunteering">Join Now</a>
+                        <a class="feature-btn" href="{{route('volunteering')}}">Join Now</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="feature-item two">
                         <i class="flaticon-donation"></i>
                         <h3>
-                            <a href="https://dev.vithu.org/donation">Donate now</a>
+                            <a href="{{route('donation')}}">Donate now</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                             not simply.</p>
-                        <a class="feature-btn" href="https://dev.vithu.org/donation">Join Now</a>
+                        <a class="feature-btn" href="{{route('donation')}}">Join Now</a>
                     </div>
                 </div>
                 <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
                     <div class="feature-item three">
                         <i class="flaticon-love"></i>
                         <h3>
-                            <a href="https://dev.vithu.org/contact-us">Show your love</a>
+                            <a href="{{route('contact-us')}}">Show your love</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                             not simply.</p>
-                        <a class="feature-btn" href="https://dev.vithu.org/contact-us">Join Now</a>
+                        <a class="feature-btn" href="{{route('contact-us')}}">Join Now</a>
                     </div>
                 </div>
             </div>
@@ -519,7 +519,7 @@
                         <div class="donation-item">
                             <div class="top">
                                 <a class="tags text-capitalize"
-                                    href="https://dev.vithu.org/projects/ongoing">ongoing</a>
+                                    href="{{route('ongoing')}}">ongoing</a>
                                 <h3>
                                     <a
                                         href="https://dev.vithu.org/project/marappalam-pre-school">Marappalam Pre-School</a>

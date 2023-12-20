@@ -44,7 +44,7 @@ class PostResource extends Resource
                     ->required()
                     ->maxLength(255),
              
-                Forms\Components\RichEditor::make('content')
+                Forms\Components\MarkdownEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
 
@@ -61,9 +61,9 @@ class PostResource extends Resource
                         ->image()->columnSpanFull(),
                        ])->columnSpan(1),
     
-                    Section::make('Tags')->schema([
-                            Select::make('tags')->relationship('tags','name')
-                        ])->columnSpan(1),
+                    // Section::make('Tags')->schema([
+                    //         Select::make('tags')->relationship('tags','name')
+                    //     ])->columnSpan(1),
                     ]),
                 
               

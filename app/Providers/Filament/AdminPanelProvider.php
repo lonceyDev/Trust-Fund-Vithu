@@ -28,8 +28,17 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'danger' => Color::Red,
+                'gray' => Color::Gray,
+                'info' => Color::Slate,
+                'primary' => Color::Cyan,
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
             ])
+            ->font('Poppins')
+            ->brandLogoHeight('3rem')
+            ->brandLogo(fn () => view('filament.admin.logo'))
+            ->brandLogo(asset('assets/front/img/logo-vithu.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
