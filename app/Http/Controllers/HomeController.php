@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class HomeController extends Controller
 {
@@ -26,7 +29,47 @@ class HomeController extends Controller
         return view('frontend.home');
     }
 
-    public function barChart()
+    public function Blog()
+    {
+        $blogs=Post::all();
+        return view('frontend.explore.blog',compact('blogs'));
+    }
+  public function BlogDetail($slug) {
+    try {
+        // Fetch the specific blog using the provided slug
+        $blog = Post::where('slug', $slug)->firstOrFail();
+
+        // Fetch recent blogs (excluding the current blog)
+        $recentBlogs = Post::where('id', '!=', $blog->id)->take(5)->get();
+
+        return view('frontend.explore.blog-details', compact('blog', 'recentBlogs'));
+    } catch (ModelNotFoundException $e) {
+        // Handle the case where the blog is not found, e.g., redirect or display an error.
+        return redirect()->route('home')->with('error', 'Blog not found');
+    }
+}
+
+public function Event()
+{
+    $events=Event::all();
+    return view('frontend.get-involved.event',compact('events'));
+
+}
+
+public function EventDetail($slug) {
+    try {
+
+        $event = Event::where('slug', $slug)->firstOrFail();
+        $recentEvents = Event::where('id', '!=', $event->id)->take(5)->get();
+
+        return view('frontend.get-involved.event-details', compact('event', 'recentEvents'));
+    } catch (ModelNotFoundException $e) {
+        
+        return redirect()->route('home')->with('error', 'Event not found');
+    }
+}
+
+public function barChart()
     {
         
         $data = [

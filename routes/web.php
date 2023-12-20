@@ -66,8 +66,12 @@ Route::view('/project', 'frontend.projects.index')->name('project');
 Route::view('/ongoing', 'frontend.projects.ongoing')->name('ongoing');
 Route::view('/complete', 'frontend.projects.completed')->name('complete');
 
-Route::view('/blog', 'frontend.explore.blog')->name('blog');
-//Route::view('/account', 'frontend.explore.accounts')->name('account');
+Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
+Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
+
+Route::get('/event',[App\Http\Controllers\HomeController::class,'Event'])->name('event');
+Route::get('/event/{slug}',[App\Http\Controllers\HomeController::class,'EventDetail'])->name('event-details');
+
 
 
 Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');
