@@ -8,7 +8,7 @@
                     <h2>Contact Us</h2>
                     <ul>
                         <li>
-                            <a href="https://dev.vithu.org">Home</a>
+                            <a href="{{route('home')}}">Home</a>
                         </li>
                         <li>
                             <span>Contact Us</span>
@@ -24,10 +24,11 @@
 
 <div class="contact-area  pt-100 pb-70">
     <div class="container">
-        <form id="contactForm">
-            <h2>Let's talk...!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, iusto possimus doloremque amet
-                vitae facere blanditiis nulla explicabo obcaecati nihil ipsam deleniti nesciunt illo, non iure</p>
+        <form  method="POST" action="{{route('contact.store')}}" id="contactForm1">
+            @csrf
+            <h2>GET IN TOUCH</h2>
+            <p>
+                Please feel free to contact us if you have any further questions.</p>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
@@ -54,7 +55,7 @@
                         <label>
                             <i class="icofont-ui-call"></i>
                         </label>
-                        <input type="text" name="phone_number" id="phone_number" placeholder="Phone" required
+                        <input type="text" name="phone" id="phone" placeholder="Phone" required
                             data-error="Please enter your number" class="form-control">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -64,7 +65,7 @@
                         <label>
                             <i class="icofont-notepad"></i>
                         </label>
-                        <input type="text" name="msg_subject" id="msg_subject" class="form-control"
+                        <input type="text" name="subject" id="subject" class="form-control"
                             placeholder="Subject" required data-error="Please enter your subject">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -96,7 +97,7 @@
                     <button type="submit" class="btn common-btn">
                         Send Message
                     </button>
-                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    {{-- <div id="msgSubmit" class="h3 text-center hidden"></div> --}}
                     <div class="clearfix"></div>
                 </div>
             </div>

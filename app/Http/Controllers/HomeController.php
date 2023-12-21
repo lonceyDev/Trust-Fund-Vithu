@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Event;
 use App\Models\Project;
@@ -28,6 +29,19 @@ class HomeController extends Controller
     public function index()
     {
         return view('frontend.home');
+    }
+    public function create()
+    {
+        return view('frontend.contact-us');
+    }
+    public function store(Request $request)
+    {
+        
+        Contact::create($request->all());
+      
+        return redirect()
+            ->route('home')
+            ->withMessage('contact has been sent successfully!!!');
     }
 
     public function Blog()

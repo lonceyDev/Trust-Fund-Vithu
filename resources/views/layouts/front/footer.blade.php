@@ -73,7 +73,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('contact-us') }}">
+                                <a href="{{ route('contact.create') }}">
                                     <i class="icofont-simple-right"></i>
                                     Contact Us
                                 </a>

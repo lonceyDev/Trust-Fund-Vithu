@@ -344,7 +344,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('contact-us') }}" class="nav-link">Contact Us</a>
+                                <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a href="#" class="nav-link dropdown-toggle">Donations <i

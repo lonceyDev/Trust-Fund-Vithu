@@ -3671,33 +3671,33 @@ ul {
     color: var(--theme-dark-primary);
 }
 
-.contact-area #contactForm {
+.contact-area #contactForm1 {
     margin-bottom: 30px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.contact-area #contactForm h2 {
+.contact-area #contactForm1 h2 {
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: -5px;
 }
 
-.contact-area #contactForm p {
+.contact-area #contactForm1 p {
     margin-bottom: 30px;
 }
 
-.contact-area #contactForm .form-group {
+.contact-area #contactForm1 .form-group {
     margin-bottom: 15px;
     position: relative;
 }
 
-.contact-area #contactForm .form-group label {
+.contact-area #contactForm1 .form-group label {
     margin-bottom: 0;
 }
 
-.contact-area #contactForm .form-group label i {
+.contact-area #contactForm1 .form-group label i {
     position: absolute;
     top: 40px;
     left: 12px;
@@ -3706,21 +3706,21 @@ ul {
     color: var(--theme-dark-primary);
 }
 
-.contact-area #contactForm .form-group label a {
+.contact-area #contactForm1 .form-group label a {
     color: var(--theme-dark-primary);
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
 }
 
-.contact-area #contactForm .form-group label a:hover {
+.contact-area #contactForm1 .form-group label a:hover {
     color: #2e9a7a;
 }
 
-.contact-area #contactForm .form-group .form-check {
+.contact-area #contactForm1 .form-group .form-check {
     display: inline-block;
 }
 
-.contact-area #contactForm .form-group .form-control {
+.contact-area #contactForm1 .form-group .form-control {
     height: 50px;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -3729,24 +3729,24 @@ ul {
     border: 0;
 }
 
-.contact-area #contactForm .form-group .form-control:focus {
+.contact-area #contactForm1 .form-group .form-control:focus {
     border: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-.contact-area #contactForm .form-group textarea {
+.contact-area #contactForm1 .form-group textarea {
     height: auto !important;
     padding-top: 13px;
 }
 
-.contact-area #contactForm .form-group .list-unstyled {
+.contact-area #contactForm1 .form-group .list-unstyled {
     font-size: 15px;
     margin-top: 10px;
     color: #dc3545;
 }
 
-.contact-area #contactForm .common-btn {
+.contact-area #contactForm1 .common-btn {
     width: 100%;
     text-align: center;
     display: block;
@@ -3755,14 +3755,14 @@ ul {
     opacity: 1;
 }
 
-.contact-area #contactForm .text-danger {
+.contact-area #contactForm1 .text-danger {
     margin-bottom: 0;
     margin-top: 10px;
     font-size: 22px;
     color: #dc3545;
 }
 
-.contact-area #contactForm .text-success {
+.contact-area #contactForm1 .text-success {
     margin-bottom: 0;
     margin-top: 10px;
     font-size: 22px;
