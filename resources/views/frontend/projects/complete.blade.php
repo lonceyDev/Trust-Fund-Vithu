@@ -1,4 +1,4 @@
-<!-- ongoing.blade.php -->
+<!-- completed.blade.php -->
 
 @extends('layouts.front.index_blade')
 @section('content')
@@ -6,7 +6,7 @@
     <section class="donations-area ptb-100">
         <div class="container">
             <div class="row">
-                @foreach ($ongoingProjects as $project)
+                @foreach ($completedProjects as $project)
                 <div class="col-sm-6 col-lg-4">
                     <div class="donation-item">
                         <div class="img">
@@ -47,9 +47,8 @@
             </div> 
         </div>              
         <div class="pagination-area">
-            {{ $ongoingProjects->links() }}
+            {{ $completedProjects->links() }}
         </div>
     </section>
 </main>
 @endsection
- 

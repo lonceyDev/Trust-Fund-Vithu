@@ -62,8 +62,7 @@ Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsm
 Route::view('/donation', 'frontend.donation.donation')->name('donation');
 
 Route::view('/contact', 'frontend.contact-us')->name('contact-us');
-Route::view('/ongoing', 'frontend.projects.ongoing')->name('ongoing');
-Route::view('/complete', 'frontend.projects.completed')->name('complete');
+
 
 Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
 Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
@@ -73,6 +72,8 @@ Route::get('/event/{slug}',[App\Http\Controllers\HomeController::class,'EventDet
 
 Route::get('/project', [App\Http\Controllers\HomeController::class, 'Project'])->name('project');
 Route::get('/project/{slug}', [App\Http\Controllers\HomeController::class, 'ProjectDetail'])->name('project-details');
+Route::get('/complete/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('complete');
+Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('ongoing');
 
 
 Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');

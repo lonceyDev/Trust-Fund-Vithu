@@ -270,10 +270,12 @@
                                         <a href="{{ route('project') }}" class="nav-link">All Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('ongoing') }}" class="nav-link">Ongoing</a>
+                                        <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'ongoing']) }}">ongoing</a>
+
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('complete') }}" class="nav-link">Completed</a>
+                                        <a class="tags text-capitalize" href="{{ route('complete', ['status' => 'complete']) }}">complete</a>
+
                                     </li>
 
                                 </ul>

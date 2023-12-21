@@ -518,8 +518,8 @@
                                                         <div class="col-sm-6 col-lg-4">
                         <div class="donation-item">
                             <div class="top">
-                                <a class="tags text-capitalize"
-                                    href="{{route('ongoing')}}">ongoing</a>
+                                <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'ongoing']) }}">ongoing</a>
+
                                 <h3>
                                     <a
                                         href="https://dev.vithu.org/project/marappalam-pre-school">Marappalam Pre-School</a>
@@ -550,8 +550,8 @@
                                                         <div class="col-sm-6 col-lg-4">
                         <div class="donation-item">
                             <div class="top">
-                                <a class="tags text-capitalize"
-                                    href="https://dev.vithu.org/projects/ongoing">ongoing</a>
+                                <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'ongoing']) }}">ongoing</a>
+
                                 <h3>
                                     <a
                                         href="https://dev.vithu.org/project/karadiyanaru-pre-school">Karadiyanaru Pre-School</a>

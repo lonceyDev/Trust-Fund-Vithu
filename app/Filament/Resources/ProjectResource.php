@@ -54,7 +54,7 @@ class ProjectResource extends Resource
                  Forms\Components\Select::make('status')
                     ->required()
                     ->options([
-                        'On going' => 'On going',
+                        'Ongoing' => 'Ongoing',
                         'Complete' => 'Complete',
                         'Pending' => 'Pending',
                     ]),

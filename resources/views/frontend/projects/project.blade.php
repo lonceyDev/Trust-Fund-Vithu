@@ -64,12 +64,12 @@
                     </div>
                 @endforeach 
             </div> 
+          
         </div>              
         <div class="pagination-area">
             {{ $projects->links() }}
         </div>
      </div>
     </section>
-
 </main>
 @endsection
