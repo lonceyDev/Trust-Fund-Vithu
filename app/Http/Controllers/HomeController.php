@@ -87,6 +87,18 @@ public function ProjectDetail($slug){
     }
 
 }
+public function showProjects($status) {
+    if ($status === 'complete') {
+        $completedProjects = Project::where('status', '=', 'complete')->paginate(6); // Adjust the conditions based on your data structure
+        return view('frontend.projects.complete', ['completedProjects' => $completedProjects]);
+    } elseif ($status === 'ongoing') {
+        $ongoingProjects = Project::where('status', '=', 'ongoing')->paginate(6);
+        return view('frontend.projects.ongoing', ['ongoingProjects' => $ongoingProjects]);
+    } 
+}
+
+
+
 
 // public function barChart()
 //     {
