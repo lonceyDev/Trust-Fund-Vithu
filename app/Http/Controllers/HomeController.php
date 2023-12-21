@@ -28,6 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+       
         return view('frontend.home');
     }
     public function create()
@@ -111,34 +112,102 @@ public function showProjects($status) {
     } 
 }
 
-
-
-
-// public function barChart()
-//     {
+public function accChart()
+    {
         
-//         $data = [
-//             'labels' => ['January', 'February', 'March', 'April', 'May'],
-//             'data' => [65, 59, 80, 81, 56],
-//         ];
-//         $pie = [            
-//             'labels' => ['Category A', 'Category B', 'Category C', 'Category D', 'Category E'],
-//             'data' => [25, 30, 15, 10, 20],
-//         ];
-//         $scatter = [
-//             'labels' => ['Data Point 1', 'Data Point 2', 'Data Point 3', 'Data Point 4', 'Data Point 5'],
-//             'data' => [
-//                 ['x' => 10, 'y' => 20],
-//                 ['x' => 15, 'y' => 25],
-//                 ['x' => 20, 'y' => 30],
-//                 ['x' => 25, 'y' => 35],
-//                 ['x' => 30, 'y' => 40],
-//             ],
-//         ];
-//         $line = [
-//             'labels' => ['January', 'February', 'March', 'April', 'May'],
-//             'data' => [65, 59, 80, 81, 56],
-//         ];
-//         return view('frontend.explore.accounts', compact('data','pie','scatter','line'));
-//     }
+        $data = [
+            'labels' => ['Year', 'Inflow', 'Outflow', 'NetFlow'],
+            'data' =>
+             ['2014', 1000, 400, 200],
+            ['2015', 1170, 460, 250],
+            ['2016', 660, 1120, 300],
+            ['2018', 1030, 540, 350],
+            ['2019', 1030, 540, 350],
+            ['2020', 1030, 540, 350],
+            ['2021', 1030, 540, 350],
+            ['2022', 1030, 540, 350],
+            ['2023', 1030, 540, 350],
+        ];
+        $pie = [            
+            'labels' => ['Foundation and Grants', 'Individual Conributions', 'Others'],
+            'data' => [55,30,15],
+        ];
+        // $scatter = [
+        //     'labels' => ['Data Point 1', 'Data Point 2', 'Data Point 3', 'Data Point 4', 'Data Point 5'],
+        //     'data' => [
+        //         ['x' => 10, 'y' => 20],
+        //         ['x' => 15, 'y' => 25],
+        //         ['x' => 20, 'y' => 30],
+        //         ['x' => 25, 'y' => 35],
+        //         ['x' => 30, 'y' => 40],
+        //     ],
+        // ];
+        $line = [
+            'labels' => ['Year', 'Donation', 'program impact'],
+            'data' =>  
+            ['2014',  1000,      400],
+            ['2015',  1170,      460],
+            ['2016',  660,       1120],
+            ['2017',  1030,      540],
+            ['2018',  1000,      400],
+            ['2019',  1170,      460],
+            ['2020',  660,       1120],
+            ['2021',  1030,      540],
+            ['2022',  1000,      400],
+            ['2023',  1170,      460],
+            ['2024',  660,       1120],
+            ['2025',  1030,      540]
+        ];
+        return view('frontend.explore.accounts', compact('data','pie','line'));
+    }
+    public function pieChart()
+    {
+    
+        $pie = [            
+            'labels' => ['Foundation and Grants', 'Individual Conributions', 'Others'],
+            'data' => [55,30,15],
+        ];
+  
+        return view('frontend.explore.pie', compact('pie'));
+    }
+    public function barChart()
+    {
+        
+        $data = [
+            'labels' => ['Year', 'Inflow', 'Outflow', 'NetFlow'],
+            'data' =>
+             ['2014', 1000, 400, 200],
+            ['2015', 1170, 460, 250],
+            ['2016', 660, 1120, 300],
+            ['2018', 1030, 540, 350],
+            ['2019', 1030, 540, 350],
+            ['2020', 1030, 540, 350],
+            ['2021', 1030, 540, 350],
+            ['2022', 1030, 540, 350],
+            ['2023', 1030, 540, 350],
+        ];
+        return view('frontend.explore.bar', compact('data'));
+    }
+    public function lineChart()
+    {
+        
+       
+        $line = [
+            'labels' => ['Year', 'Donation', 'program impact'],
+            'data' =>  
+            ['2014',  1000,      400],
+            ['2015',  1170,      460],
+            ['2016',  660,       1120],
+            ['2017',  1030,      540],
+            ['2018',  1000,      400],
+            ['2019',  1170,      460],
+            ['2020',  660,       1120],
+            ['2021',  1030,      540],
+            ['2022',  1000,      400],
+            ['2023',  1170,      460],
+            ['2024',  660,       1120],
+            ['2025',  1030,      540]
+        ];
+        return view('frontend.explore.line', compact('line'));
+    }
 }

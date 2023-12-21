@@ -53,25 +53,25 @@
                                     <div class="left">
                                         <ul>
                                             <li>
-                                                <span>Share:</span>
+                                                <span>Follow Us:</span>
                                             </li>
                                             <li>
-                                                <a href="#" target="_blank">
+                                                <a href="https://www.facebook.com/vithutrustfund" target="_blank">
                                                     <i class="icofont-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" target="_blank">
+                                                <a href="https://twitter.com/vithutrustfund" target="_blank">
                                                     <i class="icofont-twitter"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" target="_blank">
+                                                <a href="https://www.youtube.com/channel/UCqWcfwkS8hLV3A5rdu22cDw/videos?disable_polymer=1" target="_blank">
                                                     <i class="icofont-youtube-play"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" target="_blank">
+                                                <a href="https://www.instagram.com/vithutrustfund/" target="_blank">
                                                     <i class="icofont-instagram"></i>
                                                 </a>
                                             </li>
