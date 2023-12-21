@@ -62,7 +62,6 @@ Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsm
 Route::view('/donation', 'frontend.donation.donation')->name('donation');
 
 Route::view('/contact', 'frontend.contact-us')->name('contact-us');
-Route::view('/project', 'frontend.projects.index')->name('project');
 Route::view('/ongoing', 'frontend.projects.ongoing')->name('ongoing');
 Route::view('/complete', 'frontend.projects.completed')->name('complete');
 
@@ -72,6 +71,8 @@ Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetai
 Route::get('/event',[App\Http\Controllers\HomeController::class,'Event'])->name('event');
 Route::get('/event/{slug}',[App\Http\Controllers\HomeController::class,'EventDetail'])->name('event-details');
 
+Route::get('/project', [App\Http\Controllers\HomeController::class, 'Project'])->name('project');
+Route::get('/project/{slug}', [App\Http\Controllers\HomeController::class, 'ProjectDetail'])->name('project-details');
 
 
 Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');

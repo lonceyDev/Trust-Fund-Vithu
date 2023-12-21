@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
 use App\Models\Post;
+use App\Models\Event;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -34,7 +35,8 @@ class HomeController extends Controller
         $blogs=Post::all();
         return view('frontend.explore.blog',compact('blogs'));
     }
-  public function BlogDetail($slug) {
+   
+    public function BlogDetail($slug) {
     try {
         // Fetch the specific blog using the provided slug
         $blog = Post::where('slug', $slug)->firstOrFail();
@@ -67,6 +69,24 @@ public function EventDetail($slug) {
         
         return redirect()->route('home')->with('error', 'Event not found');
     }
+}
+public function Project(){
+        
+    $projects = Project::all();
+    return view('frontend.projects.project', compact('projects'));
+
+}
+public function ProjectDetail($slug){
+    try {
+        $project = Project::where('slug', $slug)->firstOrFail();
+        $recentprojects= Project::where('id', '!=', $project->id)->take(5)->get();
+        $projects = Project::all();
+       // dd($projects); // Add this line to debug
+        return view('frontend.projects.project-details', compact('projects', 'project', 'recentprojects'));
+    } catch (ModelNotFoundException $e) {
+        return redirect()->route('home')->with('error', 'Project not found');
+    }
+
 }
 
 public function barChart()

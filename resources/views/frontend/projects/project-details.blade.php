@@ -7,13 +7,13 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="title-item">
-                        <h2>{{$event->title}}</h2>
+                        <h2>{{$project->title}}</h2>
                         <ul>
                             <li>
                                 <a href="{{route('home')}}">Home</a>
                             </li>
                             <li>
-                                <span>{{$event->title}}</span>
+                                <span>{{$project->title}}</span>
                             </li>
                         </ul>
                     </div>
@@ -31,20 +31,21 @@
                          <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    {{$event->publish_at}} 
+                                    {{$project->status}} 
                                 </li>
+                               
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
-                                    By - <a href="#">{{$event->user->name}}</a>
+                                    By - <a href="#">{{$project->user->name}}</a>
                                 </li>
                             </ul>
-                            <h2>{{$event->title}}</h2>
-                                @if(is_array($event->featured_image) && count($event->featured_image) > 0)
-                                 <img src="{{ asset('storage/'.$event->featured_image[0]) }}" alt="event">
+                            <h2>{{$project->title}}</h2>
+                                @if(is_array($project->featured_image) && count($project->featured_image) > 0)
+                                 <img src="{{ asset('storage/'.$project->featured_image[0]) }}" alt="Blog">
                                 @else
                                     <p>No image available</p>
                                 @endif
-                            <p style="text-align: center;">{{$event->description}}<br></p>
+                            <p style="text-align: center;">{!!$project->description!!}<br></p>
                         </div>
                       <div class="details-share mt-2">
                             <div class="row">
@@ -85,24 +86,24 @@
                 <div class="col-lg-4">
                     <div class="widget-area">
                         <div class="post widget-item">
-                            <h3>Recent Event</h3>
-                            @foreach ($recentEvents as $recentEvent)
+                            <h3>Recent project</h3>
+                            @foreach ($recentprojects as $recentproject)
                                 <div class="post-inner">
                                     <ul class="align-items-center">
                                         <li>
-                                            @if(is_array($recentEvent->featured_image) && count($recentEvent->featured_image) > 0)
-                                                <img src="{{ asset('storage/'.$recentEvent->featured_image[0]) }}" alt="event"/>
+                                            @if(is_array($recentproject->featured_image) && count($recentproject->featured_image) > 0)
+                                                <img src="{{ asset('storage/'.$recentproject->featured_image[0]) }}" alt="project"/>
                                             @else
                                                 <p>No image available</p>
                                             @endif
                                         </li>
                                         <li>
                                             <h4>
-                                                <a href="{{ route('event-details', ['slug' => $recentEvent->slug]) }}">
-                                                    {{ $recentEvent->title }}
+                                                <a href="{{ route('project-details', ['slug' => $recentproject->slug]) }}">
+                                                    {{ $recentproject->title }}
                                                 </a>
                                             </h4>
-                                            <p>By - <a href="{{ route('event-details', ['slug' => $recentEvent->slug]) }}">{{ $recentEvent->user->name }}</a></p>
+                                            <p>By - <a href="{{ route('project-details', ['slug' => $recentproject->slug]) }}">{{ $recentproject->user->name }}</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -119,10 +120,10 @@
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
                 <!-- Display multiple images in the gallery -->
-                @foreach ($event->featured_image as $image)
+                @foreach ($project->featured_image as $image)
                     <div class="gallery-item">
                         <a href="" data-lightbox="roadtrip">
-                            <img src="{{ asset('storage/'.$image) }}" alt="event">
+                            <img src="{{ asset('storage/'.$image) }}" alt="project">
                             <i class="icofont-eye"></i>
                         </a>
                     </div>  
