@@ -1,4 +1,11 @@
 @extends('layouts.front.index_blade')
+    @push('custom-style')
+        <style>
+            .pagination-area {
+              margin-top: 20px; 
+            }
+        </style>
+    @endpush
 @section('content')
 <main>
     <div class="page-title-area title-bg-six">
@@ -52,8 +59,14 @@
                         </div>
                     </div>
                 </div>
-           @endforeach                   
+            
+           @endforeach
+        </div>
+    </div>
+            <div class="pagination-area">
+                {{ $blogs->links() }}
+            </div>
     </div>
 </section>
-    
+</main>
 @endsection
