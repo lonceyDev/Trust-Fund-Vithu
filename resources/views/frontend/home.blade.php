@@ -356,7 +356,7 @@
         </div>
     </div>
 
-
+{{-- About  --}}
     <div class="about-area two pt-100 pb-70">
         <div class="container">
             <div class="row align-items-center">

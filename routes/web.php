@@ -75,7 +75,11 @@ Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'sh
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
 Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
 
-Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');
+Route::get('/charts', [App\Http\Controllers\HomeController::class, 'accChart'])->name('account');
+Route::get('/pie', [App\Http\Controllers\HomeController::class, 'pieChart'])->name('account.pie');
+Route::get('/bar', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account.bar');
+Route::get('/line', [App\Http\Controllers\HomeController::class, 'lineChart'])->name('account.line');
+
 
 
 

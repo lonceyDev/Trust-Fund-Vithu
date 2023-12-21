@@ -25,56 +25,103 @@
 
     <div class="about-area pt-100 pb-70">
         <div class="container">
-            {{-- <div class="row align-items-center">
-                <div class="col-lg-5 col-md-6 mx-auto">
-                    <img src="{{ asset('assets/front/img/sign/Teaching-in-Braille.jpg') }}" alt=" Teaching in Braille">
-                </div>
-            </div> --}}
-            <section class="gallery-area two pt-1 pb-2">
-                <div class="container-fluid">
-                    <div class="gallery-slider-1 owl-theme owl-carousel">
+         
+            <section>
 
-
-                        <div class="gallery-item">
-                            <div style="width: 80%; margin: auto;">
-                                <canvas id="barChart"></canvas>
-                            </div>
-                        
-                        </div>
-
-                        <div class="gallery-item">
-                            <div style="width: 80%; margin: auto;">
-                                <canvas id="pieChart"></canvas>
-                            </div>
-                        </div>
-
-                        <div class="gallery-item">
-                            <div style="width: 80%; margin: auto;">
-                                <canvas id="scatterChart"></canvas>
-                            </div>
-                        
-                        </div>
-                        
-                        {{-- <div class="gallery-item">
-                             <div style="width: 80%; margin: auto;">
-                                <canvas id="lineChart"></canvas>
-                            </div>
-                        </div> --}}
-                    </div>
-                </div>
-            </section>
-
-            <div class="row">
-                <h3>Charity Accountability Standards</h3>
+            <div class="row" style="width: 1200px; height: 1000px; margin: auto; text-align: center;">
+                <h2>Vithu Trust Accountability </h2>
+                <h4>Annual Report Summary - [2014-2023]</h4>
                 <p>
-                    very week on the news you read or hear about another person having their identity stolen. This can be discouraging to sites that depend upon consumer trust: namely, online donations. With privacy policies in place, it reassures your donors that you will protect any information they give you through your website’s forms and offline forms.
+                    At Vithu Trust, we believe in accountability, transparency, and the power of collective impact. Our Annual Report Summary for [2014-2023] provides a concise overview of our achievements, challenges, and financial stewardship.
+                </p>
+                <p>
+                   <h6> Financial Overview:</h6>
+                    Total Revenue: $125,457,125
+                    Total Expenses: $124,758,961
+                    Net Surplus: $12,345,678
+                    
+                    <h6>Funding Breakdown:</h6>
+                   <p>Donations and Grants:</p> 
+                    <p>
+                         Percentage breakdown of revenue from individual donations, grants, and other sources.
+                    </p>
+                   <h6>Program Expenses:</h6> 
+                    <p>
+                        Allocation of funds to specific programs or initiatives.
+                        Strategic Investments:
+                        Infrastructure and Capacity Building:
+                        Description of investments made to strengthen our organization's capabilities.
+                        Community Impact
+                        Beneficiary Stories:
+                        Impactful Stories:
+                    </p> 
+                    <p> 
+                        Personal narratives highlighting the positive impact of our work on individuals or communities.
+                        Quantifiable Results:
+                    </p>
+                    <p>
+                        Key metrics and statistics demonstrating the tangible outcomes of our efforts.
+                        Acknowledgments
+                        We extend our heartfelt gratitude to our supporters, volunteers, partners, and the communities we serve. Your dedication and collaboration make our mission possible.
+                    </p>
+                    <p>
+                    Looking Ahead
+                    Future Initiatives:
+                    Upcoming Projects:
+                    </p>
+                    <p>
+                     A glimpse into planned initiatives and projects for the upcoming year.
+                    Collaborative Opportunities:
+
+                    Invitations for continued collaboration and support from our stakeholders.
+                    How You Can Get Involved
+                    Your involvement is crucial to our success. Whether through volunteering, contributing, or spreading awareness, your support makes a difference.
+                </p>
+                    <h6>Contact Us</h6>
+                    <p>For more details or inquiries, please contact us at.</p>
+
+                    <p>Thank you for being an integral part of Vithu Trust. Together, we are making a lasting impact and building a better future.</p>
                 </p>
             </div>
-            <div>
-                <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More Report</a>
+            <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
+                <p>Explore more details about our charity:</p>
+                <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
             </div>
         </div>
+    </section>      
+     <section>
+        <div class="container-fluid" style="max-width: 1100px; margin: auto; text-align: center;">
+            <h2 style="text-align: center;">Financial Information</h2>
+            <p></p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                <div style="flex: 1; text-align: center;">
+                    <a href="{{route('account.bar')}}">
+                        <canvas id="barChart" style="width: 100%; height: 300px;"></canvas>
+                    </a>
+                    <p></p>
+                    <a href="{{route('account.bar')}}">Non-Profit Organization Cash Flow Insights</a>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <a href="{{route('account.pie')}}">
+                        <canvas id="pieChart" style="width: 100%; height: 300px;"></canvas>
+                    </a>
+                    <p></p>
+                    <a href="{{route('account.pie')}}">Visualizing Income Sources and Program Expenses Revenue</a>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <a href="{{route('account.line')}}">
+                        <canvas id="lineChart" style="width: 100%; height: 300px;"></canvas>
+                    </a>
+                    <p></p>
+                    <a href="{{route('account.line')}}">Explore the tangible outcomes of previous donations</a>
+                </div>
+            </div>
+        </div>
+        
+        </section>
     </div>
+
+
 @endsection
 
 @push('custom-script')
@@ -128,91 +175,44 @@
     });
 </script>
 <script>
-var ctx = document.getElementById('pieChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: @json($pie['labels']),
-        datasets: [{
-            data: @json($pie['data']),
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-                'rgba(75, 192, 192, 0.7)',
-                'rgba(153, 102, 255, 0.7)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-});
-</script>
-<script>
-    var ctx = document.getElementById('scatterChart').getContext('2d');
+    var ctx = document.getElementById('pieChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'scatter',
+        type: 'pie',
         data: {
-            labels: @json($scatter['labels']),
+            labels: @json($pie['labels']),
             datasets: [{
-                label: 'Scatter Chart',
-                data: @json($scatter['data']),
-                backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                data: @json($pie['data']),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
                 borderWidth: 1
+            
             }]
         },
-        options: {
-            scales: {
-                x: {
-                    type: 'linear',
-                    position: 'bottom'
-                },
-                y: {
-                    type: 'linear',
-                    position: 'left'
-                }
-            }
-        }
     });
-</script>
-    <script>
-        // Gallery Slider JS
-        $('.gallery-slider-1').owlCarousel({
-            items: 1,
-            loop: false,
-            margin: 20,
-            nav: false,
-            dots: false,
-            smartSpeed: 1000,
-            autoplay: false,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                600: {
-                    items: 3,
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
     </script>
-@endpush
 
+@endpush
 @push('custom-style')
-    <style>
-        .owl-carousel .owl-item img {
-            min-height: 180px;
-        }
-    </style>
+<style>
+    a {
+        color: rgb(58, 55, 55);
+        text-decoration: none; 
+    }
+
+    a:hover {
+        color: darkcyan;
+    }
+</style>
 @endpush
