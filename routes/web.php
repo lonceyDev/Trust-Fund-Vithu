@@ -23,13 +23,13 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('.env', function () {
-    return abort(403);
-});
+// Route::get('.env', function () {
+//     return abort(403);
+// });
 
-Route::get('.htaccess', function () {
-    return abort(403);
-});
+// Route::get('.htaccess', function () {
+//     return abort(403);
+// });
 
 //Route::get('/', HomeController::class,'index')->name('home');
 //Route::get('/contact-us', ContactComponent::class)->name('contact');
@@ -61,9 +61,6 @@ Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsm
 
 Route::view('/donation', 'frontend.donation.donation')->name('donation');
 
-Route::view('/contact', 'frontend.contact-us')->name('contact-us');
-
-
 Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
 Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
 
@@ -75,6 +72,8 @@ Route::get('/project/{slug}', [App\Http\Controllers\HomeController::class, 'Proj
 Route::get('/complete/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('complete');
 Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('ongoing');
 
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
+Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
 
 Route::get('/charts', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account');
 

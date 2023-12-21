@@ -446,11 +446,11 @@
                     <div class="feature-item three">
                         <i class="flaticon-love"></i>
                         <h3>
-                            <a href="{{route('contact-us')}}">Show your love</a>
+                            <a href="{{route('contact.create')}}">Show your love</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                             not simply.</p>
-                        <a class="feature-btn" href="{{route('contact-us')}}">Join Now</a>
+                        <a class="feature-btn" href="{{route('contact.create')}}">Join Now</a>
                     </div>
                 </div>
             </div>
