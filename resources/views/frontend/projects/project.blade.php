@@ -62,46 +62,13 @@
                             </div>
                         </div>
                     </div>
-                @endforeach                
+                @endforeach 
+            </div> 
+        </div>              
         <div class="pagination-area">
-        <ul>
-            <li class="en">
-                <a href="javascript:void(0);">
-                    <span aria-hidden="true" class="disabled">
-                            <b class="en">Previous</b>
-                    </span>
-                </a>
-            </li>
-
-                        <li>
-                            <a class="active" href="" class="en">
-                                1
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" href="" class="en">
-                                2
-                            </a>
-                        </li>
-                        <li>
-                            <a class="" href="" class="en">
-                                3
-                            </a>
-                        </li>
-                                                
-
-            <li class="">
-                    <a href="https://dev.vithu.org/projects?page=2 ">
-                        <span aria-hidden="true"  class="">
-                            <b class="en">Next</b>
-                        </span>
-                    </a>
-            </li>
-        </ul>
-    </div>
-
-
+            {{ $projects->links() }}
         </div>
+     </div>
     </section>
 
 </main>

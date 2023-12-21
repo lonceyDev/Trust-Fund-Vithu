@@ -32,28 +32,27 @@ class HomeController extends Controller
 
     public function Blog()
     {
-        $blogs=Post::all();
+        $blogs=Post::paginate(6);
         return view('frontend.explore.blog',compact('blogs'));
     }
    
     public function BlogDetail($slug) {
     try {
-        // Fetch the specific blog using the provided slug
+       
         $blog = Post::where('slug', $slug)->firstOrFail();
 
-        // Fetch recent blogs (excluding the current blog)
         $recentBlogs = Post::where('id', '!=', $blog->id)->take(5)->get();
 
         return view('frontend.explore.blog-details', compact('blog', 'recentBlogs'));
     } catch (ModelNotFoundException $e) {
-        // Handle the case where the blog is not found, e.g., redirect or display an error.
+       
         return redirect()->route('home')->with('error', 'Blog not found');
     }
 }
 
 public function Event()
 {
-    $events=Event::all();
+    $events=Event::paginate(6);
     return view('frontend.get-involved.event',compact('events'));
 
 }
@@ -72,7 +71,7 @@ public function EventDetail($slug) {
 }
 public function Project(){
         
-    $projects = Project::all();
+    $projects = Project::paginate(9); 
     return view('frontend.projects.project', compact('projects'));
 
 }
@@ -81,7 +80,7 @@ public function ProjectDetail($slug){
         $project = Project::where('slug', $slug)->firstOrFail();
         $recentprojects= Project::where('id', '!=', $project->id)->take(5)->get();
         $projects = Project::all();
-       // dd($projects); // Add this line to debug
+       
         return view('frontend.projects.project-details', compact('projects', 'project', 'recentprojects'));
     } catch (ModelNotFoundException $e) {
         return redirect()->route('home')->with('error', 'Project not found');
@@ -89,31 +88,31 @@ public function ProjectDetail($slug){
 
 }
 
-public function barChart()
-    {
+// public function barChart()
+//     {
         
-        $data = [
-            'labels' => ['January', 'February', 'March', 'April', 'May'],
-            'data' => [65, 59, 80, 81, 56],
-        ];
-        $pie = [            
-            'labels' => ['Category A', 'Category B', 'Category C', 'Category D', 'Category E'],
-            'data' => [25, 30, 15, 10, 20],
-        ];
-        $scatter = [
-            'labels' => ['Data Point 1', 'Data Point 2', 'Data Point 3', 'Data Point 4', 'Data Point 5'],
-            'data' => [
-                ['x' => 10, 'y' => 20],
-                ['x' => 15, 'y' => 25],
-                ['x' => 20, 'y' => 30],
-                ['x' => 25, 'y' => 35],
-                ['x' => 30, 'y' => 40],
-            ],
-        ];
-        $line = [
-            'labels' => ['January', 'February', 'March', 'April', 'May'],
-            'data' => [65, 59, 80, 81, 56],
-        ];
-        return view('frontend.explore.accounts', compact('data','pie','scatter','line'));
-    }
+//         $data = [
+//             'labels' => ['January', 'February', 'March', 'April', 'May'],
+//             'data' => [65, 59, 80, 81, 56],
+//         ];
+//         $pie = [            
+//             'labels' => ['Category A', 'Category B', 'Category C', 'Category D', 'Category E'],
+//             'data' => [25, 30, 15, 10, 20],
+//         ];
+//         $scatter = [
+//             'labels' => ['Data Point 1', 'Data Point 2', 'Data Point 3', 'Data Point 4', 'Data Point 5'],
+//             'data' => [
+//                 ['x' => 10, 'y' => 20],
+//                 ['x' => 15, 'y' => 25],
+//                 ['x' => 20, 'y' => 30],
+//                 ['x' => 25, 'y' => 35],
+//                 ['x' => 30, 'y' => 40],
+//             ],
+//         ];
+//         $line = [
+//             'labels' => ['January', 'February', 'March', 'April', 'May'],
+//             'data' => [65, 59, 80, 81, 56],
+//         ];
+//         return view('frontend.explore.accounts', compact('data','pie','scatter','line'));
+//     }
 }

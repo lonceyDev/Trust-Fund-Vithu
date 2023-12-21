@@ -58,6 +58,9 @@
                 </div>
            @endforeach                   
     </div>
+    <div class="pagination-area">
+        {{ $events->links() }}
+    </div>
 </section>
     
 @endsection
