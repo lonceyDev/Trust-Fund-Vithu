@@ -506,7 +506,7 @@
         </div>
     </div>
 
-
+ {{--Projects --}}
     <section class="donations-area three pt-100 pb-70">
         <div class="container">
             <div class="section-title">
@@ -514,149 +514,100 @@
                 <h2>Be the reason of someone smiles</h2>
                 <p>Help others by donating to their fundraiser, or start one for someone you care about.</p>
             </div>
-                        <div class="row">
-                                                        <div class="col-sm-6 col-lg-4">
+                <div class="row">
+                    @foreach ($projects as $project)
+                    <div class="col-sm-6 col-lg-4">
                         <div class="donation-item">
-                            <div class="top">
-                                <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'ongoing']) }}">ongoing</a>
-
-                                <h3>
-                                    <a
-                                        href="https://dev.vithu.org/project/marappalam-pre-school">Marappalam Pre-School</a>
-                                </h3>
-                                <p></p>
-                            </div>
                             <div class="img">
-                                <img src="https://dev.vithu.org/storage/uploads/small/2023/09/download_7f3.webp" alt="Donation">
-                                <a class="common-btn" href="https://dev.vithu.org/project/marappalam-pre-school">Read
-                                    More</a>
+                                <a href="{{route('project-details',['slug' => $project->slug])}}">
+                                    @if(is_array($project->featured_image) && count($project->featured_image) > 0)
+                                        <img src="{{ asset('storage/'.$project->featured_image[0]) }}" alt="Blog">
+                                    @else
+                                       <p>No image available</p>
+                                    @endif
+                                </a>
                             </div>
+                          
                             <div class="inner">
-                                <div class="bottom">
-                                    <div class="skill">
-                                        <div class="skill-bar skill1 wow fadeInLeftBig">
-                                            <span class="skill-count1">85%</span>
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li>Raised: £0.00</li>
-                                        <li>Goal: £</li>
-                                    </ul>
-                                    <h4>Donated by <span>60 people</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                                        <div class="col-sm-6 col-lg-4">
-                        <div class="donation-item">
-                            <div class="top">
-                                <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'ongoing']) }}">ongoing</a>
-
-                                <h3>
-                                    <a
-                                        href="https://dev.vithu.org/project/karadiyanaru-pre-school">Karadiyanaru Pre-School</a>
-                                </h3>
-                                <p></p>
-                            </div>
-                            <div class="img">
-                                <img src="https://dev.vithu.org/storage/uploads/small/2023/09/download (1)_6ac.webp" alt="Donation">
-                                <a class="common-btn" href="https://dev.vithu.org/project/karadiyanaru-pre-school">Read
-                                    More</a>
-                            </div>
-                            <div class="inner">
-                                <div class="bottom">
-                                    <div class="skill">
-                                        <div class="skill-bar skill1 wow fadeInLeftBig">
-                                            <span class="skill-count1">85%</span>
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li>Raised: £0.00</li>
-                                        <li>Goal: £</li>
-                                    </ul>
-                                    <h4>Donated by <span>60 people</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                                        <div class="col-sm-6 col-lg-4">
-                        <div class="donation-item">
-                            <div class="top">
-                                <a class="tags text-capitalize"
-                                    href="https://dev.vithu.org/projects/ongoing">ongoing</a>
-                                <h3>
-                                    <a
-                                        href="https://dev.vithu.org/project/karadiyanaru-school-ndash-after-school-program">Karadiyanaru School – After School Program</a>
-                                </h3>
-                                <p></p>
-                            </div>
-                            <div class="img">
-                                <img src="https://dev.vithu.org/storage/uploads/small/2023/09/download (2)_30c.webp" alt="Donation">
-                                <a class="common-btn" href="https://dev.vithu.org/project/karadiyanaru-school-ndash-after-school-program">Read
-                                    More</a>
-                            </div>
-                            <div class="inner">
-                                <div class="bottom">
-                                    <div class="skill">
-                                        <div class="skill-bar skill1 wow fadeInLeftBig">
-                                            <span class="skill-count1">85%</span>
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li>Raised: £0.00</li>
-                                        <li>Goal: £</li>
-                                    </ul>
-                                    <h4>Donated by <span>60 people</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                            </div>
-
-        </div>
-    </section>
-
-
-    <section class="event-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">Our events</span>
-                <h2>Upcoming events near you</h2>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                                                                        <div class="event-item">
-                                <img src="https://dev.vithu.org/storage/uploads/small/2023/09/Sing-language-CD-relise-23r-dec-2021-40_3f6.webp" alt="Event">
-                                <div class="inner">
-                                    <h4>29 <span>Jan</span></h4>
+                                <div class="top">
+                                    <a class="tags text-capitalize" href="{{route('project-details',['slug'=>$project->slug])}}">{{$project->status}}</a>
                                     <h3>
-                                        <a href="https://dev.vithu.org/blog/17%E0%AE%B5%E0%AE%A4%E0%AF%81-%E0%AE%86%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%A8%E0%AE%BF%E0%AE%B1%E0%AF%88%E0%AE%B5%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-%E0%AE%9A%E0%AF%88%E0%AE%95%E0%AF%88-%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E0%AE%95%E0%AE%BE%E0%AE%A3%E0%AF%8A%E0%AE%B3%E0%AE%BF-%E0%AE%B5%E0%AF%86%E0%AE%B3%E0%AE%BF%E0%AE%AF%E0%AF%80%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-2021">17வது ஆண்டு நிறைவு விழாவும் சைகை மொழி காணொளி வெளியீட்டு விழாவும் 2021</a>
+                                        <a href="{{route('project-details',['slug'=>$project->slug])}}">{{$project->title}}</a>
                                     </h3>
+                                </div>
+                                <div class="bottom">
+                                  
+                                    <div class="skill">
+                                        <div class="skill-bar skill1 wow fadeInLeftBig">
+                                            <span class="skill-count1">85%</span>
+                                        </div>
+                                    </div>
+                                    <b></b>
                                     <ul>
-                                        
-                                        <li>
+                                        <li><h4>Expected Amount</h4><p></p>
                                             <i class="icofont-location-pin"></i>
-                                            <span>LK</span>
-                                        </li>
+                                            <span>LKR</span> {{ number_format($project->expected_amount) }}</li>
+                                        <li><h4>Project Amount</h4><p></p>
+                                            <i class="icofont-location-pin"></i>
+                                            <span>LK</span>  
+                                            {{ number_format($project->project_amount) }}</li>
                                     </ul>
+                                    <h4>Donated by <span>60 people</span></h4>
+                                    <p></p>
+                                    <a  class="common-btn" href="{{route('project-details',['slug'=>$project->slug])}}">Read More</a>
                                 </div>
                             </div>
-                        
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                    
+                        </div>
+                    </div>
+                @endforeach 
+                </div>
+            </div>
+    </section>
+{{--End Projects --}}
+{{-- events --}}
+<section class="event-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Our events</span>
+            <h2>Upcoming events near you</h2>
+        </div>
+        <div class="row align-items-center">
+            
+                <div class="col-lg-6">
+                    <div class="event-item">
+                        @if($event)
+                            <img src="{{asset('assets/front/img/event/event1-13.jpg')}}" alt="Event">
+                       
+                        <div class="inner">
+                            <h4>
+                                {{ \Carbon\Carbon::parse($event->publish_at)->format('d') }}
+                                <span class="month">{{ \Carbon\Carbon::parse($event->publish_at)->format('M') }}</span>
+                            </h4>
+                            <h3>
+                                <a href="{{ route('event-details', ['slug' => $event->slug]) }}">{{ $event->title }} </a>
+                            </h3>
+                            <ul>
+                                <li>
+                                    <i class="icofont-location-pin"></i>
+                                    <span>LK</span>
+                                </li>
+                            </ul>
+                        @else
+                            <p>No upcoming events available</p>
+                        @endif
+                        </div>   
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                                        
-                                                            <div class="event-item-right">
-                        <h4>16 <span>Jan</span></h4>
+                    @foreach ($events as $event)
+                    <div class="event-item-right">
+                        <h4>
+                            {{ \Carbon\Carbon::parse($event->publish_at)->format('d') }}
+                            <span class="month">{{ \Carbon\Carbon::parse($event->publish_at)->format('M') }}</span>
+                        </h4>
                         <h3>
-                            <a href="https://dev.vithu.org/blog/blood-donation-camp-ahead-of-vtf-17th-anniversary">Blood Donation Camp ahead of VTF 17th Anniversary</a>
+                            <a href="{{route('event-details',['slug' => $event->slug])}}">{{$event->title}} </a>
+
                         </h3>
                         <ul>
                             
@@ -666,46 +617,13 @@
                             </li>
                         </ul>
                     </div>
-                    
-                                                            <div class="event-item-right">
-                        <h4>12 <span>May</span></h4>
-                        <h3>
-                            <a href="https://dev.vithu.org/blog/yoga-children-awards-giving-and-blood-donation">Yoga, Children Awards Giving And Blood Donation</a>
-                        </h3>
-                        <ul>
-                            
-                            <li>
-                                <i class="icofont-location-pin"></i>
-                                <span>Lk</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                                                            <div class="event-item-right">
-                        <h4>20 <span>Dec</span></h4>
-                        <h3>
-                            <a href="https://dev.vithu.org/blog/nalinaka-puram-pillai-nila-preschool">Nalinaka Puram Pillai Nila Preschool</a>
-                        </h3>
-                        <ul>
-                            
-                            <li>
-                                <i class="icofont-location-pin"></i>
-                                <span>Lk</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                                        
-                                        
-                                        
-                                        
-                                    </div>
-            </div>
+                    @endforeach
+                </div>
         </div>
-    </section>
-
-
-    <div class="counter-area pt-100 pb-70">
+    </div>
+</section>
+{{-- End events --}}
+<div class="counter-area pt-100 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-6 col-sm-6 col-lg-3">
@@ -788,8 +706,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="work-img">
-                        <img src="https://dev.vithu.org/assets/front/img/work/work2.jpeg" alt="Work">
-                        <img src="https://dev.vithu.org/assets/front/img/work/work1.jpeg" alt="Work">
+                        <img src="{{asset('assets/front/img/work/work2.jpeg')}}" alt="Work">
+                        <img src="{{asset('assets/front/img/work/work2.jpeg')}}" alt="Work">
                     </div>
                 </div>
             </div>
@@ -928,7 +846,7 @@
         </div>
     </section> --}}
 
-
+{{-- Blogs --}}
     <section class="blog-area three pt-100 pb-70">
         <div class="container">
             <div class="section-title">
@@ -938,225 +856,37 @@
                     individual citizens that are making.</p>
             </div>
             <div class="row">
-
-                                    <div class="col-sm-6 col-lg-4">
+                @foreach ($blogs as $blog )
+               
+                   <div class="col-sm-6 col-lg-4">
                         <div class="blog-item">
                             <div class="top">
-                                <a href="https://dev.vithu.org/blog/17%E0%AE%B5%E0%AE%A4%E0%AF%81-%E0%AE%86%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%A8%E0%AE%BF%E0%AE%B1%E0%AF%88%E0%AE%B5%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-%E0%AE%9A%E0%AF%88%E0%AE%95%E0%AF%88-%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E0%AE%95%E0%AE%BE%E0%AE%A3%E0%AF%8A%E0%AE%B3%E0%AE%BF-%E0%AE%B5%E0%AF%86%E0%AE%B3%E0%AE%BF%E0%AE%AF%E0%AF%80%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-2021">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/Sing-language-CD-relise-23r-dec-2021-40_3f6.webp" alt="Blog">
+                                <a href="{{route('blog-details',['slug' => $blog->slug])}}">
+                                    <img src="{{asset('storage/'.$blog->featured_image)}}" alt="Blog">
                                 </a>
                             </div>
                             <div class="bottom">
                                 <ul>
                                     <li>
                                         <i class="icofont-calendar"></i>
-                                        <span>29 Jan 2022</span>
+                                        <span class="date">{{ \Carbon\Carbon::parse($blog->publish_at)->format('d M Y') }}</span>
                                     </li>
                                     <li>
                                         <i class="icofont-user-alt-3"></i>
                                         <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
+                                        <a href="#">{{$blog->user->name}}</a>
                                     </li>
                                 </ul>
                                 <h3>
-                                    <a href="https://dev.vithu.org/blog/17%E0%AE%B5%E0%AE%A4%E0%AF%81-%E0%AE%86%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%A8%E0%AE%BF%E0%AE%B1%E0%AF%88%E0%AE%B5%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-%E0%AE%9A%E0%AF%88%E0%AE%95%E0%AF%88-%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E0%AE%95%E0%AE%BE%E0%AE%A3%E0%AF%8A%E0%AE%B3%E0%AE%BF-%E0%AE%B5%E0%AF%86%E0%AE%B3%E0%AE%BF%E0%AE%AF%E0%AF%80%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-2021">17வது ஆண்டு நிறைவு விழாவும் சைகை மொழி காணொளி வெளியீட்டு விழாவும் 2021</a>
+                                    <a href="{{route('blog-details',['slug' => $blog->slug])}}">{{$blog->title}} </a>
                                 </h3>
                                 <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/17%E0%AE%B5%E0%AE%A4%E0%AF%81-%E0%AE%86%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%A8%E0%AE%BF%E0%AE%B1%E0%AF%88%E0%AE%B5%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-%E0%AE%9A%E0%AF%88%E0%AE%95%E0%AF%88-%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E0%AE%95%E0%AE%BE%E0%AE%A3%E0%AF%8A%E0%AE%B3%E0%AE%BF-%E0%AE%B5%E0%AF%86%E0%AE%B3%E0%AE%BF%E0%AE%AF%E0%AF%80%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81-%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B5%E0%AF%81%E0%AE%AE%E0%AF%8D-2021">Read More</a>
-                            </div>
+                                <a class="blog-btn" href="{{route('blog-details', ['slug' => $blog->slug])}}">Read More</a>
+                           </div>
                         </div>
                     </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/blood-donation-camp-ahead-of-vtf-17th-anniversary">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/blood-donation-vithu-trust-fund-2021-17_558.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>16 Jan 2022</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/blood-donation-camp-ahead-of-vtf-17th-anniversary">Blood Donation Camp ahead of VTF 17th Anniversary</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/blood-donation-camp-ahead-of-vtf-17th-anniversary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/yoga-children-awards-giving-and-blood-donation">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/yoga_f51.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>12 May 2021</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/yoga-children-awards-giving-and-blood-donation">Yoga, Children Awards Giving And Blood Donation</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/yoga-children-awards-giving-and-blood-donation">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/nalinaka-puram-pillai-nila-preschool">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/Pillai-Nila-Preschool_bba.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>20 Dec 2020</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/nalinaka-puram-pillai-nila-preschool">Nalinaka Puram Pillai Nila Preschool</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/nalinaka-puram-pillai-nila-preschool">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/pillai-nila-pre-school-farewell-and-road-signboard-opening">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/pillai-nila_592.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>20 Nov 2020</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/pillai-nila-pre-school-farewell-and-road-signboard-opening">Pillai Nila Pre-School Farewell and Road Signboard Opening</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/pillai-nila-pre-school-farewell-and-road-signboard-opening">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/vithu-trust-fund-donated-books-to-jaffna-public-library">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/VTF-handover-books-to-jaffna-public-library_1bd.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>12 Feb 2020</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/vithu-trust-fund-donated-books-to-jaffna-public-library">Vithu Trust Fund donated Books to Jaffna Public Library</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/vithu-trust-fund-donated-books-to-jaffna-public-library">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/braille-books-and-the-handing-over-of-perur-aadeenam-to-the-vithu-trust-fund">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/Braille-Books-and-the-Handing-over-of-Perur-Aadeenam-to-the-Vithu-Trust-Fund-1-vijitha (1)_838.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>07 Feb 2020</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/braille-books-and-the-handing-over-of-perur-aadeenam-to-the-vithu-trust-fund">Braille Books and the Handing over of Perur Aadeenam to the Vithu Trust Fund</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/braille-books-and-the-handing-over-of-perur-aadeenam-to-the-vithu-trust-fund">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="col-sm-6 col-lg-4">
-                        <div class="blog-item">
-                            <div class="top">
-                                <a href="https://dev.vithu.org/blog/honour-award-function">
-                                    <img src="https://dev.vithu.org/storage/uploads/small/2023/09/award_c6f.webp" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        <span>18 Jan 2020</span>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-user-alt-3"></i>
-                                        <span>By:</span>
-                                        <a href="#">Loncey Tech</a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="https://dev.vithu.org/blog/honour-award-function">Honour Award Function</a>
-                                </h3>
-                                <p></p>
-                                <a class="blog-btn" href="https://dev.vithu.org/blog/honour-award-function">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                
-
+                         
+                @endforeach
             </div>
         </div>
     </section>

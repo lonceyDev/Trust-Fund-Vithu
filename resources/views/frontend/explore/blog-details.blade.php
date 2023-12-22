@@ -31,7 +31,7 @@
                             <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    {{$blog->publish_at}} 
+                                    <span class="date">{{ \Carbon\Carbon::parse($blog->publish_at)->format('d M Y') }}</span>
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
@@ -47,9 +47,9 @@
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="left">
                                         <ul>
-                                            {{-- <li>
+                                            <li>
                                                 <span>Follow Us:</span>
-                                            </li> --}}
+                                            </li>
                                             <li>
                                                 <a href="https://www.facebook.com/vithutrustfund" target="_blank">
                                                     <i class="icofont-facebook"></i>

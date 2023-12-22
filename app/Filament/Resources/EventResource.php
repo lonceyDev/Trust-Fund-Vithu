@@ -58,9 +58,8 @@ class EventResource extends Resource
                     Forms\Components\Select::make('status')
                         ->required()
                         ->options([
-                        'On going' => 'On going',
+                        'Upcoming' => 'Upcoming',
                         'Complete' => 'Complete',
-                        'Pending' => 'Pending',
                     ]),
                 ])->columnSpan(1)->Columns(2),
            
