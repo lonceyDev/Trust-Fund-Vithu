@@ -31,7 +31,7 @@
                          <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    {{$event->publish_at}} 
+                                    <span class="date">{{ \Carbon\Carbon::parse($blog->publish_at)->format('d M Y') }}</span>
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>

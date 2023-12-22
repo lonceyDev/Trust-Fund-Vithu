@@ -29,7 +29,22 @@ class HomeController extends Controller
     public function index()
     {
        
-        return view('frontend.home');
+        $projects = Project::where('status', '=', 'Ongoing')
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        $event = Event::where('status', 'Upcoming')
+                ->latest('events_at')
+                ->first(); 
+        $events = Event::where('status', '=', 'Upcoming')
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        $blogs = Post::where('published', '=', '1')
+                ->orderBy('created_at', 'desc')
+                ->take(3)
+                ->get();
+        return view('frontend.home',compact('projects','events','event','blogs'));
     }
     public function create()
     {

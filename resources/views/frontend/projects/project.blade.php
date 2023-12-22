@@ -43,17 +43,34 @@
                                     <h3>
                                         <a href="{{route('project-details',['slug'=>$project->slug])}}">{{$project->title}}</a>
                                     </h3>
-                                   <p></p>
+                                   
                                 </div>
                                 <div class="bottom">
+                                    {{-- <ul>
+                                        <li>
+                                            <i class="icofont-calendar"></i>
+                                            <span class="date">{{ \Carbon\Carbon::parse($project->publish_at)->format('d M Y') }}</span>
+                                        </li>
+                                        <li>
+                                            <i class="icofont-user-alt-3"></i>
+                                            <span>By:</span>
+                                            <a href="#">{{$project->user->name}} </a>
+                                        </li>
+                                    </ul> --}}
                                     <div class="skill">
                                         <div class="skill-bar skill1 wow fadeInLeftBig">
                                             <span class="skill-count1">85%</span>
                                         </div>
                                     </div>
+                                    <p></p>
                                     <ul>
-                                        <li>{{$project->expected_amount}}</li>
-                                        <li>{{$project->project_amount}}</li>
+                                        <li><h4>Expected Amount</h4><p></p>
+                                            <i class="icofont-location-pin"></i>
+                                            <span>LK</span> {{ number_format($project->expected_amount) }}</li>
+                                        <li><h4>Project Amount</h4><p></p>
+                                            <i class="icofont-location-pin"></i>
+                                            <span>LK</span>  
+                                            {{ number_format($project->project_amount) }}</li>
                                     </ul>
                                     <h4>Donated by <span>60 people</span></h4>
                                     <p></p>

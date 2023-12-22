@@ -1,4 +1,5 @@
 @extends('layouts.front.index_blade')
+
 @section('content')
 <main>
     <div class="page-title-area title-bg-six">
@@ -32,7 +33,7 @@
                                 @if(is_array($event->featured_image) && count($event->featured_image) > 0)
                                     <img src="{{ asset('storage/'.$event->featured_image[0]) }}" alt="Blog">
                                 @else
-                                <p>No image available</p>
+                                    <p>No image available</p>
                                 @endif
                             </a>
                         </div>
@@ -40,7 +41,7 @@
                             <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    <span>{{$event->publish_at}} </span>
+                                    <span class="date">{{ \Carbon\Carbon::parse($event->publish_at)->format('d M Y') }}</span>
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
