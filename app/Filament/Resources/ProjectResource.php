@@ -25,6 +25,8 @@ use App\Filament\Resources\ProjectResource\RelationManagers;
 class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
+    protected static ?int $navigationSort = 2;
+
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
   

@@ -1,7 +1,8 @@
 @extends('layouts.front.index_blade')
  @push('custom-script')
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+
+    {{-- <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -31,14 +32,77 @@
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
-    </script>
+    </script> --}}
+
+
+<script type="text/javascript">
+
+  // google.charts.load('current', {'packages':['bar']});
+  // google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    // Load the Visualization API with the callback function
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the bar chart, passes in the data and
+    // draws it.
+    function drawChart() {
+      // Replace 'YOUR_API_KEY' with your actual API key
+      gapi.client.init({
+        'apiKey': 'AIzaSyCDHWb_0ZzTvAHFhP5irKPa2qpAe6_KMfc',
+        'discoveryDocs': ['https://docs.google.com/spreadsheets/d/1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs/edit#gid=0'],
+      }).then(function() {
+        // Call the Sheets API
+        return gapi.client.sheets.spreadsheets.values.get({
+          spreadsheetId: '1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs',
+          range: 'demo', // Specify the sheet and range
+        });
+      }).then(function(response) {
+        var dataTable = new google.visualization.DataTable();
+        var data = response.result.values;
+
+        // Assuming the first row contains headers
+        var headers = data[0];
+        for (var i = 1; i < data.length; i++) {
+          var row = data[i];
+          for (var j = 0; j < headers.length; j++) {
+            dataTable.addColumn('string', headers[j]);
+          }
+          dataTable.addRows([row]);
+        }
+
+        var options = {
+          title: 'Cash Flow',
+          chartArea: {width: '50%'},
+          hAxis: {
+            title: 'X-Axis Label',
+            minValue: 0
+          },
+          vAxis: {
+            title: 'Y-Axis Label'
+          }
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(dataTable, options);
+      });
+    }
+  }
+</script>
+
  @endpush
 @section('content')
 <section>
     <div class="container-fluid">
+        
         <h2 style="text-align: center;">Cash Flow</h2>
-        <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
+        {{-- <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
             <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+        </div> --}}
+        <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
+            <div id="chart_div" style="width: 800px; height: 500px;"></div>
         </div>
     </div> 
 </section>
