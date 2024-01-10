@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Event;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Revolution\Google\Sheets\Facades\Sheets;
 
 class HomeController extends Controller
 {
@@ -59,6 +61,7 @@ class HomeController extends Controller
             ->route('home')
             ->withMessage('contact has been sent successfully!!!');
     }
+   
 
     public function Blog()
     {
@@ -129,7 +132,14 @@ public function showProjects($status) {
 
 public function accChart()
     {
-        
+       
+        $sheets = Sheets::spreadsheet('1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs')->sheet('demo')->get();
+        $header = $sheets->pull(0);
+        $values = Sheets::collection(header: $header, rows: $sheets);
+        $values->toArray();
+       
+        $accounts=Account::all();
+       
         $data = [
             'labels' => ['Year', 'Inflow', 'Outflow', 'NetFlow'],
             'data' =>
@@ -173,7 +183,7 @@ public function accChart()
             ['2024',  660,       1120],
             ['2025',  1030,      540]
         ];
-        return view('frontend.explore.accounts', compact('data','pie','line'));
+        return view('frontend.explore.accounts', compact('data','pie','line','accounts','values'));
     }
     public function pieChart()
     {

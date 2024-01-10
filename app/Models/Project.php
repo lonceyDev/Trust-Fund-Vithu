@@ -13,6 +13,7 @@ class Project extends Model implements HasMedia
 
 {
     use HasFactory,HasSlug,InteractsWithMedia;
+    
     protected $casts = [
         'extra' => 'json', 
         'featured_image'=>'array'
@@ -38,6 +39,10 @@ class Project extends Model implements HasMedia
     public function tags()
     {
         return $this->belongsToMany(Tag::class,'project_tag');
+    }
+    public function financialReports()
+    {
+        return $this->hasMany(FinancialReport::class);
     }
 
 }
