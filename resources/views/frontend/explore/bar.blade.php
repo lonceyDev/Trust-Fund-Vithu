@@ -2,7 +2,7 @@
  @push('custom-script')
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    {{-- <script type="text/javascript">
+    <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -32,7 +32,7 @@
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
-    </script> --}}
+    </script>
 
 
 <script type="text/javascript">
@@ -98,11 +98,8 @@
     <div class="container-fluid">
         
         <h2 style="text-align: center;">Cash Flow</h2>
-        {{-- <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
-            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
-        </div> --}}
         <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
-            <div id="chart_div" style="width: 800px; height: 500px;"></div>
+            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
         </div>
     </div> 
 </section>

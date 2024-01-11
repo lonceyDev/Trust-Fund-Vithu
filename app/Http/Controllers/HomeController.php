@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
     }
 
     /**
@@ -46,7 +46,10 @@ class HomeController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(3)
                 ->get();
-        return view('frontend.home',compact('projects','events','event','blogs'));
+        
+        $galleries=Event::pluck('featured_image')->flatten()->all();
+
+        return view('frontend.home',compact('projects','events','event','blogs','galleries'));
     }
     public function create()
     {

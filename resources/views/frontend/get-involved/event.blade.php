@@ -1,5 +1,11 @@
 @extends('layouts.front.index_blade')
-
+@push('custom-style')
+<style>
+    .owl-carousel .owl-item img {
+        min-height: 180px;
+    }
+</style>
+@endpush 
 @section('content')
 <main>
     <div class="page-title-area title-bg-six">
@@ -46,7 +52,7 @@
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
                                     <span>By:</span>
-                                    <a href="#">{{$event->user->name}} </a>
+                                    <a href="{{route('event-details',['slug' => $event->slug])}}">{{$event->user->name}} </a>
                                 </li>
                             </ul>
                             <h3>
@@ -63,5 +69,6 @@
         {{ $events->links() }}
     </div>
 </section>
-    
+
 @endsection
+
