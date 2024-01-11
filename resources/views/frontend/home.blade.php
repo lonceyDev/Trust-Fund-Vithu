@@ -1,4 +1,31 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+<style>
+    .owl-carousel .owl-item img {
+        min-height: 180px;
+    }
+.common-btn:hover {
+    color: #fff;
+    background-color:rgb(63, 138, 200);
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
+}
+
+.common-btn {
+    color: #ffffff;
+    background-color: rgb(2, 71, 127);
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+a {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    text-decoration: none;
+}
+</style>
+@endpush 
 @section('content')
     
 
@@ -714,7 +741,7 @@
         </div>
     </section>
 
-{{-- 
+
     <section class="gallery-area two pt-100 pb-70">
         <div class="container-fluid">
             <div class="section-title">
@@ -724,45 +751,17 @@
                     individual citizens that are making.</p>
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
+              @foreach ($galleries as $image)
                 <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery1.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery1.jpg" alt="Gallery">
+                    <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
+                        <img src="{{ asset('storage/'.$image) }}" alt="project">
                         <i class="icofont-eye"></i>
                     </a>
                 </div>
-                <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery2.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery2.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery3.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery3.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery4.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery4.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery5.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery5.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://dev.vithu.org/assets/front/img/gallery/gallery6.jpg" data-lightbox="roadtrip">
-                        <img src="https://dev.vithu.org/assets/front/img/gallery/gallery6.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
+            @endforeach
             </div>
         </div>
-    </section> --}}
+    </section>
 
     
     {{-- <section class="testimonial-area ptb-100">

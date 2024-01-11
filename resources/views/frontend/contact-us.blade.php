@@ -1,4 +1,37 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+<style>
+    .common-btn {
+    color: #072a5f;
+    background-color: var(--theme-dark-primaryprimary);
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: rgb(41, 129, 237);
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+</style>
+    
+@endpush
 @section('content')
 <div class="page-title-area title-bg-eight">
     <div class="d-table">

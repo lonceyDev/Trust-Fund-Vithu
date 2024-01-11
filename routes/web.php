@@ -62,8 +62,7 @@ Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsm
 
 Route::view('/donation', 'frontend.donation.donation')->name('donation');
 
-Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
-Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
+
 
 Route::get('/event',[App\Http\Controllers\HomeController::class,'Event'])->name('event');
 Route::get('/event/{slug}',[App\Http\Controllers\HomeController::class,'EventDetail'])->name('event-details');
@@ -76,11 +75,15 @@ Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'sh
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
 Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
 
+//explore tap
 Route::get('/accountablity', [App\Http\Controllers\HomeController::class, 'accChart'])->name('account');
 Route::get('/pie', [App\Http\Controllers\HomeController::class, 'pieChart'])->name('account.pie');
 Route::get('/bar', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account.bar');
 Route::get('/line', [App\Http\Controllers\HomeController::class, 'lineChart'])->name('account.line');
-//Route::get('/account', [App\Http\Controllers\HomeController::class, 'account'])->name('account');
+Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
+Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
+Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
+
 
 Route::get('sheet', [App\Http\Controllers\GoogleSpreadsheetController::class, 'index']);
 

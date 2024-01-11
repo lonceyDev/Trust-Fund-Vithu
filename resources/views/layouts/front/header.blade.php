@@ -81,19 +81,32 @@
                                 <a href="tel:+0123456987">+0123-456-987</a>
                             </li> --}}
                             <li>
-                                <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview"><img src="{{ asset('assets/front/img/flags/uk.gif') }}" alt=""> <span>UK</span> </a>
+                                <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" target="_blank">
+                                    <img src="{{ asset('assets/front/img/flags/uk.gif') }}" alt=""> 
+                                    <span>UK</span> 
+                                </a>
                             </li>
                             <li>
-                                <a href="http://csonet.org/index.php?menu=80"><img src="{{ asset('assets/front/img/flags/uno.gif') }}" alt=""> <span>UN</span> </a>
+                                <a href="http://csonet.org/index.php?menu=80" target="_blank">
+                                    <img src="{{ asset('assets/front/img/flags/uno.gif') }}" alt=""> 
+                                    <span>UN</span> </a>
                             </li>
                             <li>
-                                <a href="https://www.google.ch/maps/place/Europe/@48.1322498,4.1720587,4z/data=!3m1!4b1!4m5!3m4!1s0x46ed8886cfadda85:0x72ef99e6b3fcf079!8m2!3d54.5259614!4d15.2551187?hl=en"><img src="{{ asset('assets/front/img/flags/eu.gif') }}" alt=""> <span>EU</span> </a>
+                                <a href="https://www.google.ch/maps/place/Europe/@48.1322498,4.1720587,4z/data=!3m1!4b1!4m5!3m4!1s0x46ed8886cfadda85:0x72ef99e6b3fcf079!8m2!3d54.5259614!4d15.2551187?hl=en" target="_blank">
+                                    <img src="{{ asset('assets/front/img/flags/eu.gif') }}" alt=""> 
+                                    <span>EU</span> 
+                                </a>
                             </li>
                             <li>
-                                <a href="https://www.stadt-kriens.ch/dienstleistungen/vereine/vereine-detail.page/968/association/664"><img src="{{ asset('assets/front/img/flags/ch.gif') }}" alt=""> <span>CH</span> </a>
+                                <a href="https://www.stadt-kriens.ch/dienstleistungen/vereine/vereine-detail.page/968/association/664" target="_blank">
+                                    <img src="{{ asset('assets/front/img/flags/ch.gif') }}" alt=""> 
+                                    <span>CH</span> 
+                                </a>
                             </li>
                             <li>
-                                <a href="http://www.ngosecretariat.gov.lk/index.php?option=com_content&view=featured&Itemid=101"><img src="{{ asset('assets/front/img/flags/lk.gif') }}" alt=""> <span>LK</span> </a>
+                                <a href="http://www.ngosecretariat.gov.lk/index.php?option=com_content&view=featured&Itemid=101" target="_blank">
+                                    <img src="{{ asset('assets/front/img/flags/lk.gif') }}" alt=""> 
+                                    <span>LK</span> </a>
                             </li>
                         </ul>
                     </div>
@@ -261,8 +274,7 @@
                                 </ul>
                             </li>
 
-
-                            <li class="nav-item">
+                           <li class="nav-item">
                                 <a href="#" class="nav-link dropdown-toggle ">Our Work <i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
@@ -337,7 +349,7 @@
                                         <a href="{{route('account')}}" class="nav-link">Accounts</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Our Partners</a>
+                                        <a href="{{route('our-parners')}}" class="nav-link">Our Partners</a>
                                     </li>
 
                                 </ul>

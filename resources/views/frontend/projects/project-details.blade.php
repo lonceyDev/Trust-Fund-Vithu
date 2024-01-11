@@ -122,7 +122,7 @@
                 <!-- Display multiple images in the gallery -->
                 @foreach ($project->featured_image as $image)
                     <div class="gallery-item">
-                        <a href="" data-lightbox="roadtrip">
+                        <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
                             <img src="{{ asset('storage/'.$image) }}" alt="project">
                             <i class="icofont-eye"></i>
                         </a>
@@ -135,4 +135,11 @@
         </div>
     </div>
 </main>
+@push('custom-style')
+    <style>
+        .owl-carousel .owl-item img {
+            min-height: 180px;
+        }
+    </style>
+@endpush
 @endsection

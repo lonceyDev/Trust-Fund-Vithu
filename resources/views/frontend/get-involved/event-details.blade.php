@@ -31,7 +31,7 @@
                          <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    <span class="date">{{ \Carbon\Carbon::parse($blog->publish_at)->format('d M Y') }}</span>
+                                    <span class="date">{{ \Carbon\Carbon::parse($event->publish_at)->format('d M Y') }}</span>
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
@@ -121,7 +121,7 @@
                 <!-- Display multiple images in the gallery -->
                 @foreach ($event->featured_image as $image)
                     <div class="gallery-item">
-                        <a href="" data-lightbox="roadtrip">
+                        <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
                             <img src="{{ asset('storage/'.$image) }}" alt="event">
                             <i class="icofont-eye"></i>
                         </a>
