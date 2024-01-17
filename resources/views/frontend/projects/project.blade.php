@@ -1,4 +1,31 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+<style>
+    .owl-carousel .owl-item img {
+        min-height: 180px;
+    }
+.common-btn:hover {
+    color: #fff;
+    background-color:rgb(63, 138, 200);
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
+}
+
+.common-btn {
+    color: #ffffff;
+    background-color: rgb(2, 71, 127);
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+a {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    text-decoration: none;
+}
+</style>
+@endpush 
 @section('content')
 <main>
     <div class="page-title-area title-bg-two">

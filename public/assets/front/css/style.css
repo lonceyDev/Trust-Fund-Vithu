@@ -2017,7 +2017,7 @@ ul {
 }
 
 .footer-item .footer-links ul li a:hover {
-    color: var(--theme-primary);
+    color: rgb(168, 206, 242);
 }
 
 .footer-item .footer-links ul li a i {
