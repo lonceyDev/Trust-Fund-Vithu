@@ -37,7 +37,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->font('Poppins')
             ->brandLogoHeight('3rem')
-            ->brandLogo(fn () => view('filament.admin.logo'))
             ->brandLogo(asset('assets/front/img/logo-vithu.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -45,10 +44,10 @@ class AdminPanelProvider extends PanelProvider
                 Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
-            ])
+            // ->widgets([
+            //     Widgets\AccountWidget::class,
+            //     // Widgets\FilamentInfoWidget::class,
+            // ])
             
             ->middleware([
                 EncryptCookies::class,

@@ -52,6 +52,7 @@ class EventResource extends Resource
                 ->required()
                 ->maxLength(255),
             Forms\Components\FileUpload::make('featured_image')
+                
                 ->multiple()
                 ->directory('event_images'),
                 Group::make()->schema([
@@ -81,7 +82,10 @@ class EventResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('location')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('featured_image'),
+                Tables\Columns\ImageColumn::make('featured_image')
+                ->circular()
+                ->stacked()
+                ->limitedRemainingText(),
                 Tables\Columns\TextColumn::make('events_at')
                     ->date()
                     ->sortable(),

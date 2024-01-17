@@ -33,7 +33,7 @@
   
           chart.draw(data, options);
         }
-      </script>
+</script>
 @endpush
 @section('content')
 <section>

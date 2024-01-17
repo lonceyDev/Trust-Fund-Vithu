@@ -1,7 +1,8 @@
 @extends('layouts.front.index_blade')
+
 @push('custom-style')
 <style>
-    .owl-carousel .owl-item img {
+.owl-carousel .owl-item img {
         min-height: 180px;
     }
 .common-btn:hover {
@@ -24,7 +25,25 @@ a {
     transition: 0.5s all ease;
     text-decoration: none;
 }
-</style>
+
+    @keyframes shake {
+
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25%, 75% {
+        transform: translateX(-5px);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+    }
+
+    .shake-text {
+      display: inline-block;
+      animation: shake 0.5s infinite;
+    }
+  </style>
 @endpush 
 @section('content')
     
@@ -425,7 +444,7 @@ a {
                         </ul>
                         <div class="about-btn-area">
                             <a class="common-btn about-btn" href="{{route('donation')}}">Get Start A Fundraising</a>
-                            <a class="common-btn" href="{{route('donation')}}">Read More</a>
+                            <a class="common-btn" href="{{route('about.about-us')}}">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -433,7 +452,7 @@ a {
                     <div class="about-img">
                         <img src="{{asset('assets/front/img/about/about-main2.jpg')}}" alt="About">
                         <div class="video-wrap">
-                            <button class="js-modal-btn" data-video-id="WkE5shDSrQw">
+                            <button class="js-modal-btn" data-video-id="MX4ffE6VaEw">
                                 <i class="icofont-ui-play"></i>
                             </button>
                         </div>

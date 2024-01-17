@@ -51,7 +51,7 @@
             </div>
             <div class="col-sm-6 col-lg-2">
                 <div class="footer-item">
-                    <div class="footer-links">
+                    <div class="footer-links" class="shake-text">
                         <h3>Get Started</h3>
                         <ul>
                             <li>

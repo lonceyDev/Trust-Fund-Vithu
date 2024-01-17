@@ -35,62 +35,6 @@
     </script>
 
 
-<script type="text/javascript">
-
-  // google.charts.load('current', {'packages':['bar']});
-  // google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    // Load the Visualization API with the callback function
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Callback that creates and populates a data table,
-    // instantiates the bar chart, passes in the data and
-    // draws it.
-    function drawChart() {
-      // Replace 'YOUR_API_KEY' with your actual API key
-      gapi.client.init({
-        'apiKey': 'AIzaSyCDHWb_0ZzTvAHFhP5irKPa2qpAe6_KMfc',
-        'discoveryDocs': ['https://docs.google.com/spreadsheets/d/1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs/edit#gid=0'],
-      }).then(function() {
-        // Call the Sheets API
-        return gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs',
-          range: 'demo', // Specify the sheet and range
-        });
-      }).then(function(response) {
-        var dataTable = new google.visualization.DataTable();
-        var data = response.result.values;
-
-        // Assuming the first row contains headers
-        var headers = data[0];
-        for (var i = 1; i < data.length; i++) {
-          var row = data[i];
-          for (var j = 0; j < headers.length; j++) {
-            dataTable.addColumn('string', headers[j]);
-          }
-          dataTable.addRows([row]);
-        }
-
-        var options = {
-          title: 'Cash Flow',
-          chartArea: {width: '50%'},
-          hAxis: {
-            title: 'X-Axis Label',
-            minValue: 0
-          },
-          vAxis: {
-            title: 'Y-Axis Label'
-          }
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-        chart.draw(dataTable, options);
-      });
-    }
-  }
-</script>
 
  @endpush
 @section('content')

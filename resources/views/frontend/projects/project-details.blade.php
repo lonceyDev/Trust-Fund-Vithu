@@ -1,4 +1,11 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+    <style>
+        .owl-carousel .owl-item img {
+            min-height: 180px;
+        }
+    </style>
+@endpush
 @section('content')
 <main>
     <!-- Main Content Area -->
@@ -135,11 +142,5 @@
         </div>
     </div>
 </main>
-@push('custom-style')
-    <style>
-        .owl-carousel .owl-item img {
-            min-height: 180px;
-        }
-    </style>
-@endpush
+
 @endsection

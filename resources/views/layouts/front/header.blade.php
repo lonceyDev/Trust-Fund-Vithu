@@ -146,7 +146,7 @@
                                 <option>Português</option>
                             </select>
                         </div> --}}
-                        <div class="header-search">
+                        {{-- <div class="header-search">
                             <i id="search-btn" class="icofont-search-2"></i>
                             <div id="search-overlay" class="block">
                                 <div class="centered">
@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -250,7 +250,7 @@
 
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle ">About <i
+                                <a href="{{ route('about.about-us') }}" class="nav-link dropdown-toggle ">About <i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -275,7 +275,7 @@
                             </li>
 
                            <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle ">Our Work <i
+                                <a href="{{ route('project') }}" class="nav-link dropdown-toggle ">Our Work <i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -294,7 +294,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle "> <img src="{{ asset('assets/front/img/sign-language.png') }}" alt="" class="header-sign-logo"> Sign Language<i
+                                <a href="{{ route('teaching-in-braille') }}" class="nav-link dropdown-toggle "> <img src="{{ asset('assets/front/img/sign-language.png') }}" alt="" class="header-sign-logo"> Sign Language<i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -316,7 +316,7 @@
 
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle ">Get Involved<i
+                                <a href="{{route('event')}}" class="nav-link dropdown-toggle ">Get Involved<i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -339,7 +339,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle ">Explore<i
+                                <a href="{{route('blog')}}" class="nav-link dropdown-toggle ">Explore<i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
