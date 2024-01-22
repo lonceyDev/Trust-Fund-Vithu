@@ -35,8 +35,12 @@ class PostResource extends Resource
                     ->schema([
                 Forms\Components\Select::make('user_id')
                     ->relationship('user','name'),
-                Forms\Components\Select::make('category_id')
-                   ->relationship('category','name'),
+                Forms\Components\Select::make('categories')
+                    // ->multiple()
+                    ->relationship('categories', 'name'),
+                Forms\Components\Select::make('tags')
+                    //->multiple()
+                    ->relationship('tags', 'name'),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->columnSpanFull()

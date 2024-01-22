@@ -21,15 +21,15 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsToMany(Post::class,'category_post');
     }
     public function projects()
     {
-        return $this->hasMany(Project::class);
+        return $this->belongsToMany(Project::class,'category_project');
     }
     public function events()
     {
-        return $this->hasMany(Event::class);
+        return $this->belongsToMany(Event::class,'category_event');
     }
 
 }

@@ -36,16 +36,17 @@ class Project extends Model implements HasMedia
     {
         return $this->belongsTo(User::class);
     }
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class,'project_tag');
-    }
+  
     public function financialReports()
     {
         return $this->hasMany(FinancialReport::class);
     }
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class,'category_project');
+    }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'project_tag');
     }
 }
