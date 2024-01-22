@@ -1,4 +1,36 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+
+ <style>
+
+a {
+    color: rgb(58, 55, 55);
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkcyan;
+}
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+th {
+            background-color: #f2f2f2;
+        }
+
+</style>
+
+
+@endpush
 @section('content')
     <div class="page-title-area title-bg-one">
         <div class="d-table">
@@ -40,35 +72,53 @@
                 </div>
             </section>
             
-    <div class="row" style="width: 1000px; height: 800px; margin: auto; text-align: center;">
+    <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
         <div class="col-lg-12">
-                <h3>Support in Action: Visualizing Income Sources and Program Expenses</h3>
-                <p>
-                    Income:
+            <h1>Charity Records</h1>
 
-                    Donations: Contributions from individuals, corporations, foundations, and other entities.
-                    Grants: Funding received from government bodies, private foundations, or other grant-making organizations.
-                    Fundraising Events: Money raised through events, galas, charity auctions, and other fundraising activities.
-                    Membership Fees: If applicable, fees paid by members for being part of the organization.
-                    Investment Income: Interest, dividends, or capital gains from investments.
-                    Expenditure:
-                </p>
-                <p>   
-                    Program Services: The primary activities or services provided by the organization to fulfill its mission. This could include direct aid, education programs, healthcare services, etc.
-                    Administrative Costs: Overhead expenses such as salaries of non-program staff, office supplies, utilities, and general administrative expenses.
-                    Fundraising Costs: Expenses related to organizing and conducting fundraising activities, events, and campaigns.
-                    Grants and Assistance: Money distributed as grants or aid to other organizations or individuals as part of the organization's mission.
-                    Other Expenses: Miscellaneous expenses that don't fall directly into the above categories.
-                    When creating the pie chart, you would assign a portion of the circle to each income source and expenditure category based on the percentage of the total income or expenditure it represents. The size of each slice should reflect the proportional contribution to the overall budget.
-                </p>
-                <p> 
-                    For example, if fundraising events contribute 30% of the total income, the corresponding slice of the pie chart for "Fundraising Events" would be 30% of the entire circle. Similarly, if administrative costs constitute 15% of total expenditure, the "Administrative Costs" slice would be 15% of the pie chart.
-                </p>
-                <p>  
-                    Ensure that the chart is labeled clearly and provides a visual representation of how the organization's finances are distributed. This can be a powerful tool for stakeholders, donors, and the public to understand the organization's financial priorities and sustainability.
-                </p>  
-          
-            </div>
+            <table>
+                <tr>
+                    <th>Income / Expenditure</th>
+                    <th>30/06/2018</th>
+                    <th>30/06/2019</th>
+                    <th>30/06/2020</th>
+                    <th>30/06/2021</th>
+                    <th>30/06/2022</th>
+               </tr>
+                <tr>
+                    <td>Total gross income</td>
+                    <td>£26.94k</td>
+                    <td>£39.20k</td>
+                    <td>£19.87k</td>
+                    <td>£24.11k</td>
+                    <td>£15.81k </td>
+                </tr>
+                <tr>
+                    <td>Total expenditure</td>
+                    <td>£27.96k</td>
+                    <td>£34.39k</td>
+                    <td>£18.17k</td>
+                    <td>£26.28k</td>
+                    <td>£10.24k </td>
+                </tr>
+                <tr>
+                    <td>Income from government contracts</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Income from government grants</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </table>
+            <p></p>
             <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
                 <p>Explore more details about our charity:</p>
                 <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>

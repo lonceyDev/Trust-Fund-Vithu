@@ -1,4 +1,34 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+
+ <style>
+      table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td {
+            border: 1px solid #ebe7e7;
+            text-align: justify;
+            padding: 8px;
+        }
+        th {
+            background-color: #938e8e;
+            color: #ebe7e7;
+            border: 1px solid #ebe7e7;
+            text-align: left;
+            padding: 8px;
+        }
+      a {
+            color: rgb(58, 55, 55);
+            text-decoration: none;
+        }
+
+    a:hover {
+             color: darkcyan;
+        }
+   </style>
+@endpush
  @push('custom-script')
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -48,45 +78,130 @@
     </div> 
 </section>
 <section> 
-    <div class="row" style="width: 1000px; height: 1000px; margin: auto;padding:4%; text-align: center;">
-        <h3>Transparency in Action: Non-Profit Organization Cash Flow Insights</h3>
-        <p>
-            Our Cash Flow Bar Chart provides a snapshot of our organization's financial performance over the past [2014-2023]. The chart is color-coded to help you easily distinguish between different categories such as revenue, expenses, and net cash flow
-        </p>
-        <p>
-            Inflow (Blue Bars):
+    <div class="row" style="width: 1000px; height: 1200px; margin: auto;padding:4%; text-align: center;">
+      <h2>Non-Profit Organization Cash Flow Statement</h2>
 
-            Green bars represent the various sources contributing to our organization's income. This includes donations, grants, and other inflows that sustain our mission.
-        </p>
-        <p>
-            Outflow (Red Bars):
-
-             Red bars signify the expenses incurred by our organization. These encompass operational costs, program expenditures, and other necessary outflows essential for achieving our goals.
-        </p>
-        <p>
-            Net Flow (Orange Line):
-
-            The blue line on the chart illustrates the Net Cash Flow, offering a comprehensive view of our financial health. It is the result of subtracting total outflow from total inflow.       
-        </p>
-        <p>
-            Your support directly influences our inflow and enables us to effectively manage our outflow. By contributing to Vithu Trust, you become an integral part of our mission.
-        </p>
-        <p>
-            
-        Certainly! Here's an updated version of the content with a focus on inflow, outflow, and net flow using a bar chart:
-
-
-
-        Explore the allocation of outflows across different expense categories.
-        How You Can Contribute
-        Your support directly influences our inflow and enables us to effectively manage our outflow. By contributing to Vithu Trust, you become an integral part of our mission.
-
-
-        Financial Transparency
-        We value your trust and are open to any inquiries you might have regarding our financials. For more detailed information or specific questions, please contact our finance team .
-
-        Thank you for being a vital supporter of Vithu Trust. Together, we continue to make a positive impact on [describe the mission and goals of your organization].
-        </p>
+    <table>
+        <tr>
+            <th>Cash Flow</th>
+            <th>Inflows (£)</th>
+            <th>Outflows (£)</th>
+        </tr>
+        <tr>
+            <td style="background-color: #d6d3d3;">Operating Activities</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+            <td>Donations and Grants</td>
+            <td>100,000 </td>
+            <td></td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+            <td>Program Revenue </td>
+            <td>50,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Other Income </td>
+            <td>5000</td>
+            <td></td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+            <td>Total Operating Inflows</td>
+            <td> 155,000</td>
+            <td></td>
+        </tr>
+        <!-- Add more rows as needed -->
+        <tr>
+            <td> Salaries and Wages </td>
+            <td></td>
+            <td> -80,000 </td>
+        </tr>
+        <tr>
+            <td>Program Expenses </td>
+            <td></td>
+            <td>-40,000</td>
+        </tr>
+        <tr>
+            <td>Administrative Expenses </td>
+            <td></td>
+            <td>-15,000 </td>
+        </tr>
+        <tr>
+            <td> Rent and Utilities  </td>
+            <td></td>
+            <td>-10,000</td>
+        </tr>
+        <tr>
+            <td> Other Operating Expenses </td>
+            <td></td>
+            <td>-5,000</td>
+        </tr>
+      <tr>
+            <td>Total Operating Outflows </td>
+            <td></td>
+            <td>-150,000 </td>
+        </tr>
+        <tr>
+            <td>Net Operating Cash Flow</td>
+            <td>25,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="background-color: #d6d3d3;"> Investing Activities</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Purchase of Equipment</td>
+            <td></td>
+            <td>-10,000</td>
+        </tr>
+        <tr>
+            <td>Investment Incomee</td>
+            <td> 2,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Net Investing Cash Flow</td>
+            <td> </td>
+            <td> -8,000</td>
+        </tr>
+        <tr>
+            <td style="background-color: #d6d3d3;">  Financing Activities</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> Debt Repayment  </td>
+            <td></td>
+            <td>-5,000</td>
+        </tr>
+       <tr>
+            <td> Net Financing Cash Flow</td>
+            <td> </td>
+            <td> -5000</td>
+        </tr>
+        <tr>
+            <td>  Net Cash Flow </td>
+            <td>12,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>  Beginning Cash Balance </td>
+            <td> 30,000  </td>
+            <td></td>
+        </tr>
+       <tr>
+            <td style="background-color: #d5cdcd">  Ending Cash Balance </td>
+            <td style="background-color: #d5cdcd">   42,000 </td>
+            <td style="background-color: #d5cdcd"> </td>
+        </tr>
+    </table>
     </div>
     <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
         <p>Explore more details about our charity:</p>
