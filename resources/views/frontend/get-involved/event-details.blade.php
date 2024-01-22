@@ -51,7 +51,13 @@
                                 @else
                                     <p>No image available</p>
                                 @endif
-                            <p style="text-align: center;">{{$event->description}}<br></p>
+                                <?php
+                                $descriptionWithoutUrls = preg_replace('/<a\s+(?:[^>]*?\s+)?href=([\'"])(.*?)\1/', '<a href="#"', $event->description);
+                                ?>
+                                
+                                <p style="text-align: center;">{!! nl2br(strip_tags($descriptionWithoutUrls, '<p><br><strong><em><ul><li><img>')) !!}</p>
+                                
+                            {{-- <p style="text-align: center;">{{$event->description}}<br></p> --}}
                         </div>
                       <div class="details-share mt-2">
                             <div class="row">

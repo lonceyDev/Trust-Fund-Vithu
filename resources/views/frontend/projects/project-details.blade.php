@@ -52,7 +52,12 @@
                                 @else
                                     <p>No image available</p>
                                 @endif
-                            <p style="text-align: center;">{!!$project->description!!}<br></p>
+                                <?php
+                                $descriptionWithoutUrls = preg_replace('/<a\s+(?:[^>]*?\s+)?href=([\'"])(.*?)\1/', '<a href="#"', $project->description);
+                                ?>
+                                
+                                <p style="text-align: center;">{!! nl2br(strip_tags($descriptionWithoutUrls, '<p><br><strong><em><ul><li><img>')) !!}</p>
+                                
                         </div>
                       <div class="details-share mt-2">
                             <div class="row">

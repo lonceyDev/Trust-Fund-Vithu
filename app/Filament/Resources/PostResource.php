@@ -34,19 +34,20 @@ class PostResource extends Resource
                 Section::make()
                     ->schema([
                 Forms\Components\Select::make('user_id')
-                    ->relationship('user','name')->columnSpanFull(),
+                    ->relationship('user','name'),
+                Forms\Components\Select::make('category_id')
+                   ->relationship('category','name'),
                 Forms\Components\TextInput::make('title')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255)
                     ->reactive()
                     ->afterStateUpdated(function($set, $state){ 
                         $set('slug',Str::slug($state));
                     }),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
-             
-                Forms\Components\MarkdownEditor::make('content')
+              Forms\Components\RichEditor::make('content')
+                    ->fileAttachmentsDirectory('attachments')
+                    ->fileAttachmentsVisibility('private')
                     ->required()
                     ->columnSpanFull(),
 
@@ -58,7 +59,7 @@ class PostResource extends Resource
                     Section::make()->schema([
                        Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
                     ]),
-                    Section::make('Image Upload')->schema([
+                    Section::make()->schema([
                         Forms\Components\FileUpload::make('featured_image')
                         ->image()->columnSpanFull(),
                        ])->columnSpan(1),
@@ -69,7 +70,7 @@ class PostResource extends Resource
                     ]),
                 
               
-            ])->Columns(2);
+            ])->Columns(1);
     }
 
     public static function table(Table $table): Table
@@ -77,7 +78,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name'),
-                
+                Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('featured_image')->circular(),

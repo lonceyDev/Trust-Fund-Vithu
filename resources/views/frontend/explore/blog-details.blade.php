@@ -39,7 +39,13 @@
                                 </li>
                             </ul>
                             <h2>{{$blog->title}}</h2>
-                            <p style="text-align: center; "><img src="{{asset('storage/'.$blog->featured_image)}}" style="width: 100%;"></p><p style="text-align: center; ">{{$blog->content}}<br></p>
+                            <p style="text-align: center; "><img src="{{asset('storage/'.$blog->featured_image)}}" style="width: 100%;"></p>
+                                <?php
+                                $descriptionWithoutUrls = preg_replace('/<a\s+(?:[^>]*?\s+)?href=([\'"])(.*?)\1/', '<a href="#"', $blog->content);
+                                ?>
+
+                            <p style="text-align: center;">{!! nl2br(strip_tags($descriptionWithoutUrls, '<p><br><strong><em><ul><li><img>')) !!}</p>
+             
                             
                         </div>
                         <div class="details-share mt-2">
