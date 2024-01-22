@@ -27,25 +27,138 @@
         <div class="container">
           <section style="max-width: 100%; padding: 20px; box-sizing: border-box; text-align: center;">
               
-                    <h2>Activities - how the charity spends its money</h2>
-                    <p style="text-align: center;">The WORLWIDE relief of poverty, hardship and distress, among children and young people, especially the poor, suffering, homeless, handicapped and victims of war, irrespective of caste, creed or sect ; The advancement of education among the beneficiaries, by such charitable means as the trustees shall from time to time determine<br></p>
-                    <h3>Income and expenditure</h3>
-                    <p>Data for financial year ending 30 June 2022<br></p>
-                    <ul>
-                        <li>Total income: £15,812</li>
-                        <li>Total expenditure: £10,243</li>
-                    </ul>
-                    <h4>People</h4>
-                    <ul>
-                        <li>9 Trustee(s)</li>
-                        <li>15 Volunteer(s)</li>
-                    </ul>
-        <div>
-                <p>Explore more details about our charity:</p>
-                <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
+            <h1>Charity Information</h1>
+
+            <h6>Activities</h6>
+            <p>The worldwide relief of poverty, hardship and distress, among children and young people, especially the poor, suffering, homeless, handicapped and victims of war, irrespective of caste, creed or sect. The advancement of education among the beneficiaries, by such charitable means as the trustees shall from time to time determine.</p>
+        
+            <h6>Income and Expenditure</h6>
+            <div class="financial-info">
+                <p>Total income: £15,812</p>
+                <p>Total expenditure: £10,243</p>
             </div>
+        
+            <h6>People</h6>
+            <p>9 Trustee(s)</p>
+            <p>15 Volunteer(s)</p>
+            <p>No employees have total benefits over £60k for this charity</p>
+        
+            <h6>Fundraising</h6>
+            <p>This charity raises funds from the public but does not work with professional fundraisers or commercial participators.</p>
+        
+            <h6>Trading</h6>
+            <p>This charity does not have any trading subsidiaries.</p>
+        
+            <h6>Trustee Payments</h6>
+            <p>This table shows the charity's record of submitting annual returns, accounts and trustees' annual report (TAR) for the last five financial periods..</p>
+        
+        <div>
+        <div class="col-lg-12">
+            <h1>Charity Records</h1>
+            <p>No trustees receive any remuneration, payments or benefits from the charity.</p>
+
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Reporting year</th>
+                    <th>Date received</th>
+                    <th>Received</th>
+                    <th>Download</th>
+               </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2022</td>
+                    <td>06 March 2023</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2022</td>
+                    <td>Not Required</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2021</td>
+                    <td>09 March 2022</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2021</td>
+                    <td>Not Required</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2021</td>
+                    <td>20 July 2020</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2021</td>
+                    <td>Not Required</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2020</td>
+                    <td>20 July 2020</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2020</td>
+                    <td>Not Required</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2019</td>
+                    <td>29 December 2019</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2019</td>
+                    <td>29 December 2019</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Annual return</td>
+                    <td>30 June 2018</td>
+                    <td>29 January 2019</td>
+                    <td>On time</td>
+                    <td><a href="#">download</a></td>
+                </tr>
+                <tr>
+                    <td>Accounts and TAR</td>
+                    <td>30 June 2018</td>
+                    <td>29 January 2019</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+             
+            </table>
         </div>
-    </section>      
+    </div>
+      <p></p>          
+    <p>Explore more details about our charity:</p>
+     <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
+   </div>
+  </div>
+</section>      
     <section style="max-width: 100%; padding: 20px; box-sizing: border-box; text-align: center;">
         <div class="container-fluid" style="max-width: 1300px; margin: auto; text-align: center;">
             <h2 style="text-align: center;">Financial Information</h2>
@@ -98,36 +211,36 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Inflow', 'Outflow', 'NetFlow'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2018', 1030, 540, 350],
-          ['2019', 1030, 540, 350],
-          ['2020', 1030, 540, 350],
-          ['2021', 1030, 540, 350],
-          ['2022', 1030, 540, 350],
-          ['2023', 1030, 540, 350],
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Inflow', 'Outflow', 'NetFlow'],
+        ['2014', 1000, 400, 200],
+        ['2015', 1170, 460, 250],
+        ['2016', 660, 1120, 300],
+        ['2018', 1030, 540, 350],
+        ['2019', 1030, 540, 350],
+        ['2020', 1030, 540, 350],
+        ['2021', 1030, 540, 350],
+        ['2022', 1030, 540, 350],
+        ['2023', 1030, 540, 350],
+      ]);
 
-        ]);
+      var options = {
+        title: 'Cash Flow',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        fontName: 'Britannic Bold', // Set the desired font family
+        fontSize: 12,      // Set the desired font size
+      };
 
-        var options = {
-            title: 'Cash Flow',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-        };
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-</script>
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
  <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -181,13 +294,14 @@
         chart.draw(data, options);
     }
 </script>
->
+
 
 @endpush
 @push('custom-style')
-<style>
-<style>
-.chart-container {
+
+ <style>
+
+ .chart-container {
     max-width: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -203,6 +317,24 @@ a {
 
 a:hover {
     color: darkcyan;
+}
+table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+th {
+            background-color: #f2f2f2;
+        }
+h6,h2,h1 {
+    color: rgb(46, 45, 45);
 }
 
 </style>

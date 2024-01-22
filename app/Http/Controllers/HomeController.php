@@ -136,12 +136,7 @@ public function showProjects($status) {
 public function accChart()
     {
        
-        $sheets = Sheets::spreadsheet('1Uiw1kGzzqKRiy3WwC2j0sRB3IRIzmybL9Cj_NQRVhMs')->sheet('demo')->get();
-        $header = $sheets->pull(0);
-        $values = Sheets::collection(header: $header, rows: $sheets);
-        $values->toArray();
        
-        $accounts=Account::all();
        
         $data = [
             'labels' => ['Year', 'Inflow', 'Outflow', 'NetFlow'],
@@ -186,7 +181,7 @@ public function accChart()
             ['2024',  660,       1120],
             ['2025',  1030,      540]
         ];
-        return view('frontend.explore.accounts', compact('data','pie','line','accounts','values'));
+        return view('frontend.explore.accounts', compact('data','pie','line'));
     }
     public function pieChart()
     {

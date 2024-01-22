@@ -1,4 +1,30 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+
+ <style>
+      table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+      a {
+            color: rgb(58, 55, 55);
+            text-decoration: none;
+        }
+
+    a:hover {
+             color: darkcyan;
+        }
+   </style>
+@endpush
 @push('custom-script')
     
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -46,14 +72,65 @@
 </section>
 <section> 
     <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
-        <h3>"Empower Change: Support Vithu Trust  with Your Annual Donation!"</h3>
-        <p>
-            Explore the tangible outcomes of previous donations and how they have transformed lives. Our [highlight specific success stories, testimonials, or achievements] are a testament to the generosity of supporters like you. Your annual donation ensures that these success stories continue and that more individuals can benefit from our programs and services.
-        </p>
-        <p>
-            Your support is invaluable to us. On behalf of Vithu Trust and the communities we serve, we extend our heartfelt gratitude for your commitment to positive change. With your annual donation, we are one step closer to achieving our goals and making a lasting impact.
-        </p>
-    </div>
+      <table>
+        <tr>
+            <th>Year</th>
+            <th>Total Donations (£)</th>
+            <th>Program Impact</th>
+        </tr>
+        <tr>
+            <td>2014</td>
+            <td>150,000</td>
+            <td>Community Outreach, Education</td>
+        </tr>
+        <tr>
+            <td>2015</td>
+            <td>200,000</td>
+            <td>Healthcare Initiatives, Youth Development</td>
+        </tr>
+        <tr>
+            <td>2016</td>
+            <td>180,000</td>
+            <td>Environmental Conservation, Arts & Culture</td>
+        </tr>
+        <tr>
+          <td>2017</td>
+          <td>150,000</td>
+          <td>Community Outreach, Education</td>
+      </tr>
+      <tr>
+          <td>2018</td>
+          <td>200,000</td>
+          <td>Healthcare Initiatives, Youth Development</td>
+      </tr>
+      <tr>
+          <td>2019</td>
+          <td>180,000</td>
+          <td>Environmental Conservation, Arts & Culture</td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td>180,000</td>
+        <td>Environmental Conservation, Arts & Culture</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>150,000</td>
+      <td>Community Outreach, Education</td>
+  </tr>
+  <tr>
+      <td>2022</td>
+      <td>200,000</td>
+      <td>Healthcare Initiatives, Youth Development</td>
+  </tr>
+  <tr>
+      <td>2023</td>
+      <td>180,000</td>
+      <td>Environmental Conservation, Arts & Culture</td>
+  </tr>
+    </table>
+</div>
+<p></p>
     <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
         <p>Explore more details about our charity:</p>
         <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
