@@ -34,32 +34,36 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
+            Group::make()->schema([
                 Section::make()->schema([
-                Forms\Components\Select::make('user_id')
-                    ->relationship('user','name'),
-                    Group::make()->schema([
-                        Forms\Components\TextInput::make('title')
+                    Forms\Components\Select::make('user_id')
+                        ->relationship('user','name'),
+                    Forms\Components\Select::make('category_id')
+                        ->relationship('category','name'),
+                    Forms\Components\Select::make('status')
+                        ->required()
+                        ->options([
+                            'Ongoing' => 'Ongoing',
+                            'Completed' => 'Completed',
+                            'Pending' => 'Pending',
+                    ]),
+            ])->columnSpan(1)->Columns(3),
+                Group::make()->schema([
+                        Forms\Components\TextInput::make('title')->columnSpan(8)
                         ->required()
                         ->maxLength(255)
                         ->reactive()
                         ->afterStateUpdated(function($set, $state){ 
                             $set('slug',Str::slug($state));
                         }),
-                   Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255), 
-                    ])->columnSpan(1)->Columns(2),
+                    ])->columnSpan(2)->Columns(4),
               
                 Forms\Components\RichEditor::make('description')
                     ->required()
+                    ->fileAttachmentsDirectory('attachments')
+                    ->fileAttachmentsVisibility('private')
                     ->columnSpanFull(),
-                 Forms\Components\Select::make('status')
-                    ->required()
-                    ->options([
-                        'Ongoing' => 'Ongoing',
-                        'Complete' => 'Complete',
-                        'Pending' => 'Pending',
-                    ]),
+                
                 ])->columnSpan(1),
             Group::make()->schema([  
                 Section::make()->schema([
@@ -73,7 +77,7 @@ class ProjectResource extends Resource
                    ->required(),
                 Forms\Components\DateTimePicker::make('end_date')
                    ->required(),
-           ]),
+           ])->columnSpan(1)->Columns(2),
 
            Section::make()->schema([
                 Forms\Components\TextInput::make('project_amount')
@@ -81,9 +85,9 @@ class ProjectResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('expected_amount')
                      ->numeric(),
-             ]),
+             ])->columnSpan(1)->Columns(2),
            ])->columnSpan(1),
-            ])->Columns(2);
+            ])->Columns(1);
     }
 
     public static function table(Table $table): Table
@@ -91,6 +95,7 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name'),
+                Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('featured_image'),

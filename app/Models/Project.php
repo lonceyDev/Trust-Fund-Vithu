@@ -22,7 +22,7 @@ class Project extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('featured_image');
+        $this->addMediaCollection('gallary');
     }
 
     public function getSlugOptions() :SlugOptions
@@ -44,5 +44,8 @@ class Project extends Model implements HasMedia
     {
         return $this->hasMany(FinancialReport::class);
     }
-
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

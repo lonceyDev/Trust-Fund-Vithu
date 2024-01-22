@@ -29,19 +29,21 @@ class EventResource extends Resource
         return $form
             ->schema([
                Section::make()->schema([
+         Group::make()->schema([
             Forms\Components\Select::make('user_id')
                 ->relationship('user','name'),
+            Forms\Components\Select::make('category_id')
+                ->relationship('category','name'),
+        ])->columnSpan(1)->Columns(2),   
                 Group::make()->schema([
                     Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255)
+                    ->columnSpanFull()
                     ->reactive()
                     ->afterStateUpdated(function($set, $state){ 
                         $set('slug',Str::slug($state));
                     }),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
               
                 ])->columnSpan(1)->Columns(2),
            
@@ -68,7 +70,7 @@ class EventResource extends Resource
            
              ]),
            
-            ])->Columns(2);
+            ])->Columns(1);
     }
 
     public static function table(Table $table): Table
@@ -78,6 +80,8 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('category.name'),
+
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('location')

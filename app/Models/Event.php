@@ -38,4 +38,8 @@ class Event extends Model implements HasMedia
     {
         return $this->belongsToMany(Tag::class,'event_tag');
     }
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
