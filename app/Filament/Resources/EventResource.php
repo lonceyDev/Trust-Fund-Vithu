@@ -69,7 +69,7 @@ class EventResource extends Resource
                 ->directory('event_images'),
             Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
                       ->multiple()
-                      ->directory('eventgallery_images'),
+                      ->directory('event_gallery_images'),
                 Group::make()->schema([
                     Forms\Components\DatePicker::make('events_at')
                         ->required(),
