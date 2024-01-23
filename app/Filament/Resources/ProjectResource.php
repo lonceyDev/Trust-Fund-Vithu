@@ -39,43 +39,53 @@ class ProjectResource extends Resource
                 Section::make()->schema([
                     Forms\Components\Select::make('user_id')
                         ->relationship('user','name'),
-                    Forms\Components\Select::make('categories')
-                    //->multiple()
-                    ->relationship('categories', 'name'),
-                    Forms\Components\Select::make('tags')
-                    //->multiple()
-                    ->relationship('tags', 'name'),
-                    Forms\Components\Select::make('status')
+                        Forms\Components\Select::make('status')
                         ->required()
                         ->options([
                             'Ongoing' => 'Ongoing',
                             'Completed' => 'Completed',
                             'Pending' => 'Pending',
                     ]),
-            ])->columnSpan(1)->Columns(3),
+                 ])->columnSpan(1)->Columns(2),
+                 Group::make()->schema([
+                    Section::make()->schema([
+                    Forms\Components\CheckboxList::make('categories')
+                        ->relationship('categories', 'name')
+                        ->columns(2)
+                        ->gridDirection('row'),
+                    Forms\Components\CheckboxList::make('tags')
+                         ->relationship('tags', 'name')
+                        ->columns(2)
+                        ->gridDirection('row'),
+                    ]),
+                ]),
                 Group::make()->schema([
-                        Forms\Components\TextInput::make('title')->columnSpan(8)
+                        Forms\Components\TextInput::make('title')
                         ->required()
                         ->maxLength(255)
                         ->reactive()
                         ->afterStateUpdated(function($set, $state){ 
                             $set('slug',Str::slug($state));
                         }),
-                    ])->columnSpan(2)->Columns(4),
+                    ]),
               
                 Forms\Components\RichEditor::make('description')
                     ->required()
+                    ->columnSpanFull()
                     ->fileAttachmentsDirectory('attachments')
                     ->fileAttachmentsVisibility('private')
-                    ->columnSpanFull(),
-                
-                ])->columnSpan(1),
+                ]),
+
             Group::make()->schema([  
                 Section::make()->schema([
                     Forms\Components\FileUpload::make('featured_image')
-                      ->multiple()
                       ->directory('project_images'),
                ]),
+               Section::make()->schema([
+                Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                  ->multiple()
+                  ->directory('gallery_images'),
+           ]),
                
                Section::make()->schema([
                 Forms\Components\DateTimePicker::make('start_date')
@@ -139,7 +149,7 @@ class ProjectResource extends Resource
     public static function getRelations(): array
     {
         return [
-            CategoriesRelationManager::class
+           // CategoriesRelationManager::class
         ];
     }
 

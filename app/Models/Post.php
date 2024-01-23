@@ -18,6 +18,10 @@ class Post extends Model
             ->generateSlugsFrom('title') 
             ->saveSlugsTo('slug');       
     }
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('gallary');
+    }
 
     public function user()
     {

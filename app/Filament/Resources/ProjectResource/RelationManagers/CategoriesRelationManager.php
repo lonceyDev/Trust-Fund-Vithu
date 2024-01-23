@@ -3,12 +3,14 @@
 namespace App\Filament\Resources\ProjectResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\RelationManagers\RelationManager;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class CategoriesRelationManager extends RelationManager
 {
@@ -20,13 +22,19 @@ class CategoriesRelationManager extends RelationManager
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    
             ]);
     }
 
     public function table(Table $table): Table
     {
-        return $table
+            return $table
+            ->relationship(fn (): BelongsToMany => $this->category->products())
+            ->inverseRelationship('categories')
+            ->columns([
+                TextColumn::make('name'),
+            ])
             ->recordTitleAttribute('name')
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
