@@ -14,13 +14,11 @@ class Event extends Model implements HasMedia
     use HasFactory,HasSlug,InteractsWithMedia;
     protected $guarded=[];
 
-    protected $casts = [
-       'featured_image'=>'array'
-    ];
+   
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('featured_image');
+        $this->addMediaCollection('gallery');
     }
 
     public function getSlugOptions() :SlugOptions

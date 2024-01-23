@@ -15,8 +15,7 @@ class Project extends Model implements HasMedia
     use HasFactory,HasSlug,InteractsWithMedia;
     
     protected $casts = [
-        'extra' => 'json', 
-        'featured_image'=>'array'
+        'extra' => 'json',
     ];
     protected $guarded=[];
 

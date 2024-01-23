@@ -32,14 +32,21 @@ class EventResource extends Resource
          Group::make()->schema([
             Forms\Components\Select::make('user_id')
                 ->relationship('user','name'),
-            Forms\Components\Select::make('categories')
-                //->multiple()
-                ->relationship('categories', 'name'),
-            Forms\Components\Select::make('tags')
-                //->multiple()
-                ->relationship('tags', 'name'),
+         ]),
+                Group::make()->schema([
+                    Section::make()->schema([
+                    Forms\Components\CheckboxList::make('categories')
+                        ->relationship('categories', 'name')
+                        ->columns(2)
+                        ->gridDirection('row'),
+                    Forms\Components\CheckboxList::make('tags')
+                         ->relationship('tags', 'name')
+                        ->columns(2)
+                        ->gridDirection('row'),
+                    ]),
+                ]),
                 
-        ])->columnSpan(1)->Columns(2),   
+          
                 Group::make()->schema([
                     Forms\Components\TextInput::make('title')
                     ->required()
@@ -59,9 +66,10 @@ class EventResource extends Resource
                 ->required()
                 ->maxLength(255),
             Forms\Components\FileUpload::make('featured_image')
-                
-                ->multiple()
                 ->directory('event_images'),
+            Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                      ->multiple()
+                      ->directory('eventgallery_images'),
                 Group::make()->schema([
                     Forms\Components\DatePicker::make('events_at')
                         ->required(),

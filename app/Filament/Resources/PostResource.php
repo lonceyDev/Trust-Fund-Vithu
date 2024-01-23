@@ -33,14 +33,16 @@ class PostResource extends Resource
             ->schema([
                 Section::make()
                     ->schema([
-                Forms\Components\Select::make('user_id')
+                Forms\Components\Select::make('user_id')->columnSpanFull()
                     ->relationship('user','name'),
-                Forms\Components\Select::make('categories')
-                    // ->multiple()
-                    ->relationship('categories', 'name'),
-                Forms\Components\Select::make('tags')
-                    //->multiple()
-                    ->relationship('tags', 'name'),
+                Forms\Components\CheckboxList::make('categories')
+                    ->relationship('categories', 'name')
+                    ->columns(2)
+                    ->gridDirection('row'),
+                Forms\Components\CheckboxList::make('tags')
+                     ->relationship('tags', 'name')
+                    ->columns(2)
+                    ->gridDirection('row'),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->columnSpanFull()
@@ -64,9 +66,12 @@ class PostResource extends Resource
                        Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
                     ]),
                     Section::make()->schema([
-                        Forms\Components\FileUpload::make('featured_image')
+                    Forms\Components\FileUpload::make('featured_image')
                         ->image()->columnSpanFull(),
                        ])->columnSpan(1),
+                    Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                      ->multiple()
+                      ->directory('post_gallery_images'),
     
                     // Section::make('Tags')->schema([
                     //         Select::make('tags')->relationship('tags','name')

@@ -85,7 +85,7 @@ Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetai
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
 
 
-Route::get('sheet', [App\Http\Controllers\GoogleSpreadsheetController::class, 'index']);
+// Route::get('sheet', [App\Http\Controllers\GoogleSpreadsheetController::class, 'index']);
 
 
 
