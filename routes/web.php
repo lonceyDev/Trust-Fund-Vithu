@@ -24,9 +24,9 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('.env', function () {
-    return abort(403);
-});
+// Route::get('.env', function () {
+//     return abort(403);
+// });
 
 // Route::get('.htaccess', function () {
 //     return abort(403);
@@ -85,6 +85,7 @@ Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetai
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
 
 
+Route::get('sheet', [App\Http\Controllers\GoogleSpreadsheetController::class, 'index']);
 
 
 
