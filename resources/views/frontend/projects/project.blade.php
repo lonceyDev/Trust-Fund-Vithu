@@ -57,8 +57,8 @@ a {
                         <div class="donation-item">
                             <div class="img">
                                 <a href="{{route('project-details',['slug' => $project->slug])}}">
-                                    @if(is_array($project->featured_image) && count($project->featured_image) > 0)
-                                        <img src="{{ asset('storage/'.$project->featured_image[0]) }}" alt="Blog">
+                                    @if($project->featured_image)
+                                        <img src="{{ asset('storage/'.$project->featured_image) }}" alt="Blog">
                                     @else
                                        <p>No image available</p>
                                     @endif

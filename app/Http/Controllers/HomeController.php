@@ -45,10 +45,10 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
+            $galleries = $event->with('media')->get();
+        //dd($galleries);
 
-        $galleries = Event::pluck('featured_image')->flatten();
-
-        return view('frontend.home', compact('projects', 'events', 'event', 'blogs', 'galleries'));
+        return view('frontend.home', compact('projects', 'events', 'event', 'blogs','galleries'));
     }
     public function create()
     {
@@ -98,8 +98,10 @@ class HomeController extends Controller
 
             $event = Event::where('slug', $slug)->firstOrFail();
             $recentEvents = Event::where('id', '!=', $event->id)->take(5)->get();
+            $galleries = $event->with('media')->get();
 
-            return view('frontend.get-involved.event-details', compact('event', 'recentEvents'));
+
+            return view('frontend.get-involved.event-details', compact('event', 'recentEvents','galleries'));
         } catch (ModelNotFoundException $e) {
 
             return redirect()->route('home')->with('error', 'Event not found');
@@ -116,9 +118,12 @@ class HomeController extends Controller
         try {
             $project = Project::where('slug', $slug)->firstOrFail();
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
-            $projects = Project::all();
+            $galleries = Project::with('media')->get();
+            
+            //$galleries = $recentprojects->with('media')->get();
 
-            return view('frontend.projects.project-details', compact('projects', 'project', 'recentprojects'));
+
+            return view('frontend.projects.project-details', compact( 'project', 'recentprojects','galleries'));
         } catch (ModelNotFoundException $e) {
             return redirect()->route('home')->with('error', 'Project not found');
         }

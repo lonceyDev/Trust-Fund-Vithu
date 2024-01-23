@@ -36,8 +36,8 @@
                     <div class="blog-item">
                         <div class="top">
                             <a href="{{route('event-details',['slug' => $event->slug])}}">
-                                @if(is_array($event->featured_image) && count($event->featured_image) > 0)
-                                    <img src="{{ asset('storage/'.$event->featured_image[0]) }}" alt="Blog">
+                                @if($event->featured_image)
+                                    <img src="{{ asset('storage/'.$event->featured_image) }}" alt="Blog">
                                 @else
                                     <p>No image available</p>
                                 @endif

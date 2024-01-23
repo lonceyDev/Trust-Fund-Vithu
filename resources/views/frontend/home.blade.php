@@ -770,14 +770,38 @@ a {
                     individual citizens that are making.</p>
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
-              @foreach ($galleries as $image)
+            {{-- @foreach ($galleries as $image)
                 <div class="gallery-item">
                     <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
                         <img src="{{ asset('storage/'.$image) }}" alt="project">
                         <i class="icofont-eye"></i>
                     </a>
                 </div>
-            @endforeach
+            @endforeach --}}
+{{--            
+            @foreach ($galleries as $image)
+            <div class="gallery-item">
+                <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
+                    <img src="{{ asset('storage/'.$image) }}" alt="project">
+                    <i class="icofont-eye"></i>
+                </a>
+            </div>
+        @endforeach --}}
+@foreach($galleries as $gallery)
+  <h2>{{ $gallery->name }}</h2>
+    <div class="gallery-item">
+        @foreach($gallery->media as $media)
+            <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
+                <img src="{{ $media->getUrl() }}" alt="Media Image">
+                <i class="icofont-eye"></i>
+            </a>
+        @endforeach
+    </div>
+@endforeach
+
+        
+
+
             </div>
         </div>
     </section>

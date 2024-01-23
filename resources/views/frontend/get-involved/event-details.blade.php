@@ -46,8 +46,8 @@
                                 </li>
                             </ul>
                             <h2>{{$event->title}}</h2>
-                                @if(is_array($event->featured_image) && count($event->featured_image) > 0)
-                                 <img src="{{ asset('storage/'.$event->featured_image[0]) }}" alt="event">
+                                @if($event->featured_image)
+                                 <img src="{{ asset('storage/'.$event->featured_image) }}" alt="event">
                                 @else
                                     <p>No image available</p>
                                 @endif
@@ -132,17 +132,24 @@
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
                 <!-- Display multiple images in the gallery -->
-                @foreach ($event->featured_image as $image)
-                    <div class="gallery-item">
-                        <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
-                            <img src="{{ asset('storage/'.$image) }}" alt="event">
-                            <i class="icofont-eye"></i>
-                        </a>
-                    </div>  
+                {{-- @foreach ($event->getMedia('gallery') as $media)
+                <div class="gallery-item">
+                    <img src="{{ $media->getUrl() }}" alt="{{ $media->name }}">
+                </div>
+            @endforeach
+            </div> --}}
+         @foreach($galleries as $gallery)
+                    <h2>{{ $gallery->name }}</h2>
+            <div class="gallery-item">
+                @foreach($gallery->media as $media)
+                    <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
+                        <img src="{{ $media->getUrl() }}" alt="Media Image">
+                        <i class="icofont-eye"></i>
+                    </a>
                 @endforeach
             </div>
-        </div>
-    </section>
+        @endforeach
+</section>
             </div>
         </div>
     </div>
