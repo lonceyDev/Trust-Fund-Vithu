@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('description');
             $table->longText('file_path');
-            $table->json('extra')->default('null');
+            $table->json('extra')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
