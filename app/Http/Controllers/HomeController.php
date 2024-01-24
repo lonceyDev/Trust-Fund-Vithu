@@ -34,7 +34,7 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
-        $event = Event::where('status', 'Upcoming')
+        $event = Event::where('status', 'Upcoming')->with('media')
             ->latest('events_at')
             ->first();
         $events = Event::where('status', '=', 'Upcoming')
@@ -45,10 +45,10 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
-            $galleries = $event->with('media')->get();
+
         //dd($galleries);
 
-        return view('frontend.home', compact('projects', 'events', 'event', 'blogs','galleries'));
+        return view('frontend.home', compact('projects', 'events', 'event', 'blogs'));
     }
     public function create()
     {
@@ -119,7 +119,7 @@ class HomeController extends Controller
             $project = Project::where('slug', $slug)->firstOrFail();
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
             $galleries = Project::with('media')->get();
-            
+
             //$galleries = $recentprojects->with('media')->get();
 
 
