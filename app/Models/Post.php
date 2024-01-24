@@ -13,6 +13,7 @@ class Post extends Model  implements HasMedia
 {
     use HasFactory,HasSlug, InteractsWithMedia;
     protected $guarded=[];
+    
 
     public function getSlugOptions() :SlugOptions
     {
