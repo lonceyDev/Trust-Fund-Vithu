@@ -39,6 +39,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //     return redirect()->route('blogs.category');
 // });
 
+Route::redirect('/login', '/admin/login', 301)->name('login');
 
 Route::prefix('about')->name('about.')->group(function () {
     Route::view('/about-us', 'frontend.about.about-us')->name('about-us');
