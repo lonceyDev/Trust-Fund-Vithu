@@ -20,7 +20,7 @@ use App\Http\Controllers\GoogleSpreadsheetController;
 //     return view('layouts.front.index');
 // });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
