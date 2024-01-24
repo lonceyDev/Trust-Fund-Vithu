@@ -149,7 +149,7 @@
                     </a>
                 @endforeach
         </div>
-@endforeach
+            @endforeach
         </div>
         </div>
     </section>
