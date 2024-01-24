@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('last_login_ip')->nullable();
+            $table->datetime('last_login_at')->nullable();
+            $table->integer('login_attempts')->default(0);
+            $table->boolean('is_blocked')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
