@@ -45,10 +45,10 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
-            $galleries = $event->with('media')->get();
+            // $galleries = $event->with('media')->get();
         //dd($galleries);
 
-        return view('frontend.home', compact('projects', 'events', 'event', 'blogs','galleries'));
+        return view('frontend.home', compact('projects', 'events', 'event', 'blogs'));
     }
     public function create()
     {

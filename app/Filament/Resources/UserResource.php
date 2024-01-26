@@ -10,10 +10,8 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\UserResource\RelationManagers;
+
 
 class UserResource extends Resource
 {
@@ -45,6 +43,14 @@ class UserResource extends Resource
                 Forms\Components\Toggle::make('is_blocked')
                     ->required(),
                 ]),
+                Forms\Components\Select::make('roles')
+                    ->relationship('roles','name')
+                    ->multiple()
+                    ->preload(),
+                Forms\Components\Select::make('permissions')
+                    ->relationship('permissions','name')
+                    ->multiple()
+                    ->preload(),
                 
             ])->Columns(2);
     }
@@ -58,7 +64,7 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
+                    ->dateTime('d-M-Y')
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_blocked')
                     ->boolean(),
