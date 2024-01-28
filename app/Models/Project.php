@@ -16,6 +16,7 @@ class Project extends Model implements HasMedia
     
     protected $casts = [
         'extra' => 'json',
+        
     ];
     protected $guarded=[];
 

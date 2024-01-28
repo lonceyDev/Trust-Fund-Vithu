@@ -11,16 +11,15 @@ use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Textarea;
+
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
-use Illuminate\Database\Eloquent\Builder;
+
 use Filament\Forms\Components\DateTimePicker;
 use App\Filament\Resources\ProjectResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\ProjectResource\RelationManagers;
+
 use App\Filament\Resources\ProjectResource\RelationManagers\CategoriesRelationManager;
 
 class ProjectResource extends Resource
@@ -49,14 +48,16 @@ class ProjectResource extends Resource
                  ])->columnSpan(1)->Columns(2),
                  Group::make()->schema([
                     Section::make()->schema([
-                    Forms\Components\CheckboxList::make('categories')
+                    Forms\Components\Select::make('categories')
                         ->relationship('categories', 'name')
-                        ->columns(2)
-                        ->gridDirection('row'),
-                    Forms\Components\CheckboxList::make('tags')
+                        ->multiple()
+                        ->preload(),
+                        
+                    Forms\Components\Select::make('tags')
                          ->relationship('tags', 'name')
-                        ->columns(2)
-                        ->gridDirection('row'),
+                         ->multiple()
+                         ->preload(),
+
                     ]),
                 ]),
                 Group::make()->schema([

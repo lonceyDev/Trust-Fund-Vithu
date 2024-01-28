@@ -9,10 +9,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\TagResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\TagResource\RelationManagers;
 use Filament\Forms\Components\Section;
 
 class TagResource extends Resource
@@ -39,9 +36,8 @@ class TagResource extends Resource
                     ->afterStateUpdated(function($set, $state){ 
                         $set('slug',Str::slug($state));
                     }),
-                Forms\Components\TextInput::make('slug')
-                    ->required()
-                    ->maxLength(255),
+                //Forms\Components\TextInput::make('slug')
+                   
                 ])->columns(2),
                
             ]);

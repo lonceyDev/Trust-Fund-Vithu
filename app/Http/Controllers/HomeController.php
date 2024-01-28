@@ -117,13 +117,15 @@ class HomeController extends Controller
     {
         try {
             $project = Project::where('slug', $slug)->firstOrFail();
+           $media= $project->getMediaCollections();
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
-            $galleries = Project::with('media')->get();
-            
-            //$galleries = $recentprojects->with('media')->get();
+            // $project = Project::where('slug', $slug)->firstOrFail()->with('media')->get();
+            // $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
+            //$galleries = Project::with('media')->get();
+            //dd($galleries);
 
 
-            return view('frontend.projects.project-details', compact( 'project', 'recentprojects','galleries'));
+            return view('frontend.projects.project-details', compact( 'project', 'recentprojects','project', 'media'));
         } catch (ModelNotFoundException $e) {
             return redirect()->route('home')->with('error', 'Project not found');
         }

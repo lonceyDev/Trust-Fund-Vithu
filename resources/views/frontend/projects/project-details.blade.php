@@ -139,17 +139,18 @@
                     </a>
                 </div>
             @endforeach --}}
-            @foreach($galleries as $gallery)
-                 <h2>{{ $gallery->name }}</h2>
-             <div class="gallery-item">
-                @foreach($gallery->media as $media)
-                    <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
-                        <img src="{{ $media->getUrl() }}" alt="Media Image">
-                        <i class="icofont-eye"></i>
-                    </a>
-                @endforeach
-        </div>
-            @endforeach
+          
+            
+                 <div class="gallery-item">
+                    @foreach($project->media as $media)
+                        <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
+                            <img src="{{ $media->getUrl() }}" alt="Media Image">
+                            <i class="icofont-eye"></i>
+                        </a>
+                    @endforeach
+                </div>
+      
+          
         </div>
         </div>
     </section>
