@@ -58,7 +58,7 @@
             <div class="video-overlay"></div>
 
             <video loop="" muted="" autoplay="" poster="#" class="background-video">
-                <source src="{{ asset('assets/front/img/home-screen.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/front/img/home-video.mp4') }}" type="video/mp4">
             </video>
 
 
@@ -129,7 +129,7 @@
                         <div class="about-img">
                             <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
                             <div class="video-wrap">
-                                <button class="js-modal-btn" data-video-id="MX4ffE6VaEw">
+                                <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>
                                 </button>
                             </div>
