@@ -35,14 +35,14 @@ class PostResource extends Resource
                     ->schema([
                 Forms\Components\Select::make('user_id')->columnSpanFull()
                     ->relationship('user','name'),
-                Forms\Components\CheckboxList::make('categories')
-                    ->relationship('categories', 'name')
-                    ->columns(2)
-                    ->gridDirection('row'),
-                Forms\Components\CheckboxList::make('tags')
-                     ->relationship('tags', 'name')
-                    ->columns(2)
-                    ->gridDirection('row'),
+                // Forms\Components\CheckboxList::make('categories')
+                //     ->relationship('categories', 'name')
+                //     ->columns(2)
+                //     ->gridDirection('row'),
+                // Forms\Components\CheckboxList::make('tags')
+                //      ->relationship('tags', 'name')
+                //     ->columns(2)
+                //     ->gridDirection('row'),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->columnSpanFull()
@@ -69,7 +69,7 @@ class PostResource extends Resource
                     Forms\Components\FileUpload::make('featured_image')
                         ->image()->columnSpanFull(),
                        ])->columnSpan(1),
-                    Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                    Forms\Components\FileUpload::make('gallery')
                       ->multiple()
                       ->directory('post_gallery_images'),
     
@@ -87,7 +87,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\TextColumn::make('category.name'),
+               // Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('featured_image')->circular(),

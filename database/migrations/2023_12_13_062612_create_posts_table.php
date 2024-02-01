@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title'); 
             $table->longText('content'); 
-            $table->string('featured_image')->nullable(); 
+            $table->string('featured_image')->nullable();
+            $table->longText('gallery')->nullable(); 
             $table->dateTime('publish_at')->nullable(); 
             $table->boolean('published')->default(false); 
             $table->text('meta_description')->nullable(); 

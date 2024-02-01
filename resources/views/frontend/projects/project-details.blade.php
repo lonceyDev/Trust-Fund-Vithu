@@ -1,11 +1,11 @@
 @extends('layouts.front.index_blade')
-@push('custom-style')
-    <style>
-        .owl-carousel .owl-item img {
-            min-height: 180px;
-        }
-    </style>
-@endpush
+    @push('custom-style')
+        <style>
+            .owl-carousel .owl-item img {
+                min-height: 180px;
+            }
+        </style>
+    @endpush
 @section('content')
 <main>
     <!-- Main Content Area -->
@@ -124,36 +124,32 @@
                     </div>
                 </div>
                    <!-- Gallery Section -->
-    <section class="gallery-area two pt-100 pb-70">
-        <div class="container-fluid">
-            <div class="section-title">
-                <span class="sub-title">Our gallery</span>
-                <h2>Discover the best things we do</h2>
-            </div>
-        <div class="gallery-slider owl-theme owl-carousel">
-            {{-- @foreach ($project->getMedia('gallery') as $media)
-                <div class="gallery-item">
-                    <a href="{{ asset('storage/'.$media->getUrl())}}" data-lightbox="roadtrip">
-                        <img src="{{ asset('storage/'.$media->getUrl()) }}" alt="project">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-            @endforeach --}}
-          
-            
-                 <div class="gallery-item">
-                    @foreach($project->media as $media)
-                        <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
-                            <img src="{{ $media->getUrl() }}" alt="Media Image">
-                            <i class="icofont-eye"></i>
-                        </a>
-                    @endforeach
-                </div>
-      
-          
-        </div>
-        </div>
-    </section>
+                <section class="gallery-area two pt-100 pb-70">
+                    <div class="container-fluid">
+                        <div class="section-title">
+                            <span class="sub-title">Our gallery</span>
+                            <h2>Discover the best things we do</h2>
+                            <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
+                        </div>
+                    
+                        @if (isset($project->gallery) && is_array($project->gallery))
+                                <div class="gallery-slider owl-theme owl-carousel">
+                                    @foreach ($project->gallery as $image)
+                                        <div class="gallery-item">
+                                            <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
+                                                <img src="{{ asset('storage/'.$image) }}" alt="Gallery">
+                                                <i class="icofont-eye"></i>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @else
+                                <p>No gallery images found for this project.</p>
+                            @endif
+                        </div>
+                  
+                    </div>
+               </section>
             </div>
         </div>
     </div>

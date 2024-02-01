@@ -46,20 +46,20 @@ class ProjectResource extends Resource
                             'Pending' => 'Pending',
                     ]),
                  ])->columnSpan(1)->Columns(2),
-                 Group::make()->schema([
-                    Section::make()->schema([
-                    Forms\Components\Select::make('categories')
-                        ->relationship('categories', 'name')
-                        ->multiple()
-                        ->preload(),
+                //  Group::make()->schema([
+                //     Section::make()->schema([
+                //     Forms\Components\Select::make('categories')
+                //         ->relationship('categories', 'name')
+                //         ->multiple()
+                //         ->preload(),
                         
-                    Forms\Components\Select::make('tags')
-                         ->relationship('tags', 'name')
-                         ->multiple()
-                         ->preload(),
+                //     Forms\Components\Select::make('tags')
+                //          ->relationship('tags', 'name')
+                //          ->multiple()
+                //          ->preload(),
 
-                    ]),
-                ]),
+                //     ]),
+                // ]),
                 Group::make()->schema([
                         Forms\Components\TextInput::make('title')
                         ->required()
@@ -83,7 +83,7 @@ class ProjectResource extends Resource
                       ->directory('project_images'),
                ]),
                Section::make()->schema([
-                Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+                Forms\Components\FileUpload::make('gallery')
                   ->multiple()
                   ->directory('gallery_images'),
            ]),
@@ -111,7 +111,7 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\TextColumn::make('category.name'),
+            //    Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('featured_image'),

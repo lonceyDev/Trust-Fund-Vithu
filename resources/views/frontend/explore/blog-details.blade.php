@@ -1,4 +1,11 @@
 @extends('layouts.front.index_blade')
+    @push('custom-style')
+        <style>
+            .owl-carousel .owl-item img {
+                min-height: 180px;
+            }
+        </style>
+    @endpush
 @section('content')
 <main>
     <div class="page-title-area title-bg-seven">
@@ -115,5 +122,32 @@
         </div>
     </div>
 </main>
+   <!-- Gallery Section -->
+   <section class="gallery-area two pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="section-title">
+            <span class="sub-title">Our gallery</span>
+            <h2>Discover the best things we do</h2>
+            <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
+        </div>
+    
+        @if (isset($blog->gallery) && is_array($blog->gallery))
+                <div class="gallery-slider owl-theme owl-carousel">
+                    @foreach ($blog->gallery as $image)
+                        <div class="gallery-item">
+                            <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
+                                <img src="{{ asset('storage/'.$image) }}" alt="Gallery">
+                                <i class="icofont-eye"></i>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p>No gallery images found for this project.</p>
+            @endif
+        </div>
+  
+    </div>
+</section>
 
 @endsection

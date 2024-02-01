@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('featured_image')->nullable();
+            $table->longText('gallery')->nullable();
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->decimal('project_amount', 10, 2);

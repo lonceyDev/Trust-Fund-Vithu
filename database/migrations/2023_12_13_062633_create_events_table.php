@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('description');
             $table->string('location');
             $table->string('featured_image')->nullable();
+            $table->longText('gallery')->nullable();
             $table->date('events_at');
             $table->string('status')->default('upcoming');
             $table->json('extra')->nullable();

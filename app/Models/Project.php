@@ -16,14 +16,15 @@ class Project extends Model implements HasMedia
     
     protected $casts = [
         'extra' => 'json',
+        'gallery'=>'array'
         
     ];
     protected $guarded=[];
 
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('gallary');
-    }
+    // public function registerMediaCollections(): void
+    // {
+    //     $this->addMediaCollection('gallary');
+    // }
 
     public function getSlugOptions() :SlugOptions
     {

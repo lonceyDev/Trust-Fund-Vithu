@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+
 use Filament\Facades\Filament;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\Paginator;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\ServiceProvider;
@@ -42,7 +44,11 @@ class AppServiceProvider extends ServiceProvider
                     ->group('Vithu Trust')
                     ->sort(3),
             ]);
+            
         // });
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
     
 }
