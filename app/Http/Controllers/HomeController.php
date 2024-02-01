@@ -17,10 +17,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-       // $this->middleware('auth');
-    }
+   
 
     /**
      * Show the application dashboard.
@@ -45,8 +42,6 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
-            // $galleries = $event->with('media')->get();
-        //dd($galleries);
 
         return view('frontend.home', compact('projects', 'events', 'event', 'blogs'));
     }
