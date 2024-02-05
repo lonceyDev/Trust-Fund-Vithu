@@ -1,11 +1,11 @@
 @extends('layouts.front.index_blade')
-@push('custom-style')
-    <style>
-        .owl-carousel .owl-item img {
-            min-height: 180px;
-        }
-    </style>
-@endpush
+    @push('custom-style')
+        <style>
+            .owl-carousel .owl-item img {
+                min-height: 180px;
+            }
+        </style>
+    @endpush
 @section('content')
 <main>
     <!-- Main Content Area -->
@@ -123,33 +123,33 @@
                         </div>
                     </div>
                 </div>
-                   <!-- Gallery Section -->
-    <section class="gallery-area two pt-100 pb-70">
+     <!-- Gallery Section -->
+     <section class="gallery-area two pt-100 pb-70">
         <div class="container-fluid">
             <div class="section-title">
                 <span class="sub-title">Our gallery</span>
                 <h2>Discover the best things we do</h2>
+                <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and individual citizens that are making.</p>
             </div>
-            <div class="gallery-slider owl-theme owl-carousel">
-                <!-- Display multiple images in the gallery -->
-                {{-- @foreach ($event->getMedia('gallery') as $media)
-                <div class="gallery-item">
-                    <img src="{{ $media->getUrl() }}" alt="{{ $media->name }}">
-                </div>
-            @endforeach
-            </div> --}}
-         @foreach($galleries as $gallery)
-                    <h2>{{ $gallery->name }}</h2>
-            <div class="gallery-item">
-                @foreach($gallery->media as $media)
-                    <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
-                        <img src="{{ $media->getUrl() }}" alt="Media Image">
-                        <i class="icofont-eye"></i>
-                    </a>
-                @endforeach
+        
+            @if (isset($event->gallery) && is_array($event->gallery))
+                    <div class="gallery-slider owl-theme owl-carousel">
+                        @foreach ($event->gallery as $image)
+                            <div class="gallery-item">
+                                <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
+                                    <img src="{{ asset('storage/'.$image) }}" alt="Gallery">
+                                    <i class="icofont-eye"></i>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <p>No gallery images found for this project.</p>
+                @endif
             </div>
-        @endforeach
-</section>
+      
+        </div>
+   </section>
             </div>
         </div>
     </div>

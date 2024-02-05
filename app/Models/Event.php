@@ -14,7 +14,10 @@ class Event extends Model implements HasMedia
     use HasFactory,HasSlug,InteractsWithMedia;
     protected $guarded=[];
 
-   
+    protected $casts = [
+       'gallery'=>'array'
+        
+    ];
 
     public function registerMediaCollections(): void
     {

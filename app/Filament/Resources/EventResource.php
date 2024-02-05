@@ -11,10 +11,8 @@ use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\EventResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\EventResource\RelationManagers;
+
 
 class EventResource extends Resource
 {
@@ -33,18 +31,18 @@ class EventResource extends Resource
             Forms\Components\Select::make('user_id')
                 ->relationship('user','name'),
          ]),
-                Group::make()->schema([
-                    Section::make()->schema([
-                    Forms\Components\CheckboxList::make('categories')
-                        ->relationship('categories', 'name')
-                        ->columns(2)
-                        ->gridDirection('row'),
-                    Forms\Components\CheckboxList::make('tags')
-                         ->relationship('tags', 'name')
-                        ->columns(2)
-                        ->gridDirection('row'),
-                    ]),
-                ]),
+                // Group::make()->schema([
+                //     Section::make()->schema([
+                //     Forms\Components\CheckboxList::make('categories')
+                //         ->relationship('categories', 'name')
+                //         ->columns(2)
+                //         ->gridDirection('row'),
+                //     Forms\Components\CheckboxList::make('tags')
+                //          ->relationship('tags', 'name')
+                //         ->columns(2)
+                //         ->gridDirection('row'),
+                //     ]),
+                // ]),
                 
           
                 Group::make()->schema([
@@ -67,7 +65,7 @@ class EventResource extends Resource
                 ->maxLength(255),
             Forms\Components\FileUpload::make('featured_image')
                 ->directory('event_images'),
-            Forms\Components\SpatieMediaLibraryFileUpload::make('gallery')
+            Forms\Components\FileUpload::make('gallery')
                       ->multiple()
                       ->directory('event_gallery_images'),
                 Group::make()->schema([
@@ -93,7 +91,7 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('category.name'),
+                //Tables\Columns\TextColumn::make('category.name'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

@@ -58,7 +58,7 @@
             <div class="video-overlay"></div>
 
             <video loop="" muted="" autoplay="" poster="#" class="background-video">
-                <source src="{{ asset('assets/front/img/home-screen.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/front/img/home-video.mp4') }}" type="video/mp4">
             </video>
 
 
@@ -129,7 +129,7 @@
                         <div class="about-img">
                             <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
                             <div class="video-wrap">
-                                <button class="js-modal-btn" data-video-id="MX4ffE6VaEw">
+                                <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>
                                 </button>
                             </div>
@@ -243,8 +243,8 @@
                             <div class="donation-item">
                                 <div class="img">
                                     <a href="{{ route('project-details', ['slug' => $project->slug]) }}">
-                                        @if (is_array($project->featured_image) && count($project->featured_image) > 0)
-                                            <img src="{{ asset('storage/' . $project->featured_image[0]) }}" alt="Blog">
+                                        @if($project->featured_image) 
+                                            <img src="{{ asset('storage/' . $project->featured_image) }}" alt="Blog">
                                         @else
                                             <p>No image available</p>
                                         @endif
@@ -449,7 +449,7 @@
         </section>
 
 {{-- Gallery Start --}}
-        <section class="gallery-area two pt-100 pb-70">
+        {{-- <section class="gallery-area two pt-100 pb-70">
             <div class="container-fluid">
                 <div class="section-title">
                     <span class="sub-title">Our gallery</span>
@@ -458,41 +458,21 @@
                         individual citizens that are making.</p>
                 </div>
                 <div class="gallery-slider owl-theme owl-carousel">
-                    {{-- @foreach ($galleries as $image)
+               
+                    
+            @foreach ($projects as $image)
                 <div class="gallery-item">
                     <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
                         <img src="{{ asset('storage/'.$image) }}" alt="project">
                         <i class="icofont-eye"></i>
                     </a>
                 </div>
-            @endforeach --}}
-                    {{--
-            @foreach ($galleries as $image)
-            <div class="gallery-item">
-                <a href="{{ asset('storage/'.$image) }}" data-lightbox="roadtrip">
-                    <img src="{{ asset('storage/'.$image) }}" alt="project">
-                    <i class="icofont-eye"></i>
-                </a>
-            </div>
-        @endforeach --}}
-                    {{-- @foreach ($galleries as $gallery)
-                        <h2>{{ $gallery->name }}</h2>
-                        <div class="gallery-item">
-                            @foreach ($gallery->media as $media)
-                                <a href="{{ asset($media->getUrl()) }}" data-lightbox="roadtrip">
-                                    <img src="{{ $media->getUrl() }}" alt="Media Image">
-                                    <i class="icofont-eye"></i>
-                                </a>
-                            @endforeach
-                        </div>
-                    @endforeach --}}
-
-
-
+           @endforeach
+                    
 
                 </div>
             </div>
-        </section>
+        </section> --}}
 {{-- End Gallery--}}
 
         {{-- Blogs --}}

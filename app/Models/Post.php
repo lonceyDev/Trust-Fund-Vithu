@@ -14,7 +14,10 @@ class Post extends Model  implements HasMedia
     use HasFactory,HasSlug, InteractsWithMedia;
     protected $guarded=[];
     
-
+    protected $casts = [
+        'gallery'=>'array'
+        
+    ];
     public function getSlugOptions() :SlugOptions
     {
         return SlugOptions::create()
