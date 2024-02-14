@@ -121,11 +121,11 @@ class HomeController extends Controller
     }
     public function showProjects($status)
     {
-        if ($status === 'complete') {
-            $completedProjects = Project::where('status', '=', 'complete')->paginate(6); // Adjust the conditions based on your data structure
+        if ($status == 'Completed') {
+            $completedProjects = Project::where('status', '=', 'Completed')->paginate(6); 
             return view('frontend.projects.complete', ['completedProjects' => $completedProjects]);
-        } elseif ($status === 'ongoing') {
-            $ongoingProjects = Project::where('status', '=', 'ongoing')->paginate(6);
+        } elseif ($status == 'Ongoing') {
+            $ongoingProjects = Project::where('status', '=', 'Ongoing')->paginate(6);
             return view('frontend.projects.ongoing', ['ongoingProjects' => $ongoingProjects]);
         }
     }

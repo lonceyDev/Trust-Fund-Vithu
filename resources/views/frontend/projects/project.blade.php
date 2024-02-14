@@ -36,7 +36,7 @@ a {
                         <h2 class="text-capitalize"> Projects</h2>
                         <ul>
                             <li>
-                                <a href="https://dev.vithu.org">Home</a>
+                                <a href="{{route('home')}}">Home</a>
                             </li>
                             <li>
                                 <span class="text-capitalize"> Projects</span>
@@ -58,7 +58,7 @@ a {
                             <div class="img">
                                 <a href="{{route('project-details',['slug' => $project->slug])}}">
                                     @if($project->featured_image)
-                                        <img src="{{ asset('storage/'.$project->featured_image) }}" alt="Blog">
+                                        <img src="{{ asset('storage/'.$project->featured_image) }}" alt="project">
                                     @else
                                        <p>No image available</p>
                                     @endif
