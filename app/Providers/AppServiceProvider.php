@@ -27,15 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         
         Paginator::useBootstrapFive();
-        // Filament::serving(function () {
-        //     Filament::registerNavigationItems([
-        //         NavigationItem::make('Analytics')
-        //             ->url('https://filament.pirsch.io', shouldOpenInNewTab: true)
-        //             ->icon('heroicon-o-presentation-chart-line')
-        //             ->activeIcon('heroicon-s-presentation-chart-line')
-        //             ->group('Reports')
-        //             ->sort(3),
-        //     ]);
+        
             Filament::registerNavigationItems([
                 NavigationItem::make('Website')
                     ->url('https://vtf.lonceybiz.com/', shouldOpenInNewTab: true)
@@ -45,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
                     ->sort(3),
             ]);
             
-        // });
+      
         if($this->app->environment('production')) {
             URL::forceScheme('https');
         }
