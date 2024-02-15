@@ -29,23 +29,20 @@ Route::get('/blog',function(){
      $blogs=Post::orderBy('publish_at')->get();
      return PostResource::collection($blogs);
 });
+Route::get('/project', function (Request $request) {
+    $status = $request->input('status');
+    
+    if ($status === 'Completed' || $status === 'Ongoing') {
 
-Route::get('/project',function(){
+        $projects = Project::where('status', $status)->get();
 
-    $projects=Project::orderBy('start_date')->get();
+    } else {
+        
+        $projects = Project::orderBy('start_date')->get();;
+    }
+    
     return ProjectResource::collection($projects);
 });
-Route::get('/ongoing',function(){
-
-    $projects= Project::where('status', '=', 'Ongoing')->get();
-    return ProjectResource::collection($projects);
-});
-Route::get('/complete',function(){
-
-    $projects= Project::where('status', '=', 'Completed')->get();
-    return ProjectResource::collection($projects);
-});
-
 Route::get('/event',function(){
 
     $events=Event::orderBy('events_at')->get();
