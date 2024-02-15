@@ -35,6 +35,16 @@ Route::get('/project',function(){
     $projects=Project::orderBy('start_date')->get();
     return ProjectResource::collection($projects);
 });
+Route::get('/ongoing',function(){
+
+    $projects= Project::where('status', '=', 'Ongoing')->get();
+    return ProjectResource::collection($projects);
+});
+Route::get('/complete',function(){
+
+    $projects= Project::where('status', '=', 'Completed')->get();
+    return ProjectResource::collection($projects);
+});
 
 Route::get('/event',function(){
 
