@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         //     ]);
             Filament::registerNavigationItems([
                 NavigationItem::make('Website')
-                    ->url('http://127.0.0.1:8000', shouldOpenInNewTab: true)
+                    ->url('https://vtf.lonceybiz.com/', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-globe-alt')
                     ->activeIcon('heroicon-s-presentation-chart-line')
                     ->group('Vithu Trust')
