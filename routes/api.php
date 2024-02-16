@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/blog',function(){
 
-     $blogs=Post::orderBy('publish_at')->get();
+     $blogs=Post::paginate(10);
      return PostResource::collection($blogs);
 });
 Route::get('/project', function (Request $request) {
@@ -34,18 +34,18 @@ Route::get('/project', function (Request $request) {
     
     if ($status === 'Completed' || $status === 'Ongoing') {
 
-        $projects = Project::where('status', $status)->get();
+        $projects = Project::paginate(10);
 
     } else {
         
-        $projects = Project::orderBy('start_date')->get();;
+        $projects = Project::paginate(10);
     }
     
     return ProjectResource::collection($projects);
 });
 Route::get('/event',function(){
 
-    $events=Event::orderBy('events_at')->get();
+    $events=Event::paginate(10);
     return EventResource::collection($events);
 });
 
