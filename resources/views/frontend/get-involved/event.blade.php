@@ -4,6 +4,7 @@
     .owl-carousel .owl-item img {
         min-height: 180px;
     }
+
 </style>
 @endpush 
 @section('content')
@@ -37,7 +38,7 @@
                         <div class="top">
                             <a href="{{route('event-details',['slug' => $event->slug])}}">
                                 @if($event->featured_image)
-                                    <img src="{{ asset('storage/'.$event->featured_image) }}" alt="Blog">
+                                    <img class="event-image" src="{{ asset('storage/'.$event->featured_image) }}" alt="Blog">
                                 @else
                                     <p>No image available</p>
                                 @endif

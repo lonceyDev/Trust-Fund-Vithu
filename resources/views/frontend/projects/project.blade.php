@@ -24,6 +24,7 @@ a {
     transition: 0.5s all ease;
     text-decoration: none;
 }
+
 </style>
 @endpush 
 @section('content')
@@ -58,7 +59,7 @@ a {
                             <div class="img">
                                 <a href="{{route('project-details',['slug' => $project->slug])}}">
                                     @if($project->featured_image)
-                                        <img src="{{ asset('storage/'.$project->featured_image) }}" alt="project">
+                                        <img class="project-image" src="{{ asset('storage/'.$project->featured_image) }}" alt="project">
                                     @else
                                        <p>No image available</p>
                                     @endif

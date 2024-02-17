@@ -4,6 +4,10 @@
             .pagination-area {
               margin-top: 20px; 
             }
+            .blog-item img {
+                width: 100%; /* Set the width to 100% to ensure consistency */
+                height: auto; /* Maintain aspect ratio */
+            }
         </style>
     @endpush
 @section('content')
