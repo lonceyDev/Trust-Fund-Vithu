@@ -19,6 +19,7 @@ class Event extends Model implements HasMedia
         
     ];
 
+   
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('gallery');

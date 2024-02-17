@@ -35,9 +35,10 @@ class HomeController extends Controller
             ->latest('events_at')
             ->first();
         $events = Event::where('status', '=', 'Upcoming')
-            ->latest()
+            ->latest('events_at')
             ->take(3)
             ->get();
+           // dd($event);
         $blogs = Post::where('published', '=', '1')
             ->latest()
             ->take(3)

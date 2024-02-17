@@ -312,9 +312,9 @@
 
                                 <div class="inner">
                                     <h4>
-                                        {{ \Carbon\Carbon::parse($event->publish_at)->format('d') }}
+                                        {{ \Carbon\Carbon::parse($event->events_at)->format('d') }}
                                         <span
-                                            class="month">{{ \Carbon\Carbon::parse($event->publish_at)->format('M') }}</span>
+                                            class="month">{{ \Carbon\Carbon::parse($event->events_at)->format('M') }}</span>
                                     </h4>
                                     <h3>
                                         <a href="{{ route('event-details', ['slug' => $event->slug]) }}">{{ $event->title }}
@@ -323,7 +323,8 @@
                                     <ul>
                                         <li>
                                             <i class="icofont-location-pin"></i>
-                                            <span>LK</span>
+                                            <span>{{ $event->location }}</span>
+
                                         </li>
                                     </ul>
                                 @else
@@ -334,10 +335,13 @@
                 </div>
                 <div class="col-lg-6">
                     @foreach ($events as $event)
+                    
                         <div class="event-item-right">
+
+                          {{-- @dd($event->events_at) --}}
                             <h4>
-                                {{ \Carbon\Carbon::parse($event->publish_at)->format('d') }}
-                                <span class="month">{{ \Carbon\Carbon::parse($event->publish_at)->format('M') }}</span>
+                                {{ \Carbon\Carbon::parse($event->events_at)->format('d') }}
+                                <span class="month">{{ \Carbon\Carbon::parse($event->events_at)->format('M') }}</span>
                             </h4>
                             <h3>
                                 <a href="{{ route('event-details', ['slug' => $event->slug]) }}">{{ $event->title }} </a>
@@ -347,7 +351,7 @@
 
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <span>Lk</span>
+                                    <span>{{ $event->location }}</span>
                                 </li>
                             </ul>
                         </div>
