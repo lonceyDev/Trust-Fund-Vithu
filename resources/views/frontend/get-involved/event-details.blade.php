@@ -103,8 +103,8 @@
                                 <div class="post-inner">
                                     <ul class="align-items-center">
                                         <li>
-                                            @if(is_array($recentEvent->featured_image) && count($recentEvent->featured_image) > 0)
-                                                <img src="{{ asset('storage/'.$recentEvent->featured_image[0]) }}" alt="event"/>
+                                            @if($recentEvent->featured_image)
+                                                <img src="{{ asset('storage/'.$recentEvent->featured_image) }}" alt="event"/>
                                             @else
                                                 <p>No image available</p>
                                             @endif
