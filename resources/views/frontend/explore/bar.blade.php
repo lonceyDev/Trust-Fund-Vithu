@@ -202,10 +202,11 @@
             <td style="background-color: #d5cdcd"> </td>
         </tr>
     </table>
+    <p></p>
     </div>
-    <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
+    {{-- <div style="width: 1000px; height:200px; margin: auto; text-align: center;">
         <p>Explore more details about our charity:</p>
         <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
-    </div>
+    </div> --}}
 </section>    
 @endsection

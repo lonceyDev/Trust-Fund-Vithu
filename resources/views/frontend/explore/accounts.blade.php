@@ -153,12 +153,17 @@
             </table>
         </div>
     </div>
-      <p></p>          
+      <p></p> 
+      <p></p> 
+
+    <div>         
     <p>Explore more details about our charity:</p>
      <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
-   </div>
+     <p></p>
+    </div>
   </div>
-</section>      
+</section> 
+     
     <section style="max-width: 100%; padding: 20px; box-sizing: border-box; text-align: center;">
         <div class="container-fluid" style="max-width: 1300px; margin: auto; text-align: center;">
             <h2 style="text-align: center;">Financial Information</h2>
@@ -197,6 +202,7 @@
                         <p>Explore more details about our charity:</p>
                         <a href="{{route('account.line')}}" class="btn btn-secondary">More details</a>
                     </div>
+                    <p></p>
                 </div>
             </div>
         </div>
