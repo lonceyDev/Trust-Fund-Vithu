@@ -80,7 +80,7 @@ class RoleResource extends Resource
     }
  public static function getEloquentQuery(): EloquentBuilder
  {
-    return parent::getEloquentQuery()->where('name','!=','admin');
+    return parent::getEloquentQuery()->where('name','!=','Super Admin');
  }
 
 }

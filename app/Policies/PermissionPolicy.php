@@ -13,7 +13,7 @@ class PermissionPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
 
     }
@@ -23,7 +23,7 @@ class PermissionPolicy
      */
     public function view(User $user, Permission $permission)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
     }
 
     /**
@@ -31,7 +31,7 @@ class PermissionPolicy
      */
     public function create(User $user)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -40,7 +40,7 @@ class PermissionPolicy
      */
     public function update(User $user, Permission $permission)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -49,7 +49,7 @@ class PermissionPolicy
      */
     public function delete(User $user, Permission $permission)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -58,7 +58,7 @@ class PermissionPolicy
      */
     public function restore(User $user, Permission $permission)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -67,7 +67,7 @@ class PermissionPolicy
      */
     public function forceDelete(User $user, Permission $permission)
     {
-        return $user->hasRole('Admin');
+        return $user->hasRole('Super Admin','Admin');
 
     }
 }
