@@ -5,8 +5,8 @@
         min-height: 180px;
     }
 .common-btn:hover {
-    color: #fff;
-    background-color:rgb(63, 138, 200);
+    color: #064674;
+    background-color:rgb(252, 252, 252);
     -webkit-transform: translate(0, -5px);
     transform: translate(0, -5px);
 }
