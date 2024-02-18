@@ -7,8 +7,8 @@
         }
 
         .common-btn:hover {
-            color: #fff;
-            background-color: rgb(63, 138, 200);
+            color: rgb(2, 71, 127);;
+            background-color:#ffffff;
             -webkit-transform: translate(0, -5px);
             transform: translate(0, -5px);
         }
