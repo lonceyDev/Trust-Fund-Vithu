@@ -8,7 +8,7 @@
     padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
-}
+    }
 
 .btn {
     display: inline-block;
@@ -113,7 +113,7 @@
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
+                {{-- <div class="col-lg-12 col-md-12">
                     <div class="form-group">
                         <div class="form-check agree-label">
                             <input name="gridCheck" value="I agree to the terms and privacy policy."
@@ -125,7 +125,7 @@
                             <div class="help-block with-errors gridCheck-error"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-12">
                     <button type="submit" class="btn common-btn">
                         Send Message

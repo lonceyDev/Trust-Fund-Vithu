@@ -64,10 +64,14 @@ class EventResource extends Resource
                 ->required()
                 ->maxLength(255),
             Forms\Components\FileUpload::make('featured_image')
+                ->image()
+                ->imageEditor()
                 ->directory('event_images'),
             Forms\Components\FileUpload::make('gallery')
-                      ->multiple()
-                      ->directory('event_gallery_images'),
+                    ->image()
+                    ->imageEditor()
+                    ->multiple()
+                    ->directory('event_gallery_images'),
                 Group::make()->schema([
                     Forms\Components\DatePicker::make('events_at')
                         ->required(),

@@ -14,12 +14,18 @@ class EventResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
+        $galleries = [];
+        foreach ($this->gallery as $image) {
+            $galleries[] = url('/').'/storage/'.$image;
+        }
+       
         return[
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
-            'featured_image'=>$this->featured_image,
-            'gallery'=>$this->gallery,
+            'featured_image'=> url('/').'/storage/'.$this->featured_image,
+            'gallery'=>$this->$galleries,
             'events_at'=>$this->events_at,
             'status'=>$this->status
            ];

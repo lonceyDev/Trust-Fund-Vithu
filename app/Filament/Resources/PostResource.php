@@ -67,9 +67,12 @@ class PostResource extends Resource
                     ]),
                     Section::make()->schema([
                     Forms\Components\FileUpload::make('featured_image')
-                        ->image()->columnSpanFull(),
+                        ->image()
+                        ->columnSpanFull(),
                        ])->columnSpan(1),
                     Forms\Components\FileUpload::make('gallery')
+                      ->image()
+                      ->imageEditor()
                       ->multiple()
                       ->directory('post_gallery_images'),
     

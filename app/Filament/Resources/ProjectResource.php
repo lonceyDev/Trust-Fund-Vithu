@@ -80,11 +80,15 @@ class ProjectResource extends Resource
             Group::make()->schema([  
                 Section::make()->schema([
                     Forms\Components\FileUpload::make('featured_image')
-                      ->directory('project_images'),
+                    ->image()
+                    ->imageEditor()
+                    ->directory('project_images'),
                ]),
                Section::make()->schema([
                 Forms\Components\FileUpload::make('gallery')
                   ->multiple()
+                  ->image()
+                  ->imageEditor()
                   ->directory('gallery_images'),
            ]),
                

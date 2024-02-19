@@ -14,12 +14,18 @@ class PostResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-       return[
+        $galleries = [];
+        foreach ($this->gallery as $image) {
+            $galleries[] = url('/').'/storage/'.$image;
+        }
+      //  dd($galleries)
+       
+        return[
         'id'=>$this->id,
         'title'=>$this->title,
         'content'=>$this->content,
-        'featured_image'=>$this->featured_image,
-        'gallery'=>$this->gallery,
+        'featured_image'=> url('/').'/storage/'.$this->featured_image,
+        'gallery'=>$galleries,
         'publish_at'=>$this->publish_at,
         'published'=>$this->published
        ];
