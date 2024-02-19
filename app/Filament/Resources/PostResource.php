@@ -33,8 +33,8 @@ class PostResource extends Resource
             ->schema([
                 Section::make()
                     ->schema([
-                Forms\Components\Select::make('user_id')->columnSpanFull()
-                    ->relationship('user','name'),
+                // Forms\Components\Select::make('user_id')->columnSpanFull()
+                //     ->relationship('user','name'),
                 // Forms\Components\CheckboxList::make('categories')
                 //     ->relationship('categories', 'name')
                 //     ->columns(2)
@@ -51,7 +51,7 @@ class PostResource extends Resource
                     ->afterStateUpdated(function($set, $state){ 
                         $set('slug',Str::slug($state));
                     }),
-              Forms\Components\RichEditor::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->fileAttachmentsDirectory('attachments')
                     ->fileAttachmentsVisibility('private')
                     ->required()
@@ -59,17 +59,13 @@ class PostResource extends Resource
 
                 Forms\Components\Toggle::make('published')
                     ->required()->columnSpanFull(),
-                    ])->columnSpan(1)->Columns(2),
-               
-                Group::make()->schema([
-                    Section::make()->schema([
-                       Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
-                    ]),
-                    Section::make()->schema([
+                   
+                    Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
+                 
                     Forms\Components\FileUpload::make('featured_image')
                         ->image()
                         ->columnSpanFull(),
-                       ])->columnSpan(1),
+                       
                     Forms\Components\FileUpload::make('gallery')
                       ->image()
                       ->imageEditor()
@@ -79,9 +75,7 @@ class PostResource extends Resource
                     // Section::make('Tags')->schema([
                     //         Select::make('tags')->relationship('tags','name')
                     //     ])->columnSpan(1),
-                    ]),
-                
-              
+                    ]),   
             ])->Columns(1);
     }
 
@@ -89,7 +83,7 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
+                //Tables\Columns\TextColumn::make('user.name'),
                // Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

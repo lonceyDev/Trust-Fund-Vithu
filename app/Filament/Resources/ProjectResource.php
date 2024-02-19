@@ -34,18 +34,12 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-            Group::make()->schema([
-                Section::make()->schema([
-                    Forms\Components\Select::make('user_id')
-                        ->relationship('user','name'),
-                        Forms\Components\Select::make('status')
-                        ->required()
-                        ->options([
-                            'Ongoing' => 'Ongoing',
-                            'Completed' => 'Completed',
-                            'Pending' => 'Pending',
-                    ]),
-                 ])->columnSpan(1)->Columns(2),
+            Section::make()->schema([
+            //     Section::make()->schema([
+            //         // Forms\Components\Select::make('user_id')
+            //         //     ->relationship('user','name'),
+                       
+            //      ])->columnSpan(1)->Columns(2),
                 //  Group::make()->schema([
                 //     Section::make()->schema([
                 //     Forms\Components\Select::make('categories')
@@ -60,15 +54,15 @@ class ProjectResource extends Resource
 
                 //     ]),
                 // ]),
-                Group::make()->schema([
-                        Forms\Components\TextInput::make('title')
+                Section::make()->schema([
+                    Forms\Components\TextInput::make('title')
                         ->required()
                         ->maxLength(255)
                         ->reactive()
                         ->afterStateUpdated(function($set, $state){ 
                             $set('slug',Str::slug($state));
                         }),
-                    ]),
+                
               
                 Forms\Components\RichEditor::make('description')
                     ->required()
@@ -77,28 +71,35 @@ class ProjectResource extends Resource
                     ->fileAttachmentsVisibility('private')
                 ]),
 
-            Group::make()->schema([  
                 Section::make()->schema([
                     Forms\Components\FileUpload::make('featured_image')
                     ->image()
                     ->imageEditor()
                     ->directory('project_images'),
-               ]),
+                ]),
                Section::make()->schema([
                 Forms\Components\FileUpload::make('gallery')
                   ->multiple()
                   ->image()
                   ->imageEditor()
                   ->directory('gallery_images'),
-           ]),
-               
-               Section::make()->schema([
+               ]),
+            
+       
+            Section::make()->schema([
                 Forms\Components\DateTimePicker::make('start_date')
                    ->required(),
                 Forms\Components\DateTimePicker::make('end_date')
                    ->required(),
-           ])->columnSpan(1)->Columns(2),
+                Forms\Components\Select::make('status')
+                   ->required()
+                   ->options([
+                       'Ongoing' => 'Ongoing',
+                       'Completed' => 'Completed',
+                       'Pending' => 'Pending',
+                   ]),
 
+            ])->columnSpan(1)->Columns(3),
            Section::make()->schema([
                 Forms\Components\TextInput::make('project_amount')
                     ->required()
@@ -106,7 +107,8 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('expected_amount')
                      ->numeric(),
              ])->columnSpan(1)->Columns(2),
-           ])->columnSpan(1),
+           
+           ]),
             ])->Columns(1);
     }
 
@@ -114,7 +116,7 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
+              //  Tables\Columns\TextColumn::make('user.name'),
             //    Tables\Columns\TextColumn::make('category.name'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

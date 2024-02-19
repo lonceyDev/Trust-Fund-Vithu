@@ -43,9 +43,9 @@ class ContactResource extends Resource
                     ->required()
                     ->maxLength(65535)
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('gridCheck')
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('gridCheck')
+                //     ->required()
+                //     ->maxLength(255),
             ]);
     }
 
@@ -61,8 +61,8 @@ class ContactResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('subject')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('gridCheck')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('gridCheck')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -27,11 +27,11 @@ class EventResource extends Resource
         return $form
             ->schema([
                Section::make()->schema([
-         Group::make()->schema([
-            Forms\Components\Select::make('user_id')
-                ->relationship('user','name'),
-         ]),
-                // Group::make()->schema([
+        //  Group::make()->schema([
+        //     Forms\Components\Select::make('user_id')
+        //         ->relationship('user','name'),
+        //  ]),
+        //         // Group::make()->schema([
                 //     Section::make()->schema([
                 //     Forms\Components\CheckboxList::make('categories')
                 //         ->relationship('categories', 'name')
@@ -92,9 +92,9 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name')
-                    ->numeric()
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('user.name')
+                //     ->numeric()
+                //     ->sortable(),
                 //Tables\Columns\TextColumn::make('category.name'),
 
                 Tables\Columns\TextColumn::make('title')
