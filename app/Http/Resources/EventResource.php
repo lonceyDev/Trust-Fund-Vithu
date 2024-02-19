@@ -25,7 +25,7 @@ class EventResource extends JsonResource
             'title'=>$this->title,
             'description'=>$this->description,
             'featured_image'=> url('/').'/storage/'.$this->featured_image,
-            'gallery'=>$this->$galleries,
+            'gallery'=>$galleries,
             'events_at'=>$this->events_at,
             'status'=>$this->status
            ];

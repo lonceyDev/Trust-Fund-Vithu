@@ -71,14 +71,7 @@
                 <div class="col-lg-4">
                     <div class="left">
                         <ul class="header-flags">
-                            {{-- <li>
-                                <i class="icofont-location-pin"></i>
-                                <a href="#">6B, Helvetica street, Jordan</a>
-                            </li>
-                            <li>
-                                <i class="icofont-ui-call"></i>
-                                <a href="tel:+0123456987">+0123-456-987</a>
-                            </li> --}}
+                            
                             <li>
                                 <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" target="_blank">
                                     <img src="{{ asset('assets/front/img/flags/uk.gif') }}" alt=""> 
@@ -113,9 +106,7 @@
                 <div class="col-lg-8">
                     <div class="right">
                         <ul>
-                            {{-- <li>
-                                <span>Follow Us:</span>
-                            </li> --}}
+                           
                             <li>
                                 <a href="https://www.facebook.com/vithutrustfund" target="_blank" alt="facebook">
                                     <i class="icofont-facebook"></i>
@@ -277,45 +268,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Donations <i
-                                        class="icofont-simple-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="donations.html" class="nav-link">Donations</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="donation-details.html" class="nav-link">Donation Details</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
-                            {{-- <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Events <i
-                                        class="icofont-simple-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="events.html" class="nav-link">Events</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="event-details.html" class="nav-link">Event Details</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Blog <i
-                                        class="icofont-simple-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="blog.html" class="nav-link">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contact.html" class="nav-link">Contact</a>
-                            </li> --}}
+
                         </ul>
                         <div class="side-nav">
 
