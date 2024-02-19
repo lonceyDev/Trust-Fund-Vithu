@@ -117,48 +117,27 @@
                                 <span>Follow Us:</span>
                             </li> --}}
                             <li>
-                                <a href="https://www.facebook.com/vithutrustfund" target="_blank">
+                                <a href="https://www.facebook.com/vithutrustfund" target="_blank" alt="facebook">
                                     <i class="icofont-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/vithutrustfund" target="_blank">
+                                <a href="https://twitter.com/vithutrustfund" target="_blank" alt="twitter">
                                     <i class="icofont-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/channel/UCqWcfwkS8hLV3A5rdu22cDw/videos?disable_polymer=1" target="_blank">
+                                <a href="https://www.youtube.com/channel/UCqWcfwkS8hLV3A5rdu22cDw/videos?disable_polymer=1" target="_blank" alt=youtube>
                                     <i class="icofont-youtube-play"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/vithutrustfund/" target="_blank">
+                                <a href="https://www.instagram.com/vithutrustfund/" target="_blank" alt="instagram">
                                     <i class="icofont-instagram"></i>
                                 </a>
                             </li>
                         </ul>
-                        {{-- <div class="language">
-                            <select>
-                                <option>English</option>
-                                <option>العربيّة</option>
-                                <option>Deutsch</option>
-                                <option>Português</option>
-                            </select>
-                        </div> --}}
-                        {{-- <div class="header-search">
-                            <i id="search-btn" class="icofont-search-2"></i>
-                            <div id="search-overlay" class="block">
-                                <div class="centered">
-                                    <div id="search-box">
-                                        <i id="close-btn" class="icofont-close"></i>
-                                        <form>
-                                            <input type="text" class="form-control" placeholder="Search..." />
-                                            <button type="submit" class="btn">Search</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+                   
                     </div>
                 </div>
             </div>
@@ -183,66 +162,7 @@
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            {{-- <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle active">Home <i
-                                        class="icofont-simple-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="{{ route('home') }}" class="nav-link">Home Demo One</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-2.html" class="nav-link">Home Demo Two</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html" class="nav-link">Home Demo Three</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-4.html" class="nav-link active">Home Demo Four</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
-                            {{-- <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Pages <i
-                                        class="icofont-simple-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link dropdown-toggle">Users <i
-                                                class="icofont-simple-down"></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="sign-in.html" class="nav-link">Sign In</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="sign-up.html" class="nav-link">Sign Up</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="gallery.html" class="nav-link">Gallery</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="testimonials.html" class="nav-link">Testimonials</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="team.html" class="nav-link">Team</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="faq.html" class="nav-link">FAQ</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="404.html" class="nav-link">404 Error Page</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
+                           
                             <li class="nav-item active">
                                 <a href="{{ route('home') }}" class="nav-link">Home</a>
                             </li>
