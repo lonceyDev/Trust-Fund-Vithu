@@ -4,6 +4,7 @@ namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 
 class EditUser extends EditRecord
@@ -17,8 +18,16 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    // protected function beforeSave(): void
+    // {
+    //    Notification::make()
+    //    ->title('Account updated')
+    //    ->sendToDatabase(\auth()->user());
+    // }
+
     protected function getRedirectUrl():string
     {
         return $this->getResource()::getUrl('index');
     }
+
 }

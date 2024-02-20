@@ -19,7 +19,7 @@ class MobileAppController extends Controller
     
         if ($status === 'Completed' || $status === 'Ongoing') {
     
-            $projects = Project::paginate(10);
+            $projects = Project::where('status', $status)->paginate(10);
     
         } else {
             

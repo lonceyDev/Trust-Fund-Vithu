@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique(); 
-            $table->unsignedBigInteger('user_id');
+            
             $table->string('title'); 
             $table->longText('content'); 
             $table->string('featured_image')->nullable();
@@ -28,10 +28,7 @@ return new class extends Migration
             $table->string('external_url')->nullable(); 
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+          
         });
 
         

@@ -9,17 +9,19 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Spatie\Permission\Models\Role;
 use Filament\Forms\Components\Group;
-use Filament\Forms\Components\Section;
 
+use Illuminate\Support\Facades\Auth;
+use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 
 use Filament\Forms\Components\DateTimePicker;
 use App\Filament\Resources\ProjectResource\Pages;
-
 use App\Filament\Resources\ProjectResource\RelationManagers\CategoriesRelationManager;
 
 class ProjectResource extends Resource
@@ -32,15 +34,17 @@ class ProjectResource extends Resource
   
     public static function form(Form $form): Form
     {
+       
+        $user = Auth::user();
+
+        $user_id = $user->id;
+     
+                
         return $form
             ->schema([
-            Section::make()->schema([
-            //     Section::make()->schema([
-            //         // Forms\Components\Select::make('user_id')
-            //         //     ->relationship('user','name'),
-                       
-            //      ])->columnSpan(1)->Columns(2),
-                //  Group::make()->schema([
+                Section::make()->schema([
+                  
+               //  Group::make()->schema([
                 //     Section::make()->schema([
                 //     Forms\Components\Select::make('categories')
                 //         ->relationship('categories', 'name')
@@ -96,7 +100,6 @@ class ProjectResource extends Resource
                    ->options([
                        'Ongoing' => 'Ongoing',
                        'Completed' => 'Completed',
-                       'Pending' => 'Pending',
                    ]),
 
             ])->columnSpan(1)->Columns(3),

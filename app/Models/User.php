@@ -7,6 +7,7 @@ namespace App\Models;
 use Filament\Panel;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Filament\Notifications\Notification;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -46,18 +47,8 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function projects()
-    {
-        return $this->hasMany(Project::class);
-    }
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
-    public function posts()
-    {
-        return $this->hasMany(Post::class);
-    }
+  
+  
     public function tags()
     {
         return $this->belongsToMany(Tag::class,'tag_user');
@@ -75,4 +66,10 @@ class User extends Authenticatable implements FilamentUser
  
     return null; 
 }
+// public function toDatabase(User $notifiable): array
+// {
+//     return Notification::make()
+//         ->title('Contact details Saved successfully')
+//         ->getDatabaseMessage();
+// }
 }

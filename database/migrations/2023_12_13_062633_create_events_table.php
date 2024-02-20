@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('slug')->unique();
+           $table->string('slug')->unique();
             $table->string('title');
             $table->longText('description');
             $table->string('location');
