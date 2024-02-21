@@ -53,7 +53,7 @@
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
                                     <span>By:</span>
-                                    <a href="{{route('event-details',['slug' => $event->slug])}}">{{$event->user->name}} </a>
+                                    <a href="{{route('event-details',['slug' => $event->slug])}}">VTF</a>
                                 </li>
                             </ul>
                             <h3>

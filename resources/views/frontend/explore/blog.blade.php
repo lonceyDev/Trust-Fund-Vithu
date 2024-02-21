@@ -52,7 +52,7 @@
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
                                     <span>By:</span>
-                                    <a href="{{route('blog-details',['slug' => $blog->slug])}}">{{$blog->user->name}} </a>
+                                    <a href="{{route('blog-details',['slug' => $blog->slug])}}">VTF</a>
                                 </li>
                             </ul>
                             <h3>

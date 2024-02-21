@@ -42,7 +42,7 @@
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
-                                    By - <a href="#">{{$event->user->name}}</a>
+                                    By - <a href="#">VTF</a>
                                 </li>
                             </ul>
                             <h2>{{$event->title}}</h2>

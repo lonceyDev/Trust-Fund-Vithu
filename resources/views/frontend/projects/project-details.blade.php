@@ -43,7 +43,7 @@
                                
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
-                                    By - <a href="#">{{$project->user->name}}</a>
+                                    By - <a href="#">VTF</a>
                                 </li>
                             </ul>
                             <h2>{{$project->title}}</h2>
