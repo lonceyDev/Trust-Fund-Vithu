@@ -27,7 +27,8 @@ class ContactUs implements ShouldQueue
      */
     public function handle(): void
     {
-       $maulable=new ContactMessage($this->data);
-       Mail::to('ambhisara@gmail.com')->send($maulable);
+       $mailable=new ContactMessage($this->data);
+
+       Mail::to('ambhisara@gmail.com')->send($mailable);
     }
 }

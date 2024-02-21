@@ -54,15 +54,7 @@ class HomeController extends Controller
     {
         return view('frontend.contact-us');
     }
-    public function store(Request $request)
-    {
 
-        Contact::create($request->all());
-
-        return redirect()
-            ->route('home')
-            ->withMessage('contact has been sent successfully!!!');
-    }
     public function send_mail(Request $request)
 
 
@@ -78,7 +70,7 @@ class HomeController extends Controller
        ];
 
        Contact::create($request->all());
-       
+
       // Mail::to('ambhisara@gmail.com')->send(new ContactMessage($data));
         // dd('sent');
         $job=(new ContactUs($data));

@@ -2,11 +2,10 @@
 
 namespace App\Notifications;
 
-use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
-
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class ContactNotification extends Notification
 {
@@ -35,21 +34,11 @@ class ContactNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-       
-       
         return (new MailMessage)
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
-    public function sendMessage(Request $request)
-{
-   
-    $adminEmail = 'vithu@test.com';
-    Notification::route('mail', $adminEmail)
-                ->notify(new ContactNotification($request->all()));
-
-}
 
     /**
      * Get the array representation of the notification.

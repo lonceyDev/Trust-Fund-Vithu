@@ -28,16 +28,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //     return abort(403);
 // });
 
-// Route::get('.htaccess', function () {
-//     return abort(403);
-// });
-
-//Route::get('/', HomeController::class,'index')->name('home');
-//Route::get('/contact-us', ContactComponent::class)->name('contact');
-
-// Route::get('/blog', function () {
-//     return redirect()->route('blogs.category');
-// });
 
 Route::redirect('/login', '/admin/login', 301)->name('login');
 
@@ -74,7 +64,6 @@ Route::get('/complete/{status}', [App\Http\Controllers\HomeController::class, 's
 Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('ongoing');
 
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
-//Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
 Route::post('/contact', [App\Http\Controllers\HomeController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
@@ -87,7 +76,6 @@ Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetai
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
 
 
-// Route::get('sheet', [App\Http\Controllers\GoogleSpreadsheetController::class, 'index']);
 
 
 

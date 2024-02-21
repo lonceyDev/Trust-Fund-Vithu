@@ -10,6 +10,8 @@ use Filament\Widgets\ChartWidget;
 class ProjectAdminChart extends ChartWidget
 {
     protected static ?string $heading = 'Project Chart';
+    protected int | string | array $columnSpan=2;
+
 
     protected static ?int $sort = 3;
 

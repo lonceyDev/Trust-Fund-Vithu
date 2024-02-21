@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Request;
 use Mockery\Exception\InvalidOrderException;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class Handler extends ExceptionHandler
 {
