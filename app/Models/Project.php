@@ -33,7 +33,11 @@ class Project extends Model implements HasMedia
             ->saveSlugsTo('slug');       
     }
 
- 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+  
     public function financialReports()
     {
         return $this->hasMany(FinancialReport::class);

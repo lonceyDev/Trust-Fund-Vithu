@@ -47,8 +47,18 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-  
-  
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
     public function tags()
     {
         return $this->belongsToMany(Tag::class,'tag_user');

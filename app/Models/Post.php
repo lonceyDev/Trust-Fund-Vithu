@@ -29,6 +29,10 @@ class Post extends Model  implements HasMedia
         $this->addMediaCollection('gallary');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function categories()
     {
