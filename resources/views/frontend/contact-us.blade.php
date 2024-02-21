@@ -57,7 +57,7 @@
 
 <div class="contact-area  pt-100 pb-70">
     <div class="container">
-        <form  method="POST" action="{{route('contact.store')}}" id="contactForm1">
+        <form  method="POST" action="{{route('contact.mail')}}" id="contactForm1">
             @csrf
             <h2>GET IN TOUCH</h2>
             <p>

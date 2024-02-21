@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Jobs\ContactUs;
+use App\Mail\ContactMail;
+use App\Mail\ContactMessage;
 use App\Models\Post;
 use App\Models\Event;
+use App\Models\Contact;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
@@ -59,11 +63,35 @@ class HomeController extends Controller
             ->route('home')
             ->withMessage('contact has been sent successfully!!!');
     }
+    public function send_mail(Request $request)
+
+
+    {
+  
+        $data = [
+            'name' => $request['name'], 
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'subject' => $request['subject'],
+            'message' => $request['message'],
+           
+       ];
+
+       Contact::create($request->all());
+       
+      // Mail::to('ambhisara@gmail.com')->send(new ContactMessage($data));
+        // dd('sent');
+        $job=(new ContactUs($data));
+        dispatch($job);
+        
+        return redirect()->route('contact.create')->with('status', 'Your Mail has been received');
+    }
 
 
     public function Blog()
     {
         $blogs = Post::paginate(6);
+        
         return view('frontend.explore.blog', compact('blogs'));
     }
 
@@ -76,6 +104,7 @@ class HomeController extends Controller
             $recentBlogs = Post::where('id', '!=', $blog->id)->take(5)->get();
 
             return view('frontend.explore.blog-details', compact('blog', 'recentBlogs'));
+
         } catch (ModelNotFoundException $e) {
 
             return redirect()->route('home')->with('error', 'Blog not found');
@@ -85,6 +114,7 @@ class HomeController extends Controller
     public function Event()
     {
         $events = Event::paginate(6);
+
         return view('frontend.get-involved.event', compact('events'));
     }
 
@@ -93,9 +123,11 @@ class HomeController extends Controller
         try {
 
             $event = Event::where('slug', $slug)->firstOrFail();
+
             $recentEvents = Event::where('id', '!=', $event->id)->take(5)->get();
          
             return view('frontend.get-involved.event-details', compact('event', 'recentEvents'));
+        
         } catch (ModelNotFoundException $e) {
 
             return redirect()->route('home')->with('error', 'Event not found');
@@ -105,6 +137,7 @@ class HomeController extends Controller
     {
 
         $projects = Project::paginate(9);
+
         return view('frontend.projects.project', compact('projects'));
     }
     public function ProjectDetail($slug)
@@ -116,30 +149,40 @@ class HomeController extends Controller
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
         
             return view('frontend.projects.project-details', compact( 'project', 'recentprojects'));
+
         } catch (ModelNotFoundException $e) {
+
             return redirect()->route('home')->with('error', 'Project not found');
         }
     }
     public function showProjects($status)
     {
         if ($status == 'Completed') {
+
             $completedProjects = Project::where('status', '=', 'Completed')->paginate(6); 
+
             return view('frontend.projects.complete', ['completedProjects' => $completedProjects]);
+
         } elseif ($status == 'Ongoing') {
+
             $ongoingProjects = Project::where('status', '=', 'Ongoing')->paginate(6);
+
             return view('frontend.projects.ongoing', ['ongoingProjects' => $ongoingProjects]);
         }
     }
     public function accChart(){
+
         return view('frontend.explore.accounts');
     }
     public function pieChart(){
         return view('frontend.explore.pie');
     }
     public function barChart(){
+
         return view('frontend.explore.bar');
     }
     public function lineChart(){
+
         return view('frontend.explore.line');
     }
 

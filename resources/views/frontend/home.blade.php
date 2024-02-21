@@ -507,7 +507,7 @@
                                         <li>
                                             <i class="icofont-user-alt-3"></i>
                                             <span>By:</span>
-                                            <a href="#">{{}}</a>
+                                            <a href="#">VTF</a>
                                         </li>
                                     </ul>
                                     <h3>

@@ -74,7 +74,8 @@ Route::get('/complete/{status}', [App\Http\Controllers\HomeController::class, 's
 Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('ongoing');
 
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
-Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
+//Route::post('/contact', [App\Http\Controllers\HomeController::class, 'store'])->name('contact.store');
+Route::post('/contact', [App\Http\Controllers\HomeController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
 Route::get('/accountablity', [App\Http\Controllers\HomeController::class, 'accChart'])->name('account');

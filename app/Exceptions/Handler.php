@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
        
         $this->renderable(function (InvalidOrderException $e, Request $request) {
 
-            return response()->view('frontend.errors.404', [], 404);
+            // return response()->view('frontend.errors.404', [], 404);
 
         });
     }
@@ -38,7 +38,9 @@ class Handler extends ExceptionHandler
 public function render($request, Throwable $e)
 {
    
-    return response()->view('frontend.errors.404')->setStatusCode(Response::HTTP_NOT_FOUND);
+    return response()
+        ->view('frontend.errors.404')
+        ->setStatusCode(Response::HTTP_NOT_FOUND);
 }
     
 }
