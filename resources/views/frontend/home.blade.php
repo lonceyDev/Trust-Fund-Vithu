@@ -507,7 +507,7 @@
                                         <li>
                                             <i class="icofont-user-alt-3"></i>
                                             <span>By:</span>
-                                            <a href="#">{{ $blog->user->name }}</a>
+                                            <a href="#">{{}}</a>
                                         </li>
                                     </ul>
                                     <h3>
