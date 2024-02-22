@@ -71,8 +71,8 @@ class HomeController extends Controller
 
        Contact::create($request->all());
 
-      // Mail::to('ambhisara@gmail.com')->send(new ContactMessage($data));
-        // dd('sent');
+    //    Mail::to('8de80170bf53a4')->send(new ContactMessage($data));
+    //      dd('sent');
         $job=(new ContactUs($data));
         dispatch($job);
         

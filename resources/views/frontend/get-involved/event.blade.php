@@ -53,14 +53,14 @@
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
                                     <span>By:</span>
-                                    <a href="{{route('event-details',['slug' => $event->slug])}}">VTF</a>
+                                    <a href="{{route('event-details',$event->slug)}}">VTF</a>
                                 </li>
                             </ul>
                             <h3>
-                                <a href="{{route('event-details',['slug' => $event->slug])}}">{{$event->title}} </a>
+                                <a href="{{route('event-details',$event->slug)}}">{{$event->title}} </a>
                             </h3>
                             <p></p>
-                            <a class="blog-btn" href="{{route('event-details', ['slug' => $event->slug])}}">Read More</a>
+                            <a class="blog-btn" href="{{route('event-details',$event->slug)}}">Read More</a>
                         </div>
                     </div>
                 </div>

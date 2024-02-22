@@ -111,11 +111,11 @@
                                         </li>
                                         <li>
                                             <h4>
-                                                <a href="{{ route('project-details', ['slug' => $recentproject->slug]) }}">
+                                                <a href="{{ route('project-details',$recentproject->slug) }}">
                                                     {{ $recentproject->title }}
                                                 </a>
                                             </h4>
-                                            <p>By - <a href="{{ route('project-details', ['slug' => $recentproject->slug]) }}">{{ $recentproject->user->name }}</a></p>
+                                            <p>By - <a href="{{ route('project-details', $recentproject->slug) }}">{{ $recentproject->user->name }}</a></p>
                                         </li>
                                     </ul>
                                 </div>

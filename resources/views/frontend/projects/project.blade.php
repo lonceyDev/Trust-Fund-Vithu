@@ -57,7 +57,7 @@ a {
                     <div class="col-sm-6 col-lg-4">
                         <div class="donation-item">
                             <div class="img">
-                                <a href="{{route('project-details',['slug' => $project->slug])}}">
+                                <a href="{{route('project-details',$project->slug)}}">
                                     @if($project->featured_image)
                                         <img class="project-image" src="{{ asset('storage/'.$project->featured_image) }}" alt="project">
                                     @else
@@ -67,9 +67,9 @@ a {
                             </div>
                             <div class="inner">
                                 <div class="top">
-                                    <a class="tags text-capitalize" href="{{route('project-details',['slug'=>$project->slug])}}">{{$project->status}}</a>
+                                    <a class="tags text-capitalize" href="{{route('project-details',$project->slug)}}">{{$project->status}}</a>
                                     <h3>
-                                        <a href="{{route('project-details',['slug'=>$project->slug])}}">{{$project->title}}</a>
+                                        <a href="{{route('project-details',$project->slug)}}">{{$project->title}}</a>
                                     </h3>
                                    
                                 </div>
@@ -102,7 +102,7 @@ a {
                                     </ul>
                                     <h4>Donated by <span>60 people</span></h4>
                                     <p></p>
-                                    <a  class="common-btn" href="{{route('project-details',['slug'=>$project->slug])}}">Read More</a>
+                                    <a  class="common-btn" href="{{route('project-details',$project->slug)}}">Read More</a>
                                 </div>
                             </div>
                         </div>

@@ -242,7 +242,7 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="donation-item">
                                 <div class="img">
-                                    <a href="{{ route('project-details', ['slug' => $project->slug]) }}">
+                                    <a href="{{ route('project-details',$project->slug) }}">
                                         @if($project->featured_image) 
                                             <img src="{{ asset('storage/' . $project->featured_image) }}" alt="Blog">
                                         @else
@@ -254,10 +254,10 @@
                                 <div class="inner">
                                     <div class="top">
                                         <a class="tags text-capitalize"
-                                            href="{{ route('project-details', ['slug' => $project->slug]) }}">{{ $project->status }}</a>
+                                            href="{{ route('project-details',$project->slug) }}">{{ $project->status }}</a>
                                         <h3>
                                             <a
-                                                href="{{ route('project-details', ['slug' => $project->slug]) }}">{{ $project->title }}</a>
+                                                href="{{ route('project-details', $project->slug) }}">{{ $project->title }}</a>
                                         </h3>
                                     </div>
                                     <div class="bottom">
@@ -286,7 +286,7 @@
                                         <h4>Donated by <span>60 people</span></h4>
                                         <p></p>
                                         <a class="common-btn"
-                                            href="{{ route('project-details', ['slug' => $project->slug]) }}">Read More</a>
+                                            href="{{ route('project-details',$project->slug) }}">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -317,7 +317,7 @@
                                             class="month">{{ \Carbon\Carbon::parse($event->events_at)->format('M') }}</span>
                                     </h4>
                                     <h3>
-                                        <a href="{{ route('event-details', ['slug' => $event->slug]) }}">{{ $event->title }}
+                                        <a href="{{ route('event-details',$event->slug) }}">{{ $event->title }}
                                         </a>
                                     </h3>
                                     <ul>
@@ -344,7 +344,7 @@
                                 <span class="month">{{ \Carbon\Carbon::parse($event->events_at)->format('M') }}</span>
                             </h4>
                             <h3>
-                                <a href="{{ route('event-details', ['slug' => $event->slug]) }}">{{ $event->title }} </a>
+                                <a href="{{ route('event-details',$event->slug) }}">{{ $event->title }} </a>
 
                             </h3>
                             <ul>
@@ -493,7 +493,7 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="blog-item">
                                 <div class="top">
-                                    <a href="{{ route('blog-details', ['slug' => $blog->slug]) }}">
+                                    <a href="{{ route('blog-details',$blog->slug) }}">
                                         <img src="{{ asset('storage/' . $blog->featured_image) }}" alt="Blog">
                                     </a>
                                 </div>
@@ -511,11 +511,11 @@
                                         </li>
                                     </ul>
                                     <h3>
-                                        <a href="{{ route('blog-details', ['slug' => $blog->slug]) }}">{{ $blog->title }}
+                                        <a href="{{ route('blog-details',$blog->slug) }}">{{ $blog->title }}
                                         </a>
                                     </h3>
                                     <p></p>
-                                    <a class="blog-btn" href="{{ route('blog-details', ['slug' => $blog->slug]) }}">Read
+                                    <a class="blog-btn" href="{{ route('blog-details',$blog->slug) }}">Read
                                         More</a>
                                 </div>
                             </div>

@@ -39,7 +39,7 @@
         <div class="col-sm-6 col-lg-4">
                     <div class="blog-item">
                         <div class="top">
-                            <a href="{{route('blog-details',['slug' => $blog->slug])}}">
+                            <a href="{{route('blog-details',$blog->slug)}}">
                                 <img src="{{asset('storage/'.$blog->featured_image)}}" alt="Blog">
                             </a>
                         </div>
@@ -52,14 +52,14 @@
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
                                     <span>By:</span>
-                                    <a href="{{route('blog-details',['slug' => $blog->slug])}}">VTF</a>
+                                    <a href="{{route('blog-details',$blog->slug)}}">VTF</a>
                                 </li>
                             </ul>
                             <h3>
-                                <a href="{{route('blog-details',['slug' => $blog->slug])}}">{{$blog->title}} </a>
+                                <a href="{{route('blog-details',$blog->slug)}}">{{$blog->title}} </a>
                             </h3>
                             <p></p>
-                            <a class="blog-btn" href="{{route('blog-details', ['slug' => $blog->slug])}}">Read More</a>
+                            <a class="blog-btn" href="{{route('blog-details',$blog->slug)}}">Read More</a>
                         </div>
                     </div>
                 </div>

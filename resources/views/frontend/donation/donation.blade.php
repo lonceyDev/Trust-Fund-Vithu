@@ -13,7 +13,7 @@
                     <div class="row g-0">
                         <div class="col-md-4">
                             <a href="https://vithu.enthuse.com/Donate#!/" target="_blank"> <img
-                                    src="https://dev.vithu.org/assets/front/img/donation/enthuse.png"
+                                    src="{{asset('assets/front/img/donation/enthuse.png')}}"
                                     class="img-fluid rounded-start" alt="Enthuse">
                             </a>
                         </div>
@@ -40,7 +40,7 @@
                     <div class="row g-0">
                         <div class="col-md-4">
                             <a href="http://paypal.me/vtf2004" target="_blank"> <img
-                                    src="https://dev.vithu.org/assets/front/img/donation/paypal.png"
+                                    src="{{asset('assets/front/img/donation/paypal.png')}}"
                                     class="img-fluid rounded-start" alt="Paypal">
 
                             </a>
@@ -64,14 +64,14 @@
         <hr>
         <div class="row pt-2 flags">
             <div class="col-6 col-lg-3">
-                <img src="https://dev.vithu.org/assets/front/img/donation/uk-flag.png" class="img-thumbnail"
+                <img src="{{asset('assets/front/img/donation/uk-flag.png')}}" class="img-thumbnail"
                     alt="Enthuse" data-bs-toggle="modal" data-bs-target="#uk">
                 <div class="modal fade" id="uk" tabindex="-1" aria-labelledby="ukLabel" aria-hidden="true">
                     <div class="modal-dialog  modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="ukLabel">
-                                    <img src="https://dev.vithu.org/assets/front/img/flags/uk.gif"> UK</h5>
+                                    <img src="{{asset('assets/front/img/flags/uk.gif')}}"> UK</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -89,14 +89,14 @@
                 </div>
             </div>
                 <div class="col-6 col-lg-3">
-                    <img src="https://dev.vithu.org/assets/front/img/donation/swiss.png" class="img-thumbnail"
+                    <img src="{{asset('assets/front/img/donation/swiss.png')}}" class="img-thumbnail"
                         alt="Enthuse" data-bs-toggle="modal" data-bs-target="#swiss">
                     <div class="modal fade" id="swiss" tabindex="-1" aria-labelledby="swissLabel" aria-hidden="true">
                         <div class="modal-dialog  modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="swissLabel">
-                                        <img src="https://dev.vithu.org/assets/front/img/flags/ch.gif"> Swiss Bank</h5>
+                                        <img src="{{asset('assets/front/img/flags/ch.gif')}}"> Swiss Bank</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -115,18 +115,18 @@
                 </div>
             <div class="col-6 col-lg-3">
                <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer">
-                <img src="https://dev.vithu.org/assets/front/img/donation/german.png" class="img-thumbnail"></a>
+                <img src="{{asset('assets/front/img/donation/german.png')}}" class="img-thumbnail"></a>
 
             </div>
             <div class="col-6 col-lg-3">
-                <img src="https://dev.vithu.org/assets/front/img/donation/lk.png" class="img-thumbnail"
+                <img src="{{asset('assets/front/img/donation/lk.png')}}" class="img-thumbnail"
                     alt="Enthuse" data-bs-toggle="modal" data-bs-target="#lk">
                 <div class="modal fade" id="lk" tabindex="-1" aria-labelledby="lkLabel" aria-hidden="true">
                     <div class="modal-dialog  modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="lkLabel">
-                                    <img src="https://dev.vithu.org/assets/front/img/flags/lk.gif"> Sri Lanka</h5>
+                                    <img src="{{asset('assets/front/img/flags/lk.gif')}}"> Sri Lanka</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
