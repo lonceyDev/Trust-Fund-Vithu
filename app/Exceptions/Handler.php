@@ -28,19 +28,19 @@ class Handler extends ExceptionHandler
  public function register(): void
     {
        
-        $this->renderable(function (InvalidOrderException $e, Request $request) {
+        // $this->renderable(function (InvalidOrderException $e, Request $request) {
 
-            // return response()->view('frontend.errors.404', [], 404);
+        //     // return response()->view('frontend.errors.404', [], 404);
 
-        });
+        // });
     }
     
-public function render($request, Throwable $e)
-{
+// public function render($request, Throwable $e)
+// {
    
-    return response()
-        ->view('frontend.errors.404')
-        ->setStatusCode(Response::HTTP_NOT_FOUND);
-}
+//     // return response()
+//     //     ->view('frontend.errors.404')
+//     //     ->setStatusCode(Response::HTTP_NOT_FOUND);
+// }
     
 }

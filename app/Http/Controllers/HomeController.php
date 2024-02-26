@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\ContactUs;
-use App\Mail\ContactMail;
+
 use App\Mail\ContactMessage;
 use App\Models\Post;
 use App\Models\Event;
@@ -11,7 +11,7 @@ use App\Models\Contact;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 
 class HomeController extends Controller
@@ -89,7 +89,6 @@ class HomeController extends Controller
 
     public function BlogDetail($slug)
     {
-        try {
 
             $blog = Post::where('slug', $slug)->firstOrFail();
 
@@ -97,10 +96,6 @@ class HomeController extends Controller
 
             return view('frontend.explore.blog-details', compact('blog', 'recentBlogs'));
 
-        } catch (ModelNotFoundException $e) {
-
-            return redirect()->route('home')->with('error', 'Blog not found');
-        }
     }
 
     public function Event()
@@ -112,18 +107,13 @@ class HomeController extends Controller
 
     public function EventDetail($slug)
     {
-        try {
-
+       
             $event = Event::where('slug', $slug)->firstOrFail();
 
             $recentEvents = Event::where('id', '!=', $event->id)->take(5)->get();
          
             return view('frontend.get-involved.event-details', compact('event', 'recentEvents'));
         
-        } catch (ModelNotFoundException $e) {
-
-            return redirect()->route('home')->with('error', 'Event not found');
-        }
     }
     public function Project()
     {
@@ -134,18 +124,14 @@ class HomeController extends Controller
     }
     public function ProjectDetail($slug)
     {
-        try {
+       
             $project = Project::where('slug', $slug)->firstOrFail();
-          //  dd($projects);
+      //    dd($project);
         
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
         
             return view('frontend.projects.project-details', compact( 'project', 'recentprojects'));
 
-        } catch (ModelNotFoundException $e) {
-
-            return redirect()->route('home')->with('error', 'Project not found');
-        }
     }
     public function showProjects($status)
     {

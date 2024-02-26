@@ -115,7 +115,7 @@
                                                     {{ $recentproject->title }}
                                                 </a>
                                             </h4>
-                                            <p>By - <a href="{{ route('project-details', $recentproject->slug) }}">{{ $recentproject->user->name }}</a></p>
+                                            <p>By - <a href="{{ route('project-details', $recentproject->slug) }}">VTF</a></p>
                                         </li>
                                     </ul>
                                 </div>
