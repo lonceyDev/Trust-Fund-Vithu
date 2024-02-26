@@ -1,36 +1,35 @@
 @extends('layouts.front.index_blade')
-@push('custom-style')
+    @push('custom-style')
+        <style>
 
- <style>
+                a {
+                    color: rgb(58, 55, 55);
+                    text-decoration: none;
+                }
 
-a {
-    color: rgb(58, 55, 55);
-    text-decoration: none;
-}
+                a:hover {
+                    color: darkcyan;
+                }
+                table {
+                            border-collapse: collapse;
+                            width: 100%;
+                            margin-top: 20px;
+                        }
 
-a:hover {
-    color: darkcyan;
-}
-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
+                th, td {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: left;
+                        }
 
-th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
+                th {
+                            background-color: #f2f2f2;
+                        }
 
-th {
-            background-color: #f2f2f2;
-        }
-
-</style>
+        </style>
+     @endpush
 
 
-@endpush
 @section('content')
     <div class="page-title-area title-bg-one">
         <div class="d-table">
@@ -57,7 +56,7 @@ th {
         <div class="container">
           
             <section>
-                <div class="container-fluid" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
+                {{-- <div class="container-fluid" style="width: 1000px; height: 500px; margin: auto; text-align: center;"> --}}
                     <h2 style="text-align: center;">Financial Information</h2>
                     <div style="width: 100%; display: flex; justify-content: space-around;">
                         <div style="text-align: center;">
@@ -71,8 +70,8 @@ th {
                     </div>
                 </div>
             </section>
-            
-    <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
+     
+    {{-- <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;"> --}}
         <div class="col-lg-12">
             <h1>Charity Records</h1>
 
@@ -121,13 +120,12 @@ th {
            <p></p>
         </div>
     </div>
-@endsection
 
 @push('custom-script')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  var ctx = document.getElementById('pieChart1').getContext('2d');
-  var myChart = new Chart(ctx, {
+var ctx = document.getElementById('pieChart1').getContext('2d');
+var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: ['Foundation and Grants', 'Individual Conributions', 'Others'],
@@ -142,7 +140,7 @@ th {
                 'rgba(153, 102, 255, 0.7)',
             ],
             borderColor: [
-               
+            
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(255, 99, 132, 1)',
@@ -154,7 +152,7 @@ th {
     },
 });
 var ctx = document.getElementById('pieChart2').getContext('2d');
-  var myChart = new Chart(ctx, {
+var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: ['Events','Administration','Fundraising'],
@@ -166,7 +164,7 @@ var ctx = document.getElementById('pieChart2').getContext('2d');
                 'rgba(153, 102, 255, 0.7)',
                 'rgba(54, 162, 235, 0.7)',
                 'rgba(255, 206, 86, 0.7)',
-               
+            
                 
             ],
             borderColor: [
@@ -183,4 +181,4 @@ var ctx = document.getElementById('pieChart2').getContext('2d');
 
 </script>
 @endpush
-
+@endsection

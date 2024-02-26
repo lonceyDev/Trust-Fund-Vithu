@@ -55,24 +55,24 @@ Route::view('/donation', 'frontend.donation.donation')->name('donation');
 
 
 
-Route::get('/event',[App\Http\Controllers\HomeController::class,'Event'])->name('event');
-Route::get('/event/{slug}',[App\Http\Controllers\HomeController::class,'EventDetail'])->name('event-details');
+Route::get('/event',[App\Http\Controllers\EventController::class,'Event'])->name('event');
+Route::get('/event/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
 
-Route::get('/project', [App\Http\Controllers\HomeController::class, 'Project'])->name('project');
-Route::get('/project/{slug}', [App\Http\Controllers\HomeController::class, 'ProjectDetail'])->name('project-details');
-Route::get('/complete/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('complete');
-Route::get('/ongoing/{status}', [App\Http\Controllers\HomeController::class, 'showProjects'])->name('ongoing');
+Route::get('/project', [App\Http\Controllers\ProjectController::class, 'Project'])->name('project');
+Route::get('/project/{slug}', [App\Http\Controllers\ProjectController::class, 'ProjectDetail'])->name('project-details');
+Route::get('/complete/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('complete');
+Route::get('/ongoing/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('ongoing');
 
-Route::get('/contact', [App\Http\Controllers\HomeController::class, 'create'])->name('contact.create');
-Route::post('/contact', [App\Http\Controllers\HomeController::class, 'send_mail'])->name('contact.mail');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
-Route::get('/accountablity', [App\Http\Controllers\HomeController::class, 'accChart'])->name('account');
-Route::get('/pie', [App\Http\Controllers\HomeController::class, 'pieChart'])->name('account.pie');
-Route::get('/bar', [App\Http\Controllers\HomeController::class, 'barChart'])->name('account.bar');
-Route::get('/line', [App\Http\Controllers\HomeController::class, 'lineChart'])->name('account.line');
-Route::get('/blog',[App\Http\Controllers\HomeController::class,'Blog'])->name('blog');
-Route::get('/blog/{slug}',[App\Http\Controllers\HomeController::class,'BlogDetail'])->name('blog-details');
+Route::get('/accountablity', [App\Http\Controllers\AccountController::class, 'accChart'])->name('account');
+Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('account.pie');
+Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('account.bar');
+Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('account.line');
+Route::get('/blog',[App\Http\Controllers\AccountController::class,'Blog'])->name('blog');
+Route::get('/blog/{slug}',[App\Http\Controllers\AccountController::class,'BlogDetail'])->name('blog-details');
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
 
 
