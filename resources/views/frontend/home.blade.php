@@ -1,55 +1,56 @@
 @extends('layouts.front.index_blade')
-    @push('custom-style')
-        <style>
-            .owl-carousel .owl-item img {
-                min-height: 180px;
+
+@push('custom-style')
+    <style>
+        .owl-carousel .owl-item img {
+            min-height: 180px;
+        }
+
+        .common-btn:hover {
+            color: rgb(2, 71, 127);;
+            background-color:#ffffff;
+            -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+        }
+
+        .common-btn {
+            color: #ffffff;
+            background-color: rgb(2, 71, 127);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        a {
+            -webkit-transition: 0.5s all ease;
+            transition: 0.5s all ease;
+            text-decoration: none;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
             }
 
-            .common-btn:hover {
-                color: rgb(2, 71, 127);;
-                background-color:#ffffff;
-                -webkit-transform: translate(0, -5px);
-                transform: translate(0, -5px);
+            25%,
+            75% {
+                transform: translateX(-5px);
             }
 
-            .common-btn {
-                color: #ffffff;
-                background-color: rgb(2, 71, 127);
-                display: inline-block;
-                padding: 12px 25px;
-                border-radius: 30px;
-                font-weight: 600;
+            50% {
+                transform: translateX(5px);
             }
+        }
 
-            a {
-                -webkit-transition: 0.5s all ease;
-                transition: 0.5s all ease;
-                text-decoration: none;
-            }
-
-            @keyframes shake {
-
-                0%,
-                100% {
-                    transform: translateX(0);
-                }
-
-                25%,
-                75% {
-                    transform: translateX(-5px);
-                }
-
-                50% {
-                    transform: translateX(5px);
-                }
-            }
-
-            .shake-text {
-                display: inline-block;
-                animation: shake 0.5s infinite;
-            }
-        </style>
-    @endpush
+        .shake-text {
+            display: inline-block;
+            animation: shake 0.5s infinite;
+        }
+    </style>
+@endpush
 @section('content')
    
     <main>
@@ -69,8 +70,8 @@
                             <p>It is a long established fact that a reader will be page distracted by the readable content
                                 of a pain</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="{{ route('donations') }}">Get Start A Fundraising</a>
-                                <a class="common-btn" href="{{ route('donations') }}">Donate Now</a>
+                                <a class="common-btn banner-btn" href="{{ route('donation') }}">Get Start A Fundraising</a>
+                                <a class="common-btn" href="{{ route('donation') }}">Donate Now</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +120,7 @@
                                 </li>
                             </ul>
                             <div class="about-btn-area">
-                                <a class="common-btn about-btn" href="{{ route('donations') }}">Get Start A Fundraising</a>
+                                <a class="common-btn about-btn" href="{{ route('donation') }}">Get Start A Fundraising</a>
                                 <a class="common-btn" href="{{ route('about.about-us') }}">Read More</a>
                             </div>
                         </div>
@@ -157,22 +158,22 @@
                         <div class="feature-item two">
                             <i class="flaticon-donation"></i>
                             <h3>
-                                <a href="{{ route('donations') }}">Donate now</a>
+                                <a href="{{ route('donation') }}">Donate now</a>
                             </h3>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                                 not simply.</p>
-                            <a class="feature-btn" href="{{ route('donations') }}">Join Now</a>
+                            <a class="feature-btn" href="{{ route('donation') }}">Join Now</a>
                         </div>
                     </div>
                     <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
                         <div class="feature-item three">
                             <i class="flaticon-love"></i>
                             <h3>
-                                <a href="{{ route('contacts.create') }}">Show your love</a>
+                                <a href="{{ route('contact.create') }}">Show your love</a>
                             </h3>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
                                 not simply.</p>
-                            <a class="feature-btn" href="{{ route('contacts.create') }}">Join Now</a>
+                            <a class="feature-btn" href="{{ route('contact.create') }}">Join Now</a>
                         </div>
                     </div>
                 </div>
