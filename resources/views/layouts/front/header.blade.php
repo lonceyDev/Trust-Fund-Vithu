@@ -185,18 +185,17 @@
                             </li>
 
                            <li class="nav-item">
-                                <a href="{{ route('project') }}" class="nav-link dropdown-toggle ">Our Work <i
+                                <a href="{{ route('projects') }}" class="nav-link dropdown-toggle ">Our Work <i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{ route('project') }}" class="nav-link">All Projects</a>
+                                        <a href="{{ route('projects') }}" class="nav-link">All Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'Ongoing']) }}">Ongoing</a>
-
+                                        <a class="tags text-capitalize" href="{{ route('projects', ['status' => 'Ongoing']) }}">Ongoing</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="tags text-capitalize" href="{{ route('complete', ['status' => 'Completed']) }}">Completed</a>
+                                        <a class="tags text-capitalize" href="{{ route('projects', ['status' => 'Completed']) }}">Completed</a>
 
                                     </li>
 
@@ -226,11 +225,11 @@
 
 
                             <li class="nav-item">
-                                <a href="{{route('event')}}" class="nav-link dropdown-toggle ">Get Involved<i
+                                <a href="{{route('events')}}" class="nav-link dropdown-toggle ">Get Involved<i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('event')}}" class="nav-link">Events</a>
+                                        <a href="{{route('events')}}" class="nav-link">Events</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('volunteering') }}" class="nav-link">Volunteering</a>
@@ -249,14 +248,14 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{route('blog')}}" class="nav-link dropdown-toggle ">Explore<i
+                                <a href="{{route('blogs')}}" class="nav-link dropdown-toggle ">Explore<i
                                         class="icofont-simple-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('blog')}}" class="nav-link">Blog</a>
+                                        <a href="{{route('blogs')}}" class="nav-link">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('account')}}" class="nav-link">Accounts</a>
+                                        <a href="{{route('accounts')}}" class="nav-link">Accounts</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{route('our-parners')}}" class="nav-link">Our Partners</a>
@@ -266,13 +265,13 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
+                                <a href="{{ route('contacts.create') }}" class="nav-link">Contact Us</a>
                             </li>
 
                         </ul>
                         <div class="side-nav">
 
-                            <a class="donate-btn" href="{{ route('donation') }}">
+                            <a class="donate-btn" href="{{ route('donations') }}">
                                <span>Donate</span>
                                 <i class="icofont-heart-alt"></i>
                             </a>

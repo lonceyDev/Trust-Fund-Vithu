@@ -67,19 +67,19 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('project') }}">
+                                <a href="{{ route('projects') }}">
                                     <i class="icofont-simple-right"></i>
                                     Projects
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('contact.create') }}">
+                                <a href="{{ route('contacts.create') }}">
                                     <i class="icofont-simple-right"></i>
                                     Contact Us
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('donation') }}">
+                                <a href="{{ route('donations') }}">
                                     <i class="icofont-simple-right"></i>
                                     Donate Now
                                 </a>
@@ -136,7 +136,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('donation') }}">
+                                <a href="{{ route('donations') }}">
                                     <i class="icofont-simple-right"></i>
                                     Donate Now
                                 </a>

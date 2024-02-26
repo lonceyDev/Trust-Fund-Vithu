@@ -1,32 +1,32 @@
 @extends('layouts.front.index_blade')
-@push('custom-style')
-<style>
-    .owl-carousel .owl-item img {
-        min-height: 180px;
-    }
-.common-btn:hover {
-    color: #064674;
-    background-color:rgb(252, 252, 252);
-    -webkit-transform: translate(0, -5px);
-    transform: translate(0, -5px);
-}
+    @push('custom-style')
+    <style>
+        .owl-carousel .owl-item img {
+            min-height: 180px;
+        }
+        .common-btn:hover {
+            color: #064674;
+            background-color:rgb(252, 252, 252);
+            -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+        }
 
-.common-btn {
-    color: #ffffff;
-    background-color: rgb(2, 71, 127);
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-}
-a {
-    -webkit-transition: 0.5s all ease;
-    transition: 0.5s all ease;
-    text-decoration: none;
-}
+        .common-btn {
+            color: #ffffff;
+            background-color: rgb(2, 71, 127);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        a {
+            -webkit-transition: 0.5s all ease;
+            transition: 0.5s all ease;
+            text-decoration: none;
+        }
 
-</style>
-@endpush 
+    </style>
+    @endpush 
 @section('content')
 <main>
     <div class="page-title-area title-bg-two">
@@ -52,6 +52,11 @@ a {
 
     <section class="donations-area ptb-100">
         <div class="container">
+            {{-- <div class="filter-options mb-4">
+                <a href="{{ route('projects') }}">All Projects</a>
+                <a href="{{ route('projects', ['status' => 'Completed']) }}">Completed Projects</a>
+                <a href="{{ route('projects', ['status' => 'Ongoing']) }}">Ongoing Projects</a>
+            </div> --}}
             <div class="row">
                 @foreach ($projects as $project)
                     <div class="col-sm-6 col-lg-4">
@@ -67,9 +72,9 @@ a {
                             </div>
                             <div class="inner">
                                 <div class="top">
-                                    <a class="tags text-capitalize" href="{{route('project-details',$project->slug)}}">{{$project->status}}</a>
+                                    <a class="tags text-capitalize" href="{{route('project-details', $project->slug)}}">{{$project->status}}</a>
                                     <h3>
-                                        <a href="{{route('project-details',$project->slug)}}">{{$project->title}}</a>
+                                        <a href="{{route('project-details', $project->slug)}}">{{$project->title}}</a>
                                     </h3>
                                    
                                 </div>
@@ -82,7 +87,7 @@ a {
                                         <li>
                                             <i class="icofont-user-alt-3"></i>
                                             <span>By:</span>
-                                            <a href="#">{{$project->user->name}} </a>
+                                            <a href="#">VTF</a>
                                         </li>
                                     </ul> --}}
                                     <div class="skill">

@@ -90,7 +90,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">Over 20M+ people around the world is having good life because of
+                            <a href="{{route('donations')}}">Over 20M+ people around the world is having good life because of
                                 Findo</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
@@ -101,7 +101,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">We are supporting the poor and homeless people by providing
+                            <a href="{{route('donations')}}">We are supporting the poor and homeless people by providing
                                 food</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
@@ -112,7 +112,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">First time a non- profitable organization is fighting against the
+                            <a href="{{route('donations')}}">First time a non- profitable organization is fighting against the
                                 poverty</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
@@ -123,7 +123,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">Over 1200+ volunteer working for Findo around the world</a>
+                            <a href="{{route('donations')}}">Over 1200+ volunteer working for Findo around the world</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
                         <h4><span>*Volunteer</span>in every Country</h4>
@@ -133,7 +133,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">Hands move to support in Yemen combat covid-19 by donating face
+                            <a href="{{route('donations')}}">Hands move to support in Yemen combat covid-19 by donating face
                                 masks</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>
@@ -144,7 +144,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="dream-item">
                         <h3>
-                            <a href="{{route('donation')}}">This project seeks to build houses for reduce their suffering allow
+                            <a href="{{route('donations')}}">This project seeks to build houses for reduce their suffering allow
                                 them to live</a>
                         </h3>
                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots.</p>

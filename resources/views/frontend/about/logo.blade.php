@@ -24,10 +24,11 @@
     <div class="pt-100">
         <div class="container">
             <div class="row align-items-center">
-                <p>Our logo is symbolized to depict to show what we believe in and what we Vithu Trusts stand for;
-                    we have searched long and heard to bring the six elements with an underlying meaning from across
-                    different cultures to display our purpose and diversity. The logo is also a continuous reminder
-                    to us not lose focus of our mission.
+                <p>
+                    Our logo serves as a symbol of our values and what Vithu Trusts stand for.
+                     We have looked far and wide to find the six components that each have a deeper 
+                     cultural significance in order to represent our diversity and mission. Additionally, 
+                     the logo serves as a constant reminder for us to stay focused on our goal.
                 </p>
             </div>
 

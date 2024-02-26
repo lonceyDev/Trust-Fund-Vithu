@@ -172,35 +172,35 @@
     
             <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
                 <div style="flex: 1; text-align: center;">
-                    <a href="{{route('account.bar')}}">
+                    <a href="{{route('accounts.bar')}}">
                         <div id="columnchart_material" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
                     </a>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.bar')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.bar')}}" class="btn btn-secondary">More details</a>
                     </div>
                 </div>
 
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
-                    <a href="{{route('account.pie')}}">
+                    <a href="{{route('accounts.pie')}}">
                         <div style="text-align: center;">
                            <div id="pieChart" style="width: 400px; height: 200px;"></div>
                         </div>
                     </a>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.pie')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.pie')}}" class="btn btn-secondary">More details</a>
                     </div>
                 </div>
     
                 <div style="flex: 1; text-align: center;">
-                    <a href="{{route('account.line')}}">
+                    <a href="{{route('accounts.line')}}">
                         <div id="curve_chart" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
                     </a>
                     <p></p>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.line')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.line')}}" class="btn btn-secondary">More details</a>
                     </div>
                     <p></p>
                 </div>
