@@ -173,7 +173,7 @@
             <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
                 <div style="flex: 1; text-align: center;">
                     <a href="{{route('account.bar')}}">
-                        <div id="columnchart_material" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
+                        <div id="curve_chart" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
                     </a>
                     <div>
                         <p>Explore more details about our charity:</p>
@@ -184,7 +184,7 @@
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
                     <a href="{{route('account.pie')}}">
                         <div style="text-align: center;">
-                           <div id="pieChart" style="width: 400px; height: 200px;"></div>
+                           <div id="columnchart_material" style="width: 400px; height: 200px;"></div>
                         </div>
                     </a>
                     <div>
@@ -195,7 +195,7 @@
     
                 <div style="flex: 1; text-align: center;">
                     <a href="{{route('account.line')}}">
-                        <div id="curve_chart" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
+                        <div id="columnchart_material2" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
                     </a>
                     <p></p>
                     <div>
@@ -214,9 +214,9 @@
 @endsection
 
 @push('custom-script')
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
 
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -278,9 +278,52 @@
   
           chart.draw(data, options);
         }
-</script>
+</script> --}}
 
-<script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Year', 'Inflow', 'Outflow'],
+      ['2004',  1000,      400],
+      ['2005',  1170,      460],
+      ['2006',  660,       1120],
+      ['2007',  1030,      540],
+      ['2008',  1000,      400],
+      ['2009',  1170,      460],
+      ['2010',  660,       1120],
+      ['2011',  1030,      540],
+      ['2012',  1000,      400],
+      ['2013',  1170,      460],
+      ['2014',  660,       1120],
+      ['2015',  1030,      540],
+      ['2016',  1000,      400],
+      ['2017',  1170,      460],
+      ['2018',  660,       1120],
+      ['2019',  1030,      540],
+      ['2020',  1000,      400],
+      ['2021',  1170,      460],
+      ['2022',  660,       1120],
+      ['2023',  1030,      540],
+      ['2024',  1030,      540]
+
+    ]);
+
+    var options = {
+      title: 'Non-Profit Organization Cash Flow Statement',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+  }
+</script>
+{{-- <script>
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -299,8 +342,85 @@
         var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
         chart.draw(data, options);
     }
-</script>
+</script> --}}
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Income', 'Expenses'],
+        ['2004', 102, 400],
+        ['2005', 1170, 460],
+        ['2006', 660, 1120],
+        ['2007', 1030, 540],
+        ['2008', 1000, 400],
+        ['2009', 1170, 460],
+        ['2010', 660, 1120],
+        ['2020', 1030, 540],
+        ['2021', 1000, 400],
+        ['2022', 1170, 460],
+        ['2023', 660, 1120],
+        ['2024', 1030, 540],
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Income and Expenses Report',
+          subtitle: '2004-2024',
+        }
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['Year', 'Donation'],
+          ['2004',  1000],
+          ['2005',  1170],
+          ['2006',  660],
+          ['2007',  1030],
+          ['2008',  1000],
+          ['2009',  1170],
+          ['2010',  660],
+          ['2011',  1030],
+          ['2012',  1000],
+          ['2013',  1170],
+          ['2014',  1000],
+          ['2015',  1170],
+          ['2016',  660],
+          ['2017',  1030],
+          ['2018',  1000],
+          ['2019',  1170],
+          ['2020',  660],
+          ['2021',  1030],
+          ['2022',  1000],
+          ['2023',  1170]
+      
+      ]);
+      
+
+
+      var options = {
+        chart: {
+          title: 'Company Performance',
+          subtitle: 'Sales, Expenses, and Profit: 2004-2023',
+        }
+      };
+      
+
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material2'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
 
 @endpush
 @push('custom-style')

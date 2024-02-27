@@ -76,8 +76,3 @@ Route::get('/blog',[App\Http\Controllers\BlogController::class,'Blog'])->name('b
 Route::get('/blog/{slug}',[App\Http\Controllers\BlogController::class,'BlogDetail'])->name('blog-details');
 
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
-
-
-
-
-

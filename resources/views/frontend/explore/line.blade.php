@@ -61,7 +61,7 @@
 
         var options = {
           chart: {
-            title: 'Company Performance',
+            title: 'Non-Profit Organization Donation Details',
             subtitle: 'Sales, Expenses, and Profit: 2004-2023',
           }
         };
