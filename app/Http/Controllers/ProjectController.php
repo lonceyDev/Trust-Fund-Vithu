@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function Project()
+    public function project()
     {
 
         $projects = Project::paginate(9);
 
         return view('frontend.projects.project', compact('projects'));
     }
-    public function ProjectDetail($slug)
+    public function projectDetail($slug)
     {
        
             $project = Project::where('slug', $slug)->firstOrFail();

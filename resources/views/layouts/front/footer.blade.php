@@ -67,7 +67,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('project') }}">
+                                <a href="{{ route('projects') }}">
                                     <i class="icofont-simple-right"></i>
                                     Projects
                                 </a>
