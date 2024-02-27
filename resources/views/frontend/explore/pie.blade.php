@@ -27,9 +27,7 @@
                         }
 
         </style>
-     @endpush
-
-
+    @endpush
 @section('content')
     <div class="page-title-area title-bg-one">
         <div class="d-table">
@@ -54,10 +52,9 @@
     </div>
     <div class="about-area pt-100 pb-70">
         <div class="container">
-          
-            <section>
-                {{-- <div class="container-fluid" style="width: 1000px; height: 500px; margin: auto; text-align: center;"> --}}
-                    <h2 style="text-align: center;">Financial Information</h2>
+          <section>
+                <div class="container-fluid" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
+                       <h2 style="text-align: center;">Financial Information</h2>
                     <div style="width: 100%; display: flex; justify-content: space-around;">
                         <div style="text-align: center;">
                             <h4>Income</h4>
@@ -71,56 +68,57 @@
                 </div>
             </section>
      
-    {{-- <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;"> --}}
-        <div class="col-lg-12">
-            <h1>Charity Records</h1>
+        <div class="row" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
+            <div class="col-lg-12">
+                <h1>Charity Records</h1>
 
-            <table>
-                <tr>
-                    <th>Income / Expenditure</th>
-                    <th>30/06/2018</th>
-                    <th>30/06/2019</th>
-                    <th>30/06/2020</th>
-                    <th>30/06/2021</th>
-                    <th>30/06/2022</th>
-               </tr>
-                <tr>
-                    <td>Total gross income</td>
-                    <td>£26.94k</td>
-                    <td>£39.20k</td>
-                    <td>£19.87k</td>
-                    <td>£24.11k</td>
-                    <td>£15.81k </td>
+                <table>
+                    <tr>
+                        <th>Income / Expenditure</th>
+                        <th>30/06/2018</th>
+                        <th>30/06/2019</th>
+                        <th>30/06/2020</th>
+                        <th>30/06/2021</th>
+                        <th>30/06/2022</th>
                 </tr>
-                <tr>
-                    <td>Total expenditure</td>
-                    <td>£27.96k</td>
-                    <td>£34.39k</td>
-                    <td>£18.17k</td>
-                    <td>£26.28k</td>
-                    <td>£10.24k </td>
-                </tr>
-                <tr>
-                    <td>Income from government contracts</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <td>Income from government grants</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                </tr>
-            </table>
-           <p></p>
+                    <tr>
+                        <td>Total gross income</td>
+                        <td>£26.94k</td>
+                        <td>£39.20k</td>
+                        <td>£19.87k</td>
+                        <td>£24.11k</td>
+                        <td>£15.81k </td>
+                    </tr>
+                    <tr>
+                        <td>Total expenditure</td>
+                        <td>£27.96k</td>
+                        <td>£34.39k</td>
+                        <td>£18.17k</td>
+                        <td>£26.28k</td>
+                        <td>£10.24k </td>
+                    </tr>
+                    <tr>
+                        <td>Income from government contracts</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Income from government grants</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                </table>
+            <p></p>
+            </div>
         </div>
     </div>
-
+</div>
 @push('custom-script')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
