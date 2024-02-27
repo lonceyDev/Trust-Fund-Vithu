@@ -56,14 +56,18 @@
                 <div class="container-fluid" style="width: 1000px; height: 500px; margin: auto; text-align: center;">
                        <h2 style="text-align: center;">Financial Information</h2>
                     <div style="width: 100%; display: flex; justify-content: space-around;">
+                      
                         <div style="text-align: center;">
-                            <h4>Income</h4>
-                            <canvas id="pieChart1"></canvas>
+                            {{-- <h4>Income</h4> --}}
+                            {{-- <canvas id="pieChart1"></canvas> --}}
+                            {{-- <div id="piechart1" style="width: 500px; height: 400px;"></div> --}}
+                            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
                         </div>
-                        <div style="text-align: center;">
-                            <h4>Expenses</h4>
-                            <canvas id="pieChart2"></canvas>
-                        </div>
+                         {{-- <div style="text-align: center;"> --}}
+                            {{-- <h4>Expenses</h4>
+                            <div id="piechart2" style="width: 500px; height: 400px;"></div> --}}
+                            {{-- <canvas id="pieChart2"></canvas> --}}
+                        {{-- </div>  --}}
                     </div>
                 </div>
             </section>
@@ -120,63 +124,100 @@
     </div>
 </div>
 @push('custom-script')
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-var ctx = document.getElementById('pieChart1').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Foundation and Grants', 'Individual Conributions', 'Others'],
-        datasets: [{
-            data: [55,30,15],
-            backgroundColor: [
-                
-                'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(75, 192, 192, 0.7)',
-                'rgba(153, 102, 255, 0.7)',
-            ],
-            borderColor: [
-            
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-            ],
-            borderWidth: 1
-        }],
-    },
-});
-var ctx = document.getElementById('pieChart2').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Events','Administration','Fundraising'],
-        datasets: [{
-            data: [35, 45,20 ],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(90, 192, 192, 0.7)',
-                'rgba(153, 102, 255, 0.7)',
-                'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-            
-                
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-            ],
-            borderWidth: 1
-        }],
-    },
-});
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+            var ctx = document.getElementById('pieChart1').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Foundation and Grants', 'Individual Conributions', 'Others'],
+                    datasets: [{
+                        data: [55,30,15],
+                        backgroundColor: [
+                            
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                        ],
+                        borderColor: [
+                        
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }],
+                },
+            });
+            var ctx = document.getElementById('pieChart2').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Events','Administration','Fundraising'],
+                    datasets: [{
+                        data: [35, 45,20 ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(90, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                        
+                            
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }],
+                },
+            });
 
-</script>
+    </script> --}}
+    {{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
+
+ 
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {'packages':['bar']});
+     google.charts.setOnLoadCallback(drawChart);
+
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ['Year', 'Income', 'Expenses'],
+         ['2004', 102, 400],
+         ['2005', 1170, 460],
+         ['2006', 660, 1120],
+         ['2007', 1030, 540],
+         ['2008', 1000, 400],
+         ['2009', 1170, 460],
+         ['2010', 660, 1120],
+         ['2020', 1030, 540],
+         ['2021', 1000, 400],
+         ['2022', 1170, 460],
+         ['2023', 660, 1120],
+         ['2024', 1030, 540],
+       ]);
+
+       var options = {
+         chart: {
+           title: 'Income and Expenses Report',
+           subtitle: '2004-2024',
+         }
+       };
+
+       var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+       chart.draw(data, google.charts.Bar.convertOptions(options));
+     }
+   </script>
 @endpush
 @endsection

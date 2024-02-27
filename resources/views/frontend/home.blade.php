@@ -1,55 +1,54 @@
 @extends('layouts.front.index_blade')
-
-@push('custom-style')
-    <style>
-        .owl-carousel .owl-item img {
-            min-height: 180px;
-        }
-
-        .common-btn:hover {
-            color: rgb(2, 71, 127);;
-            background-color:#ffffff;
-            -webkit-transform: translate(0, -5px);
-            transform: translate(0, -5px);
-        }
-
-        .common-btn {
-            color: #ffffff;
-            background-color: rgb(2, 71, 127);
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-        }
-
-        a {
-            -webkit-transition: 0.5s all ease;
-            transition: 0.5s all ease;
-            text-decoration: none;
-        }
-
-        @keyframes shake {
-
-            0%,
-            100% {
-                transform: translateX(0);
+    @push('custom-style')
+        <style>
+            .owl-carousel .owl-item img {
+                min-height: 180px;
             }
 
-            25%,
-            75% {
-                transform: translateX(-5px);
+            .common-btn:hover {
+                color: rgb(2, 71, 127);;
+                background-color:#ffffff;
+                -webkit-transform: translate(0, -5px);
+                transform: translate(0, -5px);
             }
 
-            50% {
-                transform: translateX(5px);
+            .common-btn {
+                color: #ffffff;
+                background-color: rgb(2, 71, 127);
+                display: inline-block;
+                padding: 12px 25px;
+                border-radius: 30px;
+                font-weight: 600;
             }
-        }
 
-        .shake-text {
-            display: inline-block;
-            animation: shake 0.5s infinite;
-        }
-    </style>
+            a {
+                -webkit-transition: 0.5s all ease;
+                transition: 0.5s all ease;
+                text-decoration: none;
+            }
+
+            @keyframes shake {
+
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+
+                25%,
+                75% {
+                    transform: translateX(-5px);
+                }
+
+                50% {
+                    transform: translateX(5px);
+                }
+            }
+
+            .shake-text {
+                display: inline-block;
+                animation: shake 0.5s infinite;
+            }
+        </style>
 @endpush
 @section('content')
    
