@@ -71,8 +71,10 @@ Route::get('/accountablity', [App\Http\Controllers\AccountController::class, 'ac
 Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('account.pie');
 Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('account.bar');
 Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('account.line');
-Route::get('/blog',[App\Http\Controllers\AccountController::class,'Blog'])->name('blog');
-Route::get('/blog/{slug}',[App\Http\Controllers\AccountController::class,'BlogDetail'])->name('blog-details');
+
+Route::get('/blog',[App\Http\Controllers\BlogController::class,'Blog'])->name('blog');
+Route::get('/blog/{slug}',[App\Http\Controllers\BlogController::class,'BlogDetail'])->name('blog-details');
+
 Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
 
 
