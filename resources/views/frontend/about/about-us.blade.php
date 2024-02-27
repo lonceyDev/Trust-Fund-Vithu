@@ -164,11 +164,11 @@
                     <div class="benefit-img">
                         <img src="{{ asset('assets/front//img/benefit-main1.jpg') }}" alt="Benefit">
                         <img src="{{ asset('assets/front//img/benefit-shape1.png') }}" alt="Benefit">
-                        <div class="video-wrap">
+                        {{-- <div class="video-wrap">
                             <button class="js-modal-btn">
                                 <i class="icofont-ui-play"></i>
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-6">

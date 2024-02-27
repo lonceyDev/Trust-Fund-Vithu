@@ -127,11 +127,11 @@
                     <div class="col-lg-6">
                         <div class="about-img">
                             <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
-                            <div class="video-wrap">
+                            {{-- <div class="video-wrap">
                                 <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
