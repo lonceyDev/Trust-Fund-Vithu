@@ -1,12 +1,12 @@
 @extends('layouts.front.index_blade')
-@push('custom-style')
-<style>
-    .owl-carousel .owl-item img {
-        min-height: 180px;
-    }
+    @push('custom-style')
+        <style>
+            .owl-carousel .owl-item img {
+                min-height: 180px;
+            }
 
-</style>
-@endpush 
+        </style>
+    @endpush 
 @section('content')
 <main>
     <div class="page-title-area title-bg-six">
@@ -36,7 +36,7 @@
         <div class="col-sm-6 col-lg-4">
                     <div class="blog-item">
                         <div class="top">
-                            <a href="{{route('event-details',['slug' => $event->slug])}}">
+                            <a href="{{route('event-details', $event->slug)}}">
                                 @if($event->featured_image)
                                     <img class="event-image" src="{{ asset('storage/'.$event->featured_image) }}" alt="Blog">
                                 @else

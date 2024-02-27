@@ -115,7 +115,7 @@
                                                     {{ $recentEvent->title }}
                                                 </a>
                                             </h4>
-                                            <p>By - <a href="{{ route('event-details', ['slug' => $recentEvent->slug]) }}">{{ $recentEvent->user->name }}</a></p>
+                                            <p>By - <a href="{{ route('event-details', ['slug' => $recentEvent->slug]) }}">vtf</a></p>
                                         </li>
                                     </ul>
                                 </div>

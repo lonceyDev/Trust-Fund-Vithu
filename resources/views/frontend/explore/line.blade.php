@@ -26,47 +26,60 @@
    </style>
 @endpush
 @push('custom-script')
-    
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-  
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-            ['Year', 'Donation', 'program impact'],
-            ['2014',  1000,      400],
-            ['2015',  1170,      460],
-            ['2016',  660,       1120],
-            ['2017',  1030,      540],
-            ['2018',  1000,      400],
-            ['2019',  1170,      460],
-            ['2020',  660,       1120],
-            ['2021',  1030,      540],
-            ['2022',  1000,      400],
-            ['2023',  1170,      460],
-            ['2024',  660,       1120],
-            ['2025',  1030,      540]
-          ]);
-  
-          var options = {
-            title: 'Annual Donation',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-          };
-  
-          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-  
-          chart.draw(data, options);
-        }
-</script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Year', 'Donation'],
+            ['2004',  1000],
+            ['2005',  1170],
+            ['2006',  660],
+            ['2007',  1030],
+            ['2008',  1000],
+            ['2009',  1170],
+            ['2010',  660],
+            ['2011',  1030],
+            ['2012',  1000],
+            ['2013',  1170],
+            ['2014',  1000],
+            ['2015',  1170],
+            ['2016',  660],
+            ['2017',  1030],
+            ['2018',  1000],
+            ['2019',  1170],
+            ['2020',  660],
+            ['2021',  1030],
+            ['2022',  1000],
+            ['2023',  1170]
+        
+        ]);
+        
+
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2004-2023',
+          }
+        };
+        
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
 @endpush
 @section('content')
 <section>
     <div class="container-fluid">
         <h2 style="text-align: center;">Financial Information</h2>
         <div style="width: 100%; display: flex; justify-content: space-around;">
-           <div id="curve_chart" style="width: 1000px; height: 500px; margin: auto; text-align: center;"></div>
+            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
         </div>
     </div>
 </section>

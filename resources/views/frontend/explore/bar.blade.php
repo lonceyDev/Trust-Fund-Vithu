@@ -30,56 +30,64 @@
    </style>
 @endpush
  @push('custom-script')
+
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
 
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+     var data = google.visualization.arrayToDataTable([
+       ['Year', 'Inflow', 'Outflow'],
+       ['2004',  1000,      400],
+       ['2005',  1170,      460],
+       ['2006',  660,       1120],
+       ['2007',  1030,      540],
+       ['2008',  1000,      400],
+       ['2009',  1170,      460],
+       ['2010',  660,       1120],
+       ['2011',  1030,      540],
+       ['2012',  1000,      400],
+       ['2013',  1170,      460],
+       ['2014',  660,       1120],
+       ['2015',  1030,      540],
+       ['2016',  1000,      400],
+       ['2017',  1170,      460],
+       ['2018',  660,       1120],
+       ['2019',  1030,      540],
+       ['2020',  1000,      400],
+       ['2021',  1170,      460],
+       ['2022',  660,       1120],
+       ['2023',  1030,      540],
+       ['2024',  1030,      540]
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Inflow', 'Outflow', 'NetFlow'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2018', 1030, 540, 350],
-          ['2019', 1030, 540, 350],
-          ['2020', 1030, 540, 350],
-          ['2021', 1030, 540, 350],
-          ['2022', 1030, 540, 350],
-          ['2023', 1030, 540, 350],
+     ]);
 
-        ]);
+     var options = {
+       title: 'Non-Profit Organization Cash Flow Statement',
+       curveType: 'function',
+       legend: { position: 'bottom' }
+     };
 
-        var options = {
-          chart: {
-            title: 'Cash Flow',
-            subtitle: 'Inflow, Outflow, and NetFlow: 2014-2023',
-          }
-        };
+     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-
-
-
+     chart.draw(data, options);
+   }
+ </script>
  @endpush
 @section('content')
 <section>
     <div class="container-fluid">
         
         <h2 style="text-align: center;">Cash Flow</h2>
-        <div style="width: 1000px; height:500px; margin: auto; padding:3%; text-align: center;">
-            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+        <div style="width: 1200px; height:500px; margin: auto; padding:3%; text-align: center;">
+            <div id="curve_chart" style="width: 1200px; height: 500px"></div>
         </div>
     </div> 
 </section>
 <section> 
     <div class="row" style="width: 1000px; height: 1200px; margin: auto;padding:4%; text-align: center;">
-      <h2>Non-Profit Organization Cash Flow Statement</h2>
+      <h2>Non-Profit Organization Cash Flow Statement (2024)</h2>
 
     <table>
         <tr>
