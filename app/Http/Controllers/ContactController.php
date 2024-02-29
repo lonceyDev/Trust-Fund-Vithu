@@ -31,11 +31,11 @@ class ContactController extends Controller
        Contact::create($request->all());
 
        Mail::to('admin@test.com')->send(new ContactMessage($data));
-         dd('sent');
+        // dd('sent');
         // $job=(new ContactUs($data));
         // dispatch($job);
         
-        return redirect()->route('contact.create')->with('status', 'Your Mail has been received');
+        return response()->json(['message' => 'Success!']);
     }
 
 }

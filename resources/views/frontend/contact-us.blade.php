@@ -1,36 +1,37 @@
 @extends('layouts.front.index_blade')
 @push('custom-style')
-<style>
-    .common-btn {
-    color: #072a5f;
-    background-color: var(--theme-dark-primaryprimary);
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    }
+    <style>
+        .common-btn {
+        color: #072a5f;
+        background-color: var(--theme-dark-primaryprimary);
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        }
 
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    background-color: rgb(41, 129, 237);
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-</style>
-    
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: rgb(41, 129, 237);
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+    </style>
+    <!-- Toastr CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endpush
 @section('content')
 <div class="page-title-area title-bg-eight">
@@ -59,6 +60,7 @@
     <div class="container">
         <form  method="POST" action="{{route('contact.mail')}}" id="contactForm1">
             @csrf
+        
             <h2>GET IN TOUCH</h2>
             <p>
                 Please feel free to contact us if you have any further questions.</p>
@@ -138,4 +140,43 @@
     </div>
 </div>
 </main>
+@push('custom-script')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    $(document).ready(function(){
+     
+    });
+        $('#contactForm1').submit(function(e){
+            e.preventDefault();
+
+            $.ajax({
+    type: 'POST',
+    url: "{{ route('contact.mail') }}",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    data: {
+        'name': $("#name").val(),
+        'email': $("#email").val(),
+        'phone': $("#phone").val(),
+        'subject': $("#subject").val(),
+        'message': $("#message").val()
+    },
+    success: function(response) {
+        
+        toastr.success('Your message has been sent successfully!', 'Success');
+
+                $('#contactForm1')[0].reset();
+    },
+    error: function(xhr, status, error) {
+
+        toastr.error('An error occurred while sending your message. Please try again later.', 'Error');
+    }
+  });
+});
+
+</script>
+
+@endpush
 @endsection
