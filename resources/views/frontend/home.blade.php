@@ -5,9 +5,8 @@
                 min-height: 180px;
             }
 
-            
-        </style>
-@endpush
+       </style>
+    @endpush
 @section('content')
    
     <main>

@@ -53,7 +53,7 @@ Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsm
 Route::view('/donations', 'frontend.donation.donation')->name('donation');
 
 Route::get('/events',[App\Http\Controllers\EventController::class,'event'])->name('events');
-Route::get('/events/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
+Route::get('/event-details/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
 
 Route::get('/projects/{status?}', [App\Http\Controllers\ProjectController::class, 'project'])->name('projects');
 Route::get('/project-details/{slug}', [App\Http\Controllers\ProjectController::class, 'projectDetail'])->name('project-details');
