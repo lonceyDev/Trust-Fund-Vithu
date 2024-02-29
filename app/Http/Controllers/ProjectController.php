@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use Illuminate\Http\Request;
+
 
 class ProjectController extends Controller
 {
-    public function project()
+    public function project($status=null)
     {
+        //dd($status);
+        if ($status === 'Completed' || $status === 'Ongoing') {
 
-        $projects = Project::paginate(9);
+            $projects = Project::where('status', $status)->paginate(6);
+
+        } else {
+            
+            $projects = Project::paginate(6);
+        }
 
         return view('frontend.projects.project', compact('projects'));
     }
@@ -25,20 +32,7 @@ class ProjectController extends Controller
             return view('frontend.projects.project-details', compact( 'project', 'recentprojects'));
 
     }
-    public function showProjects($status)
-    {
-        if ($status == 'Completed') {
-
-            $completedProjects = Project::where('status', '=', 'Completed')->paginate(6); 
-
-            return view('frontend.projects.complete', ['completedProjects' => $completedProjects]);
-
-        } elseif ($status == 'Ongoing') {
-
-            $ongoingProjects = Project::where('status', '=', 'Ongoing')->paginate(6);
-
-            return view('frontend.projects.ongoing', ['ongoingProjects' => $ongoingProjects]);
-        }
-    }
+   
+    
  
 }

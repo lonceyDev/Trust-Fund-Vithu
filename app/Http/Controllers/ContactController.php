@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Jobs\ContactUs;
 use App\Models\Contact;
+use App\Mail\ContactMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -28,10 +30,10 @@ class ContactController extends Controller
 
        Contact::create($request->all());
 
-    //    Mail::to('8de80170bf53a4')->send(new ContactMessage($data));
-    //      dd('sent');
-        $job=(new ContactUs($data));
-        dispatch($job);
+       Mail::to('admin@test.com')->send(new ContactMessage($data));
+         dd('sent');
+        // $job=(new ContactUs($data));
+        // dispatch($job);
         
         return redirect()->route('contact.create')->with('status', 'Your Mail has been received');
     }

@@ -55,10 +55,10 @@ Route::view('/donations', 'frontend.donation.donation')->name('donation');
 Route::get('/events',[App\Http\Controllers\EventController::class,'event'])->name('events');
 Route::get('/events/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
 
-Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'project'])->name('projects');
+Route::get('/projects/{status?}', [App\Http\Controllers\ProjectController::class, 'project'])->name('projects');
 Route::get('/projects/{slug}', [App\Http\Controllers\ProjectController::class, 'projectDetail'])->name('project-details');
-Route::get('/completed/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('completed');
-Route::get('/ongoing/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('ongoing');
+// Route::get('/completed/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('completed');
+// Route::get('/ongoing/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('ongoing');
 
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
 Route::post('/contacts', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');

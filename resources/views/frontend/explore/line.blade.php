@@ -15,18 +15,19 @@
         th {
             background-color: #f2f2f2;
         }
-      a {
-            color: rgb(58, 55, 55);
-            text-decoration: none;
-        }
+        a {
+                color: rgb(58, 55, 55);
+                text-decoration: none;
+            }
 
-    a:hover {
-             color: darkcyan;
+        a:hover {
+                color: darkcyan;
         }
-   </style>
+    </style>
 @endpush
 @push('custom-script')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -133,37 +134,37 @@
           <td>2017</td>
           <td>150,000</td>
           <td>Community Outreach, Education</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
           <td>2018</td>
           <td>200,000</td>
           <td>Healthcare Initiatives, Youth Development</td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
           <td>2019</td>
           <td>180,000</td>
           <td>Environmental Conservation, Arts & Culture</td>
-      </tr>
-      <tr>
-        <td>2020</td>
-        <td>180,000</td>
-        <td>Environmental Conservation, Arts & Culture</td>
-    </tr>
-    <tr>
-      <td>2021</td>
-      <td>150,000</td>
-      <td>Community Outreach, Education</td>
-  </tr>
-  <tr>
-      <td>2022</td>
-      <td>200,000</td>
-      <td>Healthcare Initiatives, Youth Development</td>
-  </tr>
-  <tr>
-      <td>2023</td>
-      <td>180,000</td>
-      <td>Environmental Conservation, Arts & Culture</td>
-  </tr>
+        </tr>
+        <tr>
+            <td>2020</td>
+            <td>180,000</td>
+            <td>Environmental Conservation, Arts & Culture</td>
+        </tr>
+        <tr>
+            <td>2021</td>
+            <td>150,000</td>
+            <td>Community Outreach, Education</td>
+        </tr>
+        <tr>
+            <td>2022</td>
+            <td>200,000</td>
+            <td>Healthcare Initiatives, Youth Development</td>
+        </tr>
+        <tr>
+            <td>2023</td>
+            <td>180,000</td>
+            <td>Environmental Conservation, Arts & Culture</td>
+        </tr>
     </table>
     <p></p>
     <p></p>

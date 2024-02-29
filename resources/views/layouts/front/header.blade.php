@@ -192,11 +192,11 @@
                                         <a href="{{ route('projects') }}" class="nav-link">All Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="tags text-capitalize" href="{{ route('ongoing', ['status' => 'Ongoing']) }}">Ongoing</a>
+                                        <a class="tags text-capitalize" href="{{ route('projects', ['status' => 'Ongoing']) }}">Ongoing</a>
 
                                     </li>
                                     <li class="nav-item">
-                                        <a class="tags text-capitalize" href="{{ route('completed', ['status' => 'Completed']) }}">Completed</a>
+                                        <a class="tags text-capitalize" href="{{ route('projects', ['status' => 'Completed']) }}">Completed</a>
 
                                     </li>
 

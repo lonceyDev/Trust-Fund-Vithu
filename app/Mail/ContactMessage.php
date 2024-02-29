@@ -34,7 +34,7 @@ class ContactMessage extends Mailable
     {
         return new Envelope(
             subject: 'Contact Message',
-            from:new Address('8de80170bf53a4','VTF')
+            from:new Address('admin@test.com','VTF')
         );
     }
 
