@@ -223,8 +223,6 @@
                                 </ul>
                             </li>
 
-
-
                             <li class="nav-item">
                                 <a href="{{route('events')}}" class="nav-link dropdown-toggle ">Get Involved<i
                                         class="icofont-simple-down"></i></a>

@@ -56,7 +56,7 @@ Route::get('/events',[App\Http\Controllers\EventController::class,'event'])->nam
 Route::get('/events/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
 
 Route::get('/projects/{status?}', [App\Http\Controllers\ProjectController::class, 'project'])->name('projects');
-Route::get('/projects/{slug}', [App\Http\Controllers\ProjectController::class, 'projectDetail'])->name('project-details');
+Route::get('/project-details/{slug}', [App\Http\Controllers\ProjectController::class, 'projectDetail'])->name('project-details');
 
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
 Route::post('/contacts/mail', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');

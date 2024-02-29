@@ -25,7 +25,7 @@ class ProjectController extends Controller
     {
        
             $project = Project::where('slug', $slug)->firstOrFail();
-      //    dd($project);
+      // dd($project);
         
             $recentprojects = Project::where('id', '!=', $project->id)->take(5)->get();
         
