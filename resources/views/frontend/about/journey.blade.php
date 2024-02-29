@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 col-md-6">
-                    <img src="{{ asset('assets/front/img/about/map.jpg') }}" alt="About"
+                    <img src="{{ asset('assets/front/img/about/map.jpg') }}" alt="journey"
                         class="border border-primary border-5">
                     <p class="text-center fw-bold fst-italic">SRI LANKA PROJECT AREAS</p>
                 </div>
@@ -91,9 +91,4 @@
     </div>
     @endsection
 
-    @push('custom-script')
-    @endpush
 
-    @push('custom-style')
-
-    @endpush

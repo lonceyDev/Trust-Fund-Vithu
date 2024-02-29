@@ -3,8 +3,8 @@
     <style>
  
 .img-partner {
-    /* max-width: 100%; */
-    height: 200px;
+  
+    height: 120px;
     width: 200px;
 }
 

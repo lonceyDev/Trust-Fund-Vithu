@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="benefit-item" style="height: 550px; text-align: center;">
-                        <img src="{{ asset('assets/front/img/about/issues.png') }}" alt="About">
+                        <img src="{{ asset('assets/front/img/about/issues.png') }}" alt="Award">
                         <div class="section-title">
                             <h2>Issues 78</h2>
                             <h3>Helping victims of war</h3>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="benefit-item three" style="height: 550px; text-align: center;">
-                        <img src="{{ asset('assets/front/img/about/Awardslogo-1.png') }}" alt="About">
+                        <img src="{{ asset('assets/front/img/about/Awardslogo-1.png') }}" alt="Award">
                         <div class="section-title">
                             <h2>Asian Voice Charity Awards</h2>
                             <h3>Most Enterprising Award - 2019</h3>
@@ -57,14 +57,4 @@
     @endsection
 
     @push('custom-script')
-    @endpush
-
-    @push('custom-style')
-    <style>
-        .benefit-item img {
-            border: 2px solid rgb(8, 8, 94); /* Adding border style to the images */
-            border-radius: 5px; /* Adding border radius for rounded corners */
-            margin-bottom: 20px; /* Adjusting the gap between the image and the section title */
-        }
-    </style>
     @endpush

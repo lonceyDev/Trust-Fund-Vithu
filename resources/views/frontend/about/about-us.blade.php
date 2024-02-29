@@ -324,9 +324,6 @@
     </section>
 @endsection
 
-@push('custom-script')
-@endpush
-
 @push('custom-style')
     <style>
         blockquote {

@@ -27,7 +27,7 @@
                                     processes Gift Aid on behalf of its charity clients</p>
                                 <p class="card-text">
                                     <a href="https://vithu.enthuse.com/Donate#!/" target="_blank"
-                                        class="btn btn-primary">Donate Now</a>
+                                        class="btn btn-primary" alt="Enthuse">Donate Now</a>
                                 </p>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                     payments and money transfers to be made through the Internet.</p>
                                 <p class="card-text">
                                     <a href="http://paypal.me/vtf2004" target="_blank"
-                                        class="btn btn-primary">Donate Now</a>
+                                        class="btn btn-primary" alt="Paypal">Donate Now</a>
                                 </p>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             <div class="col-6 col-lg-3">
-               <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer">
+               <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer" alt="Paypal">
                 <img src="{{asset('assets/front/img/donation/german.png')}}" class="img-thumbnail"></a>
 
             </div>
