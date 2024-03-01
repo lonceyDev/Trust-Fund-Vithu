@@ -124,68 +124,8 @@
     </div>
 </div>
 @push('custom-script')
-    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-            var ctx = document.getElementById('pieChart1').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Foundation and Grants', 'Individual Conributions', 'Others'],
-                    datasets: [{
-                        data: [55,30,15],
-                        backgroundColor: [
-                            
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(75, 192, 192, 0.7)',
-                            'rgba(153, 102, 255, 0.7)',
-                        ],
-                        borderColor: [
-                        
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                        ],
-                        borderWidth: 1
-                    }],
-                },
-            });
-            var ctx = document.getElementById('pieChart2').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Events','Administration','Fundraising'],
-                    datasets: [{
-                        data: [35, 45,20 ],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.7)',
-                            'rgba(90, 192, 192, 0.7)',
-                            'rgba(153, 102, 255, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 206, 86, 0.7)',
-                        
-                            
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                        ],
-                        borderWidth: 1
-                    }],
-                },
-            });
-
-    </script> --}}
-    {{-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> --}}
-
  
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    <script type="text/javascript">
      google.charts.load('current', {'packages':['bar']});
      google.charts.setOnLoadCallback(drawChart);
@@ -203,14 +143,13 @@
          ['2020', 1030, 540],
          ['2021', 1000, 400],
          ['2022', 1170, 460],
-         ['2023', 660, 1120],
-         ['2024', 1030, 540],
+         ['2023', 660, 1120]
        ]);
 
        var options = {
          chart: {
            title: 'Income and Expenses Report',
-           subtitle: '2004-2024',
+           subtitle: '2004-2023',
          }
        };
 

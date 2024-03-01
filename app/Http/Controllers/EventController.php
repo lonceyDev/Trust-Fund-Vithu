@@ -8,7 +8,7 @@ use App\Models\Event;
 class EventController extends Controller
 {
     
-    public function Event()
+    public function event()
     {
         $events = Event::paginate(6);
 

@@ -45,39 +45,29 @@ Route::view('/teaching-in-sign-language', 'frontend.sign.teaching-in-sign-langua
 Route::view('/education-for-disabled', 'frontend.sign.education-for-disabled')->name('education-for-disabled');
 Route::view('/education-for-children', 'frontend.sign.education-for-children')->name('education-for-children');
 
-Route::view('/event', 'frontend.get-involved.event')->name('event');
 Route::view('/volunteering', 'frontend.get-involved.volunteering')->name('volunteering');
 Route::view('/sponsorship', 'frontend.get-involved.sponsorship')->name('sponsorship');
 Route::view('/our-pledge', 'frontend.get-involved.our-pledge')->name('our-pledge');
 Route::view('/amazonsmile', 'frontend.get-involved.amazonsmile')->name('amazonsmile');
 
-Route::view('/donation', 'frontend.donation.donation')->name('donation');
+Route::view('/donations', 'frontend.donation.donation')->name('donation');
 
+Route::get('/events',[App\Http\Controllers\EventController::class,'event'])->name('events');
+Route::get('/event-details/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
 
+Route::get('/projects/{status?}', [App\Http\Controllers\ProjectController::class, 'project'])->name('projects');
+Route::get('/project-details/{slug}', [App\Http\Controllers\ProjectController::class, 'projectDetail'])->name('project-details');
 
-Route::get('/event',[App\Http\Controllers\EventController::class,'Event'])->name('event');
-Route::get('/event/{slug}',[App\Http\Controllers\EventController::class,'EventDetail'])->name('event-details');
-
-Route::get('/project', [App\Http\Controllers\ProjectController::class, 'Project'])->name('project');
-Route::get('/project/{slug}', [App\Http\Controllers\ProjectController::class, 'ProjectDetail'])->name('project-details');
-Route::get('/complete/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('complete');
-Route::get('/ongoing/{status}', [App\Http\Controllers\ProjectController::class, 'showProjects'])->name('ongoing');
-
-Route::get('/contact', [App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');
+Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
+Route::post('/contacts/mail', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
-Route::get('/accountablity', [App\Http\Controllers\AccountController::class, 'accChart'])->name('account');
-Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('account.pie');
-Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('account.bar');
-Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('account.line');
+Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'accChart'])->name('accounts');
+Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('accounts.pie');
+Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('accounts.bar');
+Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('accounts.line');
 
-Route::get('/blog',[App\Http\Controllers\BlogController::class,'Blog'])->name('blog');
-Route::get('/blog/{slug}',[App\Http\Controllers\BlogController::class,'BlogDetail'])->name('blog-details');
+Route::get('/blogs',[App\Http\Controllers\BlogController::class,'blog'])->name('blogs');
+Route::get('/blogs/{slug}',[App\Http\Controllers\BlogController::class,'blogDetail'])->name('blog-details');
 
-Route::view('/our-partner','frontend.explore.our-partner')->name('our-parners');
-
-
-
-
-
+Route::view('/our-partners','frontend.explore.our-partner')->name('our-parners');

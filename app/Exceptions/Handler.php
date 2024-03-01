@@ -35,12 +35,12 @@ class Handler extends ExceptionHandler
         // });
     }
     
-public function render($request, Throwable $e)
-{
+// public function render($request, Throwable $e)
+// {
    
-    return response()
-        ->view('frontend.errors.404')
-        ->setStatusCode(Response::HTTP_NOT_FOUND);
-}
+//     return response()
+//         ->view('frontend.errors.404')
+//         ->setStatusCode(Response::HTTP_NOT_FOUND);
+// }
     
 }

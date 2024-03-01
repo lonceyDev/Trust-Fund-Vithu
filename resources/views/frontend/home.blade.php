@@ -5,51 +5,8 @@
                 min-height: 180px;
             }
 
-            .common-btn:hover {
-                color: rgb(2, 71, 127);;
-                background-color:#ffffff;
-                -webkit-transform: translate(0, -5px);
-                transform: translate(0, -5px);
-            }
-
-            .common-btn {
-                color: #ffffff;
-                background-color: rgb(2, 71, 127);
-                display: inline-block;
-                padding: 12px 25px;
-                border-radius: 30px;
-                font-weight: 600;
-            }
-
-            a {
-                -webkit-transition: 0.5s all ease;
-                transition: 0.5s all ease;
-                text-decoration: none;
-            }
-
-            @keyframes shake {
-
-                0%,
-                100% {
-                    transform: translateX(0);
-                }
-
-                25%,
-                75% {
-                    transform: translateX(-5px);
-                }
-
-                50% {
-                    transform: translateX(5px);
-                }
-            }
-
-            .shake-text {
-                display: inline-block;
-                animation: shake 0.5s infinite;
-            }
-        </style>
-@endpush
+       </style>
+    @endpush
 @section('content')
    
     <main>
@@ -127,11 +84,11 @@
                     <div class="col-lg-6">
                         <div class="about-img">
                             <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
-                            <div class="video-wrap">
+                            {{-- <div class="video-wrap">
                                 <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

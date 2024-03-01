@@ -21,9 +21,3 @@
 </div>
 @endsection
 
-@push('custom-script')
-@endpush
-
-@push('custom-style')
-
-@endpush

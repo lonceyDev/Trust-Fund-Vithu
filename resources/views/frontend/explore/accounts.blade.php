@@ -172,35 +172,35 @@
     
             <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
                 <div style="flex: 1; text-align: center;">
-                    <a href="{{route('account.bar')}}">
-                        <div id="columnchart_material" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
+                    <a href="{{route('accounts.bar')}}">
+                        <div id="curve_chart" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
                     </a>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.bar')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.bar')}}" class="btn btn-secondary">More details</a>
                     </div>
                 </div>
 
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
-                    <a href="{{route('account.pie')}}">
+                    <a href="{{route('accounts.pie')}}">
                         <div style="text-align: center;">
-                           <div id="pieChart" style="width: 400px; height: 200px;"></div>
+                           <div id="columnchart_material" style="width: 400px; height: 200px;"></div>
                         </div>
                     </a>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.pie')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.pie')}}" class="btn btn-secondary">More details</a>
                     </div>
                 </div>
     
                 <div style="flex: 1; text-align: center;">
-                    <a href="{{route('account.line')}}">
-                        <div id="curve_chart" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
+                    <a href="{{route('accounts.line')}}">
+                        <div id="columnchart_material2" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
                     </a>
                     <p></p>
                     <div>
                         <p>Explore more details about our charity:</p>
-                        <a href="{{route('account.line')}}" class="btn btn-secondary">More details</a>
+                        <a href="{{route('accounts.line')}}" class="btn btn-secondary">More details</a>
                     </div>
                     <p></p>
                 </div>
@@ -215,6 +215,49 @@
 
 @push('custom-script')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Year', 'Inflow', 'Outflow'],
+      ['2004',  1000,      400],
+      ['2005',  1170,      460],
+      ['2006',  660,       1120],
+      ['2007',  1030,      540],
+      ['2008',  1000,      400],
+      ['2009',  1170,      460],
+      ['2010',  660,       1120],
+      ['2011',  1030,      540],
+      ['2012',  1000,      400],
+      ['2013',  1170,      460],
+      ['2014',  660,       1120],
+      ['2015',  1030,      540],
+      ['2016',  1000,      400],
+      ['2017',  1170,      460],
+      ['2018',  660,       1120],
+      ['2019',  1030,      540],
+      ['2020',  1000,      400],
+      ['2021',  1170,      460],
+      ['2022',  660,       1120],
+      ['2023',  1030,      540],
+      ['2024',  1030,      540]
+
+    ]);
+
+    var options = {
+      title: 'Non-Profit Organization Cash Flow Statement',
+      subtitle: '2004-2023',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+  }
+</script>
 
 <script type="text/javascript">
     google.charts.load('current', {'packages':['bar']});
@@ -222,24 +265,25 @@
 
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ['Year', 'Inflow', 'Outflow', 'NetFlow'],
-        ['2014', 1000, 400, 200],
-        ['2015', 1170, 460, 250],
-        ['2016', 660, 1120, 300],
-        ['2018', 1030, 540, 350],
-        ['2019', 1030, 540, 350],
-        ['2020', 1030, 540, 350],
-        ['2021', 1030, 540, 350],
-        ['2022', 1030, 540, 350],
-        ['2023', 1030, 540, 350],
+        ['Year', 'Income', 'Expences'],
+        ['2004', 102, 400],
+        ['2005', 1170, 460],
+        ['2006', 660, 1120],
+        ['2007', 1030, 540],
+        ['2008', 1000, 400],
+        ['2009', 1170, 460],
+        ['2010', 660, 1120],
+        ['2020', 1030, 540],
+        ['2021', 1000, 400],
+        ['2022', 1170, 460],
+        ['2023', 660, 1120]
       ]);
 
       var options = {
-        title: 'Cash Flow',
-        curveType: 'function',
-        legend: { position: 'bottom' },
-        fontName: 'Britannic Bold', // Set the desired font family
-        fontSize: 12,      // Set the desired font size
+        chart: {
+          title: 'Income and Expences Report',
+          subtitle: '2004-2023',
+        }
       };
 
       var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -247,103 +291,94 @@
       chart.draw(data, google.charts.Bar.convertOptions(options));
     }
   </script>
- <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-  
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable([
-            ['Year', 'Donation', 'program impact'],
-            ['2014',  1000,      400],
-            ['2015',  1170,      460],
-            ['2016',  660,       1120],
-            ['2017',  1030,      540],
-            ['2018',  1000,      400],
-            ['2019',  1170,      460],
-            ['2020',  660,       1120],
-            ['2021',  1030,      540],
-            ['2022',  1000,      400],
-            ['2023',  1170,      460],
-            ['2024',  660,       1120],
-            ['2025',  1030,      540]
-          ]);
-  
-          var options = {
-            title: 'Annual Donation',
-            curveType: 'function',
-            legend: { position: 'bottom' }
-          };
-  
-          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-  
-          chart.draw(data, options);
-        }
-</script>
 
-<script>
-    google.charts.load('current', {'packages':['corechart']});
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Category', 'Amount'],
-            ['Income', 8000], // Replace 8000 with your actual income value
-            ['Expenses', 5000] // Replace 5000 with your actual expenses value
-        ]);
+     var data = google.visualization.arrayToDataTable([
+      ['Donation', 'Education', 'Youth Development', 'Arts & Culture', 'Healthcare',
+        { role: 'annotation' } ],
+       ['2004', 10, 24, 20, 32, ''],
+      ['2005', 16, 22, 23, 30, ''],
+      ['2006', 28, 19, 29, 30, ''],
+      ['2007', 10, 24, 20, 32, ''],
+      ['2008', 16, 22, 23, 30, ''],
+      ['2009', 28, 19, 29, 30, ''],
+      ['2010', 10, 24, 20, 32, ''],
+      ['2011', 16, 22, 23, 30, ''],
+      ['2012', 28, 19, 29, 30, ''],
+      ['2013', 10, 24, 20, 32, ''],
+      ['2014', 16, 22, 23, 30, ''],
+      ['2015', 28, 19, 29, 30, ''],
+      ['2016', 10, 24, 20, 32, ''],
+      ['2017', 16, 22, 23, 30, ''],
+      ['2018', 28, 19, 29, 30, ''],
+      ['2019', 10, 24, 20, 32, ''],
+      ['2020', 16, 22, 23, 30, ''],
+      ['2021', 28, 19, 29, 30, ''],
+      ['2022', 10, 24, 20, 32, ''],
+      ['2023', 16, 22, 23, 30, '']
+    ]);
 
-        var options = {
-            title: 'Income vs Expenses',
-            is3D: true, // Add 3D effect for better visualization
-        };
+    var options = {
+      title: 'Non-Profit Organization Donation Details',
+      subtitle: '2004-2023',
+    //   width: 1200,
+    //   height: 400,
+      legend: { position: 'top', maxLines: 3 },
+      bar: { groupWidth: '75%' },
+      isStacked: true,
+    };
+     
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material2'));
 
-        var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
-        chart.draw(data, options);
+      chart.draw(data, google.charts.Bar.convertOptions(options));
     }
-</script>
-
-
-@endpush
-@push('custom-style')
-
- <style>
-
- .chart-container {
-    max-width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    overflow: auto; /* Add overflow property to enable scrolling if needed */
-}
-
-/* Additional styling for anchor tags */
-a {
-    color: rgb(58, 55, 55);
-    text-decoration: none;
-}
-
-a:hover {
-    color: darkcyan;
-}
-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-th {
-            background-color: #f2f2f2;
-        }
-h6,h2,h1 {
-    color: rgb(46, 45, 45);
-}
-
-</style>
-
+  </script>
 
 @endpush
+        @push('custom-style')
+
+        <style>
+
+            .chart-container {
+                max-width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                overflow: auto; 
+            }
+
+            a {
+                color: rgb(58, 55, 55);
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: darkcyan;
+            }
+            table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        margin-top: 20px;
+                    }
+
+            th, td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        text-align: left;
+                    }
+
+            th {
+                        background-color: #f2f2f2;
+                    }
+            h6,h2,h1 {
+                color: rgb(46, 45, 45);
+            }
+
+        </style>
+
+
+        @endpush

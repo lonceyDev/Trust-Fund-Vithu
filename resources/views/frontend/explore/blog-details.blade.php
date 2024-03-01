@@ -108,7 +108,7 @@
                                                     {{ $recentBlog->title }}
                                                 </a>
                                             </h4>
-                                            <p>By - <a href="{{ route('blog-details', ['slug' => $recentBlog->slug]) }}">{{ $recentBlog->user->name }}</a></p>
+                                            <p>By - <a href="{{ route('blog-details', ['slug' => $recentBlog->slug]) }}">vtf</a></p>
                                             
                                         </li>
                                     </ul>

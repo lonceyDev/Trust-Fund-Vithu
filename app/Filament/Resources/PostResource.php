@@ -8,16 +8,10 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Card;
-use Filament\Tables\Columns\Column;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\PostResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\PostResource\RelationManagers;
-use Filament\Forms\Components\Group;
 
 class PostResource extends Resource
 {
@@ -35,32 +29,33 @@ class PostResource extends Resource
                     ->schema([
                 // Forms\Components\Select::make('user_id')->columnSpanFull()
                 //     ->relationship('user','name'),
-                // Forms\Components\CheckboxList::make('categories')
-                //     ->relationship('categories', 'name')
-                //     ->columns(2)
-                //     ->gridDirection('row'),
+          
                 // Forms\Components\CheckboxList::make('tags')
                 //      ->relationship('tags', 'name')
                 //     ->columns(2)
-                //     ->gridDirection('row'),
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->columnSpanFull()
-                    ->maxLength(255)
-                    ->reactive()
-                    ->afterStateUpdated(function($set, $state){ 
-                        $set('slug',Str::slug($state));
-                    }),
-                Forms\Components\RichEditor::make('content')
-                    ->fileAttachmentsDirectory('attachments')
-                    ->fileAttachmentsVisibility('private')
-                    ->required()
-                    ->columnSpanFull(),
+                    //     ->gridDirection('row'),
+                    Forms\Components\TextInput::make('title')
+                        ->required()
+                        ->columnSpanFull()
+                        ->maxLength(255)
+                        ->reactive()
+                        ->afterStateUpdated(function($set, $state){ 
+                            $set('slug',Str::slug($state));
+                        }),
+                    Forms\Components\RichEditor::make('content')
+                        ->fileAttachmentsDirectory('attachments')
+                        ->fileAttachmentsVisibility('private')
+                        ->required()
+                        ->columnSpanFull(),
 
-                Forms\Components\Toggle::make('published')
+                    Forms\Components\Toggle::make('published')
                     ->required()->columnSpanFull(),
                    
-                    Forms\Components\DateTimePicker::make('publish_at')->columnSpanFull(),
+                    Forms\Components\DateTimePicker::make('publish_at'),
+                    Forms\Components\Select::make('categories')
+                        ->relationship('categories', 'name')
+                        ->multiple()
+                        ->preload(),
                  
                     Forms\Components\FileUpload::make('featured_image')
                         ->image()
@@ -76,7 +71,7 @@ class PostResource extends Resource
                     //         Select::make('tags')->relationship('tags','name')
                     //     ])->columnSpan(1),
                     ]),   
-            ])->Columns(1);
+            ])->Columns(2);
     }
 
     public static function table(Table $table): Table

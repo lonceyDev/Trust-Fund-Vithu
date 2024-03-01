@@ -91,8 +91,8 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img src="{{ asset('assets/front/img/get-involved/sponsorship.jpg') }}" alt="About">
-                    <img class="pt-4" src="{{ asset('assets/front/img/get-involved/slide-3.jpg') }}" alt="About">
+                    <img src="{{ asset('assets/front/img/get-involved/sponsorship.jpg') }}" alt="sponcer">
+                    <img class="pt-4" src="{{ asset('assets/front/img/get-involved/slide-3.jpg') }}" alt="sponcer">
 
                 </div>
             </div>
@@ -104,9 +104,6 @@
         </div>
     </div>
 @endsection
-
-@push('custom-script')
-@endpush
 
 @push('custom-style')
     <style>

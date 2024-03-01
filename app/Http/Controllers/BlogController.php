@@ -7,14 +7,14 @@ use App\Models\Post;
 
 class BlogController extends Controller
 {
-    public function Blog()
+    public function blog()
     {
         $blogs = Post::paginate(6);
         
         return view('frontend.explore.blog', compact('blogs'));
     }
 
-    public function BlogDetail($slug)
+    public function blogDetail($slug)
     {
 
             $blog = Post::where('slug', $slug)->firstOrFail();
