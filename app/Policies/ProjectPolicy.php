@@ -12,12 +12,12 @@ class ProjectPolicy
      */
     public function viewAny(User $user)
     {
-        // if( $user->hasPermissionTo('view project')){
+        if( $user->hasPermissionTo('view project')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -26,12 +26,12 @@ class ProjectPolicy
      */
     public function view(User $user, Project $project)
     {
-        // if( $user->hasPermissionTo('view project')){
+        if( $user->hasPermissionTo('view project')){
 
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin','Manager']);
         
     }
 
@@ -40,12 +40,12 @@ class ProjectPolicy
      */
     public function create(User $user)
     {
-        // if( $user->hasPermissionTo('create project')){
+        if( $user->hasPermissionTo('create project')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -54,12 +54,12 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project)
     {
-        // if( $user->hasPermissionTo('update project')){
+        if( $user->hasPermissionTo('update project')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin']);
 
     }
 
@@ -68,12 +68,12 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project)
     {
-        // if( $user->hasPermissionTo('delete project')){
+        if( $user->hasPermissionTo('delete project')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin']);
 
     }
 

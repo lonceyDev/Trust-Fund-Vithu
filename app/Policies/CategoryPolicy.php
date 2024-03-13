@@ -12,12 +12,12 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-        // if( $user->hasPermissionTo('View Category')){
+        if( $user->hasPermissionTo('view category')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Super Admin','Admin','Manager']);
 
     }
 
@@ -26,12 +26,12 @@ class CategoryPolicy
      */
     public function view(User $user, Category $category)
     {
-        // if( $user->hasPermissionTo('View Category')){
+        if( $user->hasPermissionTo('view category')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Super Admin','Admin','Manager']);
 
     }
 
@@ -40,12 +40,13 @@ class CategoryPolicy
      */
     public function create(User $user)
     {
-        // if( $user->hasPermissionTo('Create Category')){
+        if( $user->hasPermissionTo('create category')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Super Admin','Admin']);
+
 
     }
 
@@ -54,12 +55,13 @@ class CategoryPolicy
      */
     public function update(User $user, Category $category)
     {
-        // if( $user->hasPermissionTo('Update Category')){
+        if( $user->hasPermissionTo('update category')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Super Admin','Admin']);
+
 
     }
 
@@ -68,12 +70,13 @@ class CategoryPolicy
      */
     public function delete(User $user, Category $category)
     {
-        // if( $user->hasPermissionTo('Delete Category')){
+        if( $user->hasPermissionTo('delete category')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Super Admin','Admin']);
+
 
     }
 
@@ -82,11 +85,11 @@ class CategoryPolicy
      */
     public function restore(User $user, Category $category)
     {
-        if( $user->hasPermissionTo('Restore Category')){
+        // if( $user->hasPermissionTo('Restore Category')){
             
-            return true;
-        }
-        return false;
+        //     return true;
+        // }
+        // return false;
     }
 
     /**

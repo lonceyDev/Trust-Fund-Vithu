@@ -12,12 +12,12 @@ class EventPolicy
      */
     public function viewAny(User $user)
     {
-        // if( $user->hasPermissionTo('view event')){
+        if( $user->hasPermissionTo('view event')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+      //  return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -26,12 +26,12 @@ class EventPolicy
      */
     public function view(User $user, Event $event)
     {
-        // if( $user->hasPermissionTo('view event')){
+        if( $user->hasPermissionTo('view event')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -40,12 +40,12 @@ class EventPolicy
      */
     public function create(User $user)
     {
-        // if( $user->hasPermissionTo('create event')){
+        if( $user->hasPermissionTo('create event')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -54,12 +54,12 @@ class EventPolicy
      */
     public function update(User $user, Event $event)
     {
-        // if( $user->hasPermissionTo('update event')){
+        if( $user->hasPermissionTo('update event')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin']);
 
     }
 
@@ -68,12 +68,12 @@ class EventPolicy
      */
     public function delete(User $user, Event $event)
     {
-        // if( $user->hasPermissionTo('delete event')){
+        if( $user->hasPermissionTo('delete event')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin']);
 
     }
 
