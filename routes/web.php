@@ -34,8 +34,8 @@ Route::redirect('/login', '/admin/login', 301)->name('login');
 Route::prefix('about')->name('about.')->group(function () {
     Route::view('/about-us', 'frontend.about.about-us')->name('about-us');
     Route::view('/about-our-logo', 'frontend.about.logo')->name('logo');
-    Route::view('/patron', 'frontend.about.patron')->name('patron');
-    Route::view('/history', 'frontend.about.history')->name('history');
+    // Route::view('/patron', 'frontend.about.patron')->name('patron');
+    // Route::view('/history', 'frontend.about.history')->name('history');
     Route::view('/our-journery', 'frontend.about.journey')->name('journey');
     Route::view('/awards', 'frontend.about.award')->name('awards');
 });
@@ -62,10 +62,10 @@ Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'create'
 Route::post('/contacts/mail', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
-Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'accChart'])->name('accounts');
-Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('accounts.pie');
-Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('accounts.bar');
-Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('accounts.line');
+// Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'accChart'])->name('accounts');
+// Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('accounts.pie');
+// Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('accounts.bar');
+// Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('accounts.line');
 
 Route::get('/blogs',[App\Http\Controllers\BlogController::class,'blog'])->name('blogs');
 Route::get('/blogs/{slug}',[App\Http\Controllers\BlogController::class,'blogDetail'])->name('blog-details');

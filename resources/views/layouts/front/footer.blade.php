@@ -129,12 +129,12 @@
                                 </a>
                             </li>
 
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('about.history') }}">
                                     <i class="icofont-simple-right"></i>
                                     Our History
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="{{ route('donation') }}">
                                     <i class="icofont-simple-right"></i>

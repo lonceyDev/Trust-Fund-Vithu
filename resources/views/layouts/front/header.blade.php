@@ -166,15 +166,15 @@
                                     <li class="nav-item">
                                         <a href="{{ route('about.about-us') }}" class="nav-link">About Us</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('about.patron') }}" class="nav-link">Our Patron</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('about.logo') }}" class="nav-link">About Our Logo</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('about.history') }}" class="nav-link">Our History</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('about.journey') }}" class="nav-link">Our Journey</a>
                                     </li>
@@ -253,9 +253,9 @@
                                     <li class="nav-item">
                                         <a href="{{route('blogs')}}" class="nav-link">Blog</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{route('accounts')}}" class="nav-link">Accounts</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{route('our-parners')}}" class="nav-link">Our Partners</a>
                                     </li>
