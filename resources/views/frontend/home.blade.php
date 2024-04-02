@@ -46,14 +46,12 @@
                                 <h2>Who we are?</h2>
                             </div>
                             <p> <b>Vithu Trust Fund</b>
-                                is a charity organisation dedicated to improve and safeguard the lives of children in Sri
-                                Lanka and raise voice for the needy.
+                                is a  dedicated charity organisation committed to improving and safeguarding the lives of children in 
+                                Sri Lanka and raising voice for the needy and providing essential support to those who need it most.
                             </p>
                             <p>
-                                There are thousands of children who go through the day without a single nourishing meal.
-                                They include victims of war, which has thrown the bread-winners of these families out of
-                                work and the future of our youngsters into darkness.
-
+                                There are thousands of children who go through the day without a single nourishing meal. 
+                                They include war victims ,  who have lost their breadwinners and cast doubt on our children's future. 
 
                             </p>
                             <ul>
@@ -83,7 +81,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
+                            <img src="{{ asset('assets/front/img/about/about-main7.jpg') }}" alt="About">
                             {{-- <div class="video-wrap">
                                 <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>

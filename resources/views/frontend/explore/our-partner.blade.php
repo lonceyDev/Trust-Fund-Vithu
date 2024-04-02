@@ -4,8 +4,8 @@
  
 .img-partner {
   
-    height: 120px;
-    width: 200px;
+    height: 200px;
+    width: 250px;
 }
 
     </style>
@@ -45,88 +45,88 @@
                         individual citizens that are making.</p>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                         <a href="http://www.manandco.co.uk/" target="_blank"> 
                             <img src="{{asset('assets/front/img/sponcer/sponcer1.png')}}" alt="" class="img-partner">
-                            <h3>Participation</h3>
-                            <p>Every participant will participate each activities, getting skill, positive cooperation and
+                            {{-- <h3>Participation</h3> --}}
+                            {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                 ensuring rights of society.
     
-                            </p>
+                            </p> --}}
                         </a>    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://www.successchoices.ch/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer2.png')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                     ensuring rights of society.
         
-                                </p>
+                                </p> --}}
                             </a> 
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://www.schneesportschule-kriens.ch/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer3.gif')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                     ensuring rights of society.
-                                </p>
+                                </p> --}}
                             </a>    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://www.b-s-k.ch/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer4.png')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                     ensuring rights of society.
         
-                                </p>
+                                </p> --}}
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://sckriens.ch/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer5.webp')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                     ensuring rights of society.
         
-                                </p>
+                                </p> --}}
                             </a>    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://shaolintempel.ch/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer6.png')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                     ensuring rights of society.
-                                </p>
+                                </p> --}}
                             </a>    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                             <a href="https://lonceytech.com/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer7.png')}}" alt="" class="img-partner">
-                                <h3>Participation</h3>
-                                <p>Every participant will participate each activities, getting skill, positive cooperation and
+                                {{-- <h3>Participation</h3> --}}
+                                {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                   ensuring rights of society.
-                                </p>
+                                </p> --}}
                             </a>    
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="benefit-item four">
                         <a href="https://www.rajcreation.lk/" target="_blank"><img src="{{asset('assets/front/img/sponcer/sponcer8.png')}}" alt="" class="img-partner">
-                            <h3>Participation</h3>
-                            <p>Every participant will participate each activities, getting skill, positive cooperation and
+                            {{-- <h3>Participation</h3> --}}
+                            {{-- <p>Every participant will participate each activities, getting skill, positive cooperation and
                                 ensuring rights of society.
-                            </p>
+                            </p> --}}
                         </a>
                         </div>
                     </div>
