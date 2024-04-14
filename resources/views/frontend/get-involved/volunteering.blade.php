@@ -29,30 +29,25 @@
         <div class="container">
             <div class="row">
                 <p>
-                    <b>Vithu Trust Fund</b> is seeking volunteers to participate and offer their assistance to work with us
-                    on our projects in Sri Lanka.
+                    <b>Vithu Trust Fund</b>is seeking volunteers to participate and offer their assistance to work with us on our projects in Sri Lanka.
 
 
                 </p>
                 <p>
-                    Volunteers will be provided special training on the work they need to be carrying out. Boarding and
-                    accommodation will be provided through out their stay to work on the projects will be provided. In
-                    return, volunteers will be expected to work on projects in Sri Lanka ranging from teaching children and
-                    young people in schools and colleges through to providing coaching and training to develop
-                    entrepreneurial skills to members of the local community to participate on co-operative sustainable
-                    income generating projects.
+                    Volunteers will be provided special training on the work they need to carry out. 
+                    Boarding and accommodations will be provided throughout their stay to work on the projects. 
+                    In return, volunteers will be expected to work on projects in Sri Lanka ranging from teaching
+                     children and young people in schools and colleges to providing coaching and training to develop
+                      entrepreneurial skills to members of the local community to participate in cooperative sustainable income-generating projects.
 
 
                 </p>
                 <p>
-                    Please view our Projects page [Insert link] to choose the projects you wish to offer your skills as a
-                    volunteer.
+                    Please view our Projects page [Insert link] to choose the projects you wish to offer your skills as a volunteer.r.
 
 
                 </p>
-                <p>If you are interested to become a volunteer with Vithu Trust Fund, please contact us charity@vithu.org or
-                    send us a message via our contact us section.
-
+                <p>If you are interested in becoming a volunteer with Vithu Trust Fund, please contact us at charity@vithu.org or send us a message via our contact us section.
                 </p>
             </div>
 
@@ -63,9 +58,8 @@
 
                     </h3>
                     <p>
-                        Charity Checkout provides charities with both credit/ debit card and Direct Debit payment processing
-                        facilities. The company is a registered HMRC Gift Aid agent and also processes Gift Aid on behalf of
-                        its charity clients
+                        Charity Checkout provides charities with both credit and debit card and direct debit payment processing facilities. 
+                        The company is a registered HMRC Gift Aid agent and also processes Gift Aid on behalf of its charity clients.
 
                     </p>
                     <a class="common-btn" href="https://vithu.enthuse.com/PoultryFarming#!/" target="_blank"

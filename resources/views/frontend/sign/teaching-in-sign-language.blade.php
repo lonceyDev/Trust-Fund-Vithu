@@ -65,16 +65,14 @@
             <div class="row">
                 <h3>Learn Sign Language</h3>
                 <p>
-                    For deaf students, all communication is done in sign language. The language of communication of the
-                    common people is English, Tamil, Sinhala, French .. There are many languages of communication in sign
-                    language as well. For them, learning and communication are still a crisis due to the lack of sign
-                    language for all words.
+                    deaf students, all communication is done in sign language. The language of communication of the common people is English, Tamil, Sinhala, French, etc. 
+                    There are many languages of communication in sign language as well. For them, 
+                    learning and communication are still a crisis due to the lack of sign language for all words.
                 </p>
                 <p>
-                    Tamil Sign Language is formed by the using of both hands. Finger Sign Language is a sign language for
-                    all characters. But the lack of sign language for all words is seen as the biggest barrier to
-                    communication, learning and employment for the disabled (hearing impaired). There is also a need to
-                    interpret many words based on examples.
+                    Tamil Sign Language is formed by the use of both hands. Finger Sign Language is a sign language for all characters.
+                     But the lack of sign language for all words is seen as the biggest barrier to communication, learning, and employment for the disabled (hearing impaired).
+                     There is also a need to interpret many words based on examples.
                 </p>
             </div>
         </div>

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\Paginator;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\ServiceProvider;
-use Filament\Navigation\NavigationGroup;
+
 
 class AppServiceProvider extends ServiceProvider
 {

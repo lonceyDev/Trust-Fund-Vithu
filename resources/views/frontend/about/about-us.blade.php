@@ -65,11 +65,11 @@
                 </blockquote>
 
                 <p>
-                    His commitment to the cause made him raise funds to help the needy people when has only 19. With passage
-                    of time, his passion and commitment have involved Raj-Vithuran with many charitable activities that aim
-                    to care for the poor and underprivileged children who need immediate help. The passion and compassion of
-                    Vithu is being shared now by his wife Shimari. The couple is working tirelessly to rebuild the lives of
-                    young victims whose life have been devastated due to the long war in Sri Lanka.
+                    His commitment to the cause made him raise funds to help the needy when has only 19. 
+                    With the passage of time, his passion and commitment have involved Raj-Vithuran in many charitable activities 
+                    that aim to care for the poor and underprivileged children who need immediate help. 
+                    The passion and compassion of Vithu are being shared now by his wife, Shimari. 
+                    The couple is working tirelessly to rebuild the lives of young victims whose lives have been devastated due to the long war in Sri Lanka.
 
 
                 </p>

@@ -79,7 +79,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://csonet.org/index.php?menu=80" target="_blank">
+                                <a href="https://esango.un.org/civilsociety/showProfileDetail.do?method=showProfileDetails&tab=3&profileCode=674053" target="_blank">
                                     <img src="{{ asset('assets/front/img/flags/uno.gif') }}" alt=""> 
                                     <span>UN</span> </a>
                             </li>
@@ -96,7 +96,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://www.ngosecretariat.gov.lk/index.php?option=com_content&view=featured&Itemid=101" target="_blank">
+                                <a href="https://ngosec.gov.lk/" target="_blank">
                                     <img src="{{ asset('assets/front/img/flags/lk.gif') }}" alt=""> 
                                     <span>LK</span> </a>
                             </li>

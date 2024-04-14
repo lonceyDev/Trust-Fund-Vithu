@@ -33,22 +33,20 @@
             <div class="row">
                 <h3>Braille letters </h3>
                 <p>
-                    The teaching method for Braille is different. Awareness is taught in Braille by specially trained
-                    teachers in Braille, the characters are taught in Braille, and the descriptions and descriptions are
-                    taught in the same way as normal students. It is also possible to teach mathematics in an easy way with
-                    special math equipment.
+                    The teaching method for Braille is different. Awareness is taught in Braille by specially trained teachers, 
+                    the characters are taught in Braille, and the descriptions and descriptions are taught in the same way as normal students. 
+                    It is also possible to teach mathematics easily with special maths equipment.
                 </p>
                 <p>
-                    When written in Braille all letters, numbers, and symbols appear to be included in the “six dots.” The
-                    6th dot is referred to as the 1st 2nd and 3rd dot for 1-6. One dot / more than one dot is used for each
-                    digit / character. Within these six charges all the letters are contained in the Braille language.
-                    Students appearing for the exam in Braille will be given extra time (10 minutes more for every 60
-                    minutes) than normal students. There is also a requirement for supervisors to read the question paper in
-                    the examination hall.
+                    When written in Braille all letters, numbers, and symbols appear to be included in the “six dots.” 
+                    The 6th dot is referred to as the 1st, 2nd and 3rd dot for 1-6. One dot / more than one dot is used for each digit/character. 
+                    Within these six charges, all the letters are contained in the Braille language. 
+                    Students appearing for the exam in Braille will be given extra time (10 minutes more for every 60 minutes) than normal students. 
+                    There is also a requirement for supervisors to read the question paper in the examination hall.
                 </p>
                 <p>
-                    The teachers for these will be seen as specially trained teachers, also will be seen as specially
-                    trained teachers. They are administrative structure for 8 of these students.
+                    The teachers for these will be seen as specially trained teachers, also will be seen as specially trained teachers.
+                     They are administrative structures for 8 of these students.
                 </p>
             </div>
 
