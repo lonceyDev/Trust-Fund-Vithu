@@ -29,6 +29,11 @@ class ProjectResource extends Resource
     protected static ?string $model = Project::class;
     protected static ?int $navigationSort = 2;
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
   
@@ -42,7 +47,8 @@ class ProjectResource extends Resource
                 
         return $form
             ->schema([
-                Section::make()->schema([
+                
+             //   Section::make()->schema([
                   
                //  Group::make()->schema([
                 //     Section::make()->schema([
@@ -58,6 +64,7 @@ class ProjectResource extends Resource
 
                 //     ]),
                 // ]),
+                Forms\Components\Group::make()->schema([
                 Section::make()->schema([
                     Forms\Components\TextInput::make('title')
                         ->required()
@@ -74,45 +81,64 @@ class ProjectResource extends Resource
                     ->fileAttachmentsDirectory('attachments')
                     ->fileAttachmentsVisibility('private')
                 ]),
-
-                Section::make()->schema([
+                Forms\Components\Section::make('Image Upload')->schema([
                     Forms\Components\FileUpload::make('featured_image')
                     ->image()
                     ->imageEditor()
                     ->directory('project_images'),
-                ]),
-               Section::make()->schema([
+            
                 Forms\Components\FileUpload::make('gallery')
                   ->multiple()
                   ->image()
                   ->imageEditor()
                   ->directory('gallery_images'),
                ]),
-            
-       
-            Section::make()->schema([
+                ])->columnSpan(['lg' => 2]),  
+
+             Forms\Components\Group::make()->schema([
+                Forms\Components\Section::make('Category')->schema([
+                    Forms\Components\CheckboxList::make('categories')
+                    ->relationship('categories', 'name')
+                    ->columns(1)
+                    ->gridDirection('row'),
+                      
+                ]), 
+              Section::make('Project')->schema([
                 Forms\Components\DateTimePicker::make('start_date')
                    ->required(),
                 Forms\Components\DateTimePicker::make('end_date')
                    ->required(),
-                Forms\Components\Select::make('status')
+              
+                   Forms\Components\TextInput::make('project_amount')
                    ->required()
-                   ->options([
-                       'Ongoing' => 'Ongoing',
-                       'Completed' => 'Completed',
-                   ]),
+                   ->numeric(),
+               Forms\Components\TextInput::make('expected_amount')
+                    ->numeric(), 
 
-            ])->columnSpan(1)->Columns(3),
-           Section::make()->schema([
-                Forms\Components\TextInput::make('project_amount')
+              ]),
+                Forms\Components\Section::make('Status')->schema([ 
+                Section::make()->schema([
+                    Forms\Components\Select::make('status')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('expected_amount')
-                     ->numeric(),
-             ])->columnSpan(1)->Columns(2),
-           
-           ]),
-            ])->Columns(1);
+                    ->selectablePlaceholder(false)
+                    ->default('Ongoing')
+                    ->options([
+                        'Ongoing' => 'Ongoing',
+                        'Completed' => 'Completed',
+                    ]),
+                    Forms\Components\Toggle::make('is_active')
+                    ->label('is_active')
+                    ->onIcon('heroicon-m-eye')
+                    ->offIcon('heroicon-m-eye-slash')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->inline(false),
+                ]), 
+            ]),
+        ]),
+
+         
+            ])->Columns(3);
     }
 
     public static function table(Table $table): Table
@@ -138,6 +164,10 @@ class ProjectResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->searchable(),
+                    Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->trueColor('success')
+                    ->falseColor('danger'),
                
             ])
             ->filters([

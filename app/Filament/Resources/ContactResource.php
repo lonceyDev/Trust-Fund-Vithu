@@ -19,6 +19,12 @@ class ContactResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-phone-arrow-down-left';
     protected static ?string $navigationGroup = 'Admin';
     protected static ?int $navigationSort = 4;
+    
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
 
     public static function form(Form $form): Form
     {

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description');
             $table->longText('file_path');
             $table->json('extra')->nullable();
+            $table->boolean('is_active')->default(0);
             $table->timestamps();
         });
 

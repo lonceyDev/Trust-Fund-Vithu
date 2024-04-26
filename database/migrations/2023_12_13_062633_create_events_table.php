@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('events_at');
             $table->string('status')->default('upcoming');
             $table->json('extra')->nullable();
+            $table->boolean('is_active')->default(0);
             $table->timestamps();
         });
     }

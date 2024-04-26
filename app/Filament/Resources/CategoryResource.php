@@ -22,13 +22,27 @@ class CategoryResource extends Resource
     
     protected static ?int $navigationSort = 4;
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255),
+                Forms\Components\Toggle::make('is_active')
+                    ->label('is_active')
+                    ->onIcon('heroicon-m-eye')
+                    ->offIcon('heroicon-m-eye-slash')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->inline(false),
             ]);
     }
 
@@ -38,6 +52,10 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name') 
                     ->searchable(),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->trueColor('success')
+                    ->falseColor('danger'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

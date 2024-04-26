@@ -37,6 +37,7 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => Color::Orange,
             ])
             ->font('Poppins')
+            ->sidebarFullyCollapsibleOnDesktop()
             ->brandLogoHeight('3rem')
             ->brandLogo(asset('assets/front/img/logo-vithu.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
