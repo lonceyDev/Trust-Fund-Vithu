@@ -253,9 +253,9 @@
                                     <li class="nav-item">
                                         <a href="{{route('blogs')}}" class="nav-link">Blog</a>
                                     </li>
-                                    {{-- <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="{{route('accounts')}}" class="nav-link">Accounts</a>
-                                    </li> --}}
+                                    </li>
                                     <li class="nav-item">
                                         <a href="{{route('our-parners')}}" class="nav-link">Our Partners</a>
                                     </li>

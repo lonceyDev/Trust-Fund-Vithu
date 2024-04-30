@@ -62,10 +62,10 @@ Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'create'
 Route::post('/contacts/mail', [App\Http\Controllers\ContactController::class, 'send_mail'])->name('contact.mail');
 
 //explore tap
-// Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'accChart'])->name('accounts');
-// Route::get('/pie', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('accounts.pie');
-// Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('accounts.bar');
-// Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('accounts.line');
+Route::get('/accounts', [App\Http\Controllers\AccountController::class, 'accChart'])->name('accounts');
+Route::get('/finance-histroy', [App\Http\Controllers\AccountController::class, 'pieChart'])->name('accounts.pie');
+Route::get('/bar', [App\Http\Controllers\AccountController::class, 'barChart'])->name('accounts.bar');
+Route::get('/line', [App\Http\Controllers\AccountController::class, 'lineChart'])->name('accounts.line');
 
 Route::get('/blogs',[App\Http\Controllers\BlogController::class,'blog'])->name('blogs');
 Route::get('/blogs/{slug}',[App\Http\Controllers\BlogController::class,'blogDetail'])->name('blog-details');

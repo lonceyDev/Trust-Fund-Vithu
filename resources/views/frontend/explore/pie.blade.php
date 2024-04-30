@@ -61,7 +61,7 @@
                             {{-- <h4>Income</h4> --}}
                             {{-- <canvas id="pieChart1"></canvas> --}}
                             {{-- <div id="piechart1" style="width: 500px; height: 400px;"></div> --}}
-                            <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+                            <div id="curve_chart" style="width: 800px; height: 500px;"></div>
                         </div>
                          {{-- <div style="text-align: center;"> --}}
                             {{-- <h4>Expenses</h4>
@@ -84,6 +84,8 @@
                         <th>30/06/2020</th>
                         <th>30/06/2021</th>
                         <th>30/06/2022</th>
+                        <th>30/06/2023</th>
+
                 </tr>
                     <tr>
                         <td>Total gross income</td>
@@ -92,6 +94,8 @@
                         <td>£19.87k</td>
                         <td>£24.11k</td>
                         <td>£15.81k </td>
+                        <td>£18.81k </td>
+
                     </tr>
                     <tr>
                         <td>Total expenditure</td>
@@ -100,6 +104,8 @@
                         <td>£18.17k</td>
                         <td>£26.28k</td>
                         <td>£10.24k </td>
+                        <td>£23.01k </td>
+                        
                     </tr>
                     <tr>
                         <td>Income from government contracts</td>
@@ -108,6 +114,8 @@
                         <td>N/A</td>
                         <td>N/A</td>
                         <td>N/A</td>
+                        <td>N/A</td>
+
                     </tr>
                     <tr>
                         <td>Income from government grants</td>
@@ -116,6 +124,8 @@
                         <td>N/A</td>
                         <td>N/A</td>
                         <td>N/A</td>
+                        <td>N/A</td>
+
                     </tr>
                 </table>
             <p></p>
@@ -125,38 +135,33 @@
 </div>
 @push('custom-script')
  
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script type="text/javascript">
-     google.charts.load('current', {'packages':['bar']});
-     google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
 
-     function drawChart() {
-       var data = google.visualization.arrayToDataTable([
-         ['Year', 'Income', 'Expenses'],
-         ['2004', 102, 400],
-         ['2005', 1170, 460],
-         ['2006', 660, 1120],
-         ['2007', 1030, 540],
-         ['2008', 1000, 400],
-         ['2009', 1170, 460],
-         ['2010', 660, 1120],
-         ['2020', 1030, 540],
-         ['2021', 1000, 400],
-         ['2022', 1170, 460],
-         ['2023', 660, 1120]
-       ]);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Date', 'Total Gross Income(£)', 'Total expenditure(£)','Income from government contracts(£)','Income from government grants(£)'],
+      ['30/06/2018',  26.94 , 27.96, 0,0],
+      ['30/06/2019',  39.20 , 34.39, 0,0],
+      ['30/06/2020',  19.87 , 18.17, 0,0],
+      ['30/06/2021',  24.11 , 26.28, 0,0],
+      ['30/06/2022',  15.81 , 10.24, 0,0],
+      ['30/06/2023',  18.81, 23.01, 0,0],
+    ]);
 
-       var options = {
-         chart: {
-           title: 'Income and Expenses Report',
-           subtitle: '2004-2023',
-         }
-       };
+    var options = {
+      title: 'financial History',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+    
 
-       var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-       chart.draw(data, google.charts.Bar.convertOptions(options));
-     }
-   </script>
+    chart.draw(data, options);
+  }
+</script>
 @endpush
 @endsection
