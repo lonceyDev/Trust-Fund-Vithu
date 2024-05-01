@@ -79,7 +79,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://csonet.org/index.php?menu=80" target="_blank">
+                                <a href="https://esango.un.org/civilsociety/showProfileDetail.do?method=showProfileDetails&tab=3&profileCode=674053" target="_blank">
                                     <img src="{{ asset('assets/front/img/flags/uno.gif') }}" alt=""> 
                                     <span>UN</span> </a>
                             </li>
@@ -96,7 +96,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://www.ngosecretariat.gov.lk/index.php?option=com_content&view=featured&Itemid=101" target="_blank">
+                                <a href="https://ngosec.gov.lk/" target="_blank">
                                     <img src="{{ asset('assets/front/img/flags/lk.gif') }}" alt=""> 
                                     <span>LK</span> </a>
                             </li>
@@ -166,15 +166,15 @@
                                     <li class="nav-item">
                                         <a href="{{ route('about.about-us') }}" class="nav-link">About Us</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('about.patron') }}" class="nav-link">Our Patron</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('about.logo') }}" class="nav-link">About Our Logo</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="{{ route('about.history') }}" class="nav-link">Our History</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('about.journey') }}" class="nav-link">Our Journey</a>
                                     </li>

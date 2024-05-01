@@ -13,12 +13,12 @@ class FinancialReportPolicy
      */
     public function viewAny(User $user)
     {
-        // if( $user->hasPermissionTo('View Financial Report')){
+        if( $user->hasPermissionTo('view financial_report')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        // return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -27,12 +27,12 @@ class FinancialReportPolicy
      */
     public function view(User $user, FinancialReport $financialReport)
     {
-        // if( $user->hasPermissionTo('View Financial Report')){
+        if( $user->hasPermissionTo('view financial_report')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -41,12 +41,12 @@ class FinancialReportPolicy
      */
     public function create(User $user)
     {
-        // if( $user->hasPermissionTo('Create Financial Report')){
+        if( $user->hasPermissionTo('create financial_report')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+      //  return $user->hasRole(['Admin']);
 
     }
 
@@ -55,12 +55,12 @@ class FinancialReportPolicy
      */
     public function update(User $user, FinancialReport $financialReport)
     {
-        // if( $user->hasPermissionTo('Update Financial Report')){
+        if( $user->hasPermissionTo('update financial_report')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+        // return $user->hasRole(['Admin']);
 
     }
 
@@ -69,12 +69,12 @@ class FinancialReportPolicy
      */
     public function delete(User $user, FinancialReport $financialReport)
     {
-        // if( $user->hasPermissionTo('Delete Financial Report')){
+        if( $user->hasPermissionTo('delete financial_report')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin']);
 
     }
 

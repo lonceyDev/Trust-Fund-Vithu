@@ -19,13 +19,13 @@ return new class extends Migration
             $table->longText('content'); 
             $table->string('featured_image')->nullable();
             $table->longText('gallery')->nullable(); 
-            $table->dateTime('publish_at')->nullable(); 
-            $table->boolean('published')->default(false); 
+            $table->dateTime('published_at')->nullable();
             $table->text('meta_description')->nullable(); 
             $table->unsignedBigInteger('views')->default(0);
             $table->unsignedBigInteger('likes')->default(0); 
             $table->unsignedBigInteger('shares')->default(0);
             $table->string('external_url')->nullable(); 
+            $table->boolean('is_active')->default(0);
             $table->timestamps();
 
           

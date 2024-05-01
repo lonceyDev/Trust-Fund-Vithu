@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Role;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class RolePolicy
 {
@@ -12,7 +12,13 @@ class RolePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole('Admin');
+        
+        if( $user->hasPermissionTo('view role')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole('Admin');
 
     }
 
@@ -21,7 +27,13 @@ class RolePolicy
      */
     public function view(User $user, Role $role)
     {
-        return $user->hasRole('Admin');
+        
+        if( $user->hasPermissionTo('view role')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole('Admin');
         
     }
 
@@ -30,7 +42,13 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        return $user->hasRole('Admin');
+        
+        if( $user->hasPermissionTo('create role')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole('Admin');
         
     }
 
@@ -39,7 +57,13 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        return $user->hasRole('Admin');
+       
+        if( $user->hasPermissionTo('update role')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole('Admin');
         
     }
 
@@ -48,25 +72,14 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
-        return $user->hasRole('Admin');
+       
+        if( $user->hasPermissionTo('delete role')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole('Admin');
         
     }
 
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Role $role)
-    {
-        return $user->hasRole('Admin');
-        
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Role $role)
-    {
-        //return $user->hasRole('admin');
-        
-    }
 }

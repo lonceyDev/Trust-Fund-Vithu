@@ -13,7 +13,13 @@ class PostPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole(['Admin','Manager']);
+       
+        if( $user->hasPermissionTo('view post')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
 
     }
@@ -23,12 +29,12 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-        // if( $user->hasPermissionTo('view post')){
+        if( $user->hasPermissionTo('view post')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin','Manager']);
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin','Manager']);
 
 
     }
@@ -38,16 +44,16 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        // // if($user->hasRole(['admin','editor']) || $user->hasPermissionTo('Create Posts')){
-        // //     return true;
-        // // }
-        // // return false;
-        // if( $user->hasPermissionTo('create post')){
-            
+        // if($user->hasRole(['admin','editor']) || $user->hasPermissionTo('Create Posts')){
         //     return true;
         // }
         // return false;
-        return $user->hasRole(['Admin','Manager']);
+        if( $user->hasPermissionTo('create post')){
+            
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin','Manager']);
 
 
     }
@@ -57,12 +63,12 @@ class PostPolicy
      */
     public function update(User $user, Post $post)
     {
-        // if( $user->hasPermissionTo('update post')){
+        if( $user->hasPermissionTo('update post')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+      //  return $user->hasRole(['Admin']);
 
     }
 
@@ -71,12 +77,12 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        // if( $user->hasPermissionTo('delete post')){
+        if( $user->hasPermissionTo('delete post')){
             
-        //     return true;
-        // }
-        // return false;
-        return $user->hasRole(['Admin']);
+            return true;
+        }
+        return false;
+       // return $user->hasRole(['Admin']);
 
     }
 

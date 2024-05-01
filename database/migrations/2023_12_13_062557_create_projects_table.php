@@ -25,6 +25,7 @@ return new class extends Migration
             $table->decimal('expected_amount', 10, 2)->nullable();
             $table->string('status')->default('pending');
             $table->json('extra')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
 
         });

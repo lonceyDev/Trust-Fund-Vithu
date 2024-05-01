@@ -11,7 +11,13 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole(['Admin','Manager']);
+        
+        if( $user->hasPermissionTo('view user')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Super Admin','Admin','Manager']);
 
 
     }
@@ -21,7 +27,13 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->hasRole(['Admin','Manager']);
+        
+        if( $user->hasPermissionTo('view user')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Super Admin','Admin','Manager']);
 
     }
 
@@ -30,9 +42,13 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->hasRole('Admin');
-
-
+        
+        if( $user->hasPermissionTo('create user')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole('Super Admin','Admin');
     }
 
     /**
@@ -40,8 +56,13 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return $user->hasRole('Admin');
-
+        if( $user->hasPermissionTo('update user')){
+            
+            return true;
+        }
+        return false;
+        
+        // return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -50,8 +71,13 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return $user->hasRole('Admin');
-
+        
+        if( $user->hasPermissionTo('delete user')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole('Super Admin','Admin');
 
     }
 
@@ -60,17 +86,17 @@ class UserPolicy
      */
     public function restore(User $user, User $model)
     {
-        return $user->hasRole('Admin');
+        // return $user->hasRole('Super Admin','Admin');
 
-
-    }
+   }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
     public function forceDelete(User $user, User $model)
     {
-        return $user->hasRole('Admin');
+        // return $user->hasRole('Super Admin');
+
 
     }
 }

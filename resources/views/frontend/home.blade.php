@@ -5,7 +5,7 @@
                 min-height: 180px;
             }
 
-       </style>
+        </style>
     @endpush
 @section('content')
    
@@ -46,14 +46,12 @@
                                 <h2>Who we are?</h2>
                             </div>
                             <p> <b>Vithu Trust Fund</b>
-                                is a charity organisation dedicated to improve and safeguard the lives of children in Sri
-                                Lanka and raise voice for the needy.
+                                is a  dedicated charity organisation committed to improving and safeguarding the lives of children in 
+                                Sri Lanka and raising voice for the needy and providing essential support to those who need it most.
                             </p>
                             <p>
-                                There are thousands of children who go through the day without a single nourishing meal.
-                                They include victims of war, which has thrown the bread-winners of these families out of
-                                work and the future of our youngsters into darkness.
-
+                                There are thousands of children who go through the day without a single nourishing meal. 
+                                They include war victims ,  who have lost their breadwinners and cast doubt on our children's future. 
 
                             </p>
                             <ul>
@@ -83,7 +81,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="{{ asset('assets/front/img/about/about-main2.jpg') }}" alt="About">
+                            <img src="{{ asset('assets/front/img/about/about-main4.jpg') }}" alt="About">
                             {{-- <div class="video-wrap">
                                 <button class="js-modal-btn">
                                     <i class="icofont-ui-play"></i>
@@ -105,8 +103,9 @@
                             <h3>
                                 <a href="{{ route('volunteering') }}">Be a volunteer</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
-                                not simply.</p>
+                            <p>Join the journey to brighten the lives of  children with the Vithu Trust fund.
+                                Together, we empower lives and create lasting impact.
+                            </p>
                             <a class="feature-btn" href="{{ route('volunteering') }}">Join Now</a>
                         </div>
                     </div>
@@ -116,8 +115,7 @@
                             <h3>
                                 <a href="{{ route('donation') }}">Donate now</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
-                                not simply.</p>
+                            <p>It doesn't matter how much you donate; it matters most when you give with love. Let's be heroes in these children's stories together. </p>
                             <a class="feature-btn" href="{{ route('donation') }}">Join Now</a>
                         </div>
                     </div>
@@ -127,8 +125,7 @@
                             <h3>
                                 <a href="{{ route('contact.create') }}">Show your love</a>
                             </h3>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply rom text. Contrary to popular belief is
-                                not simply.</p>
+                            <p>Show your love through giving. Support our cause at Vithu Trust Fund and make a lasting impact.</p>
                             <a class="feature-btn" href="{{ route('contact.create') }}">Join Now</a>
                         </div>
                     </div>
@@ -142,15 +139,14 @@
                 <div class="section-title">
                     <span class="sub-title">Core features</span>
                     <h2>Our Values</h2>
-                    <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and
-                        individual citizens that are making.</p>
+                    <p>We exist for non-profits, social enterprises, community groups, activists, politicians, and individual citizens that are making.</p>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-lg-3">
                         <div class="benefit-item">
                             <i class="flaticon-house"></i>
                             <h3>Leading</h3>
-                            <p>With oppressed and marginalized groups, future generations and partners.</p>
+                            <p>With oppressed and marginalised groups, future generations, and partners.</p>
                         </div>
                     </div>
 
@@ -165,8 +161,7 @@
                         <div class="benefit-item two">
                             <i class="flaticon-hospital"></i>
                             <h3>Protect</h3>
-                            <p>The leading groups should be gain proper skill from the Common life & Individual human rights
-                                and democratic Government.
+                            <p>The leading groups should gain proper skills from common life, individual human rights, and democratic government.
 
                             </p>
                         </div>
@@ -175,8 +170,7 @@
                         <div class="benefit-item four">
                             <i class="flaticon-graduation-cap"></i>
                             <h3>Participation</h3>
-                            <p>Every participant will participate each activities, getting skill, positive cooperation and
-                                ensuring rights of society.
+                            <p>Every participant will participate in each activity, gaining skills, demonstrating positive cooperation, and ensuring the rights of society
 
                             </p>
                         </div>

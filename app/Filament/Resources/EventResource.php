@@ -26,7 +26,7 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-               Section::make()->schema([
+              
         //  Group::make()->schema([
         //     Forms\Components\Select::make('user_id')
         //         ->relationship('user','name'),
@@ -46,46 +46,64 @@ class EventResource extends Resource
                 
           
                 Group::make()->schema([
+                    Section::make()->schema([
                     Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255)
-                    ->columnSpanFull()
                     ->reactive()
                     ->afterStateUpdated(function($set, $state){ 
                         $set('slug',Str::slug($state));
                     }),
+                    Forms\Components\MarkdownEditor::make('description')
+                    ->required(),
+                ]),
+                    Forms\Components\Section::make('Image Upload')->schema([
+                        Forms\Components\FileUpload::make('featured_image')
+                            ->image()
+                            ->imageEditor()
+                            ->directory('event_images'),
+                        Forms\Components\FileUpload::make('gallery')
+                                ->image()
+                                ->imageEditor()
+                                ->multiple()
+                                ->directory('event_gallery_images'),
+                 ]),    
               
-                ])->columnSpan(1)->Columns(2),
-           
-            Forms\Components\MarkdownEditor::make('description')
-                ->required()
-                ->columnSpanFull(),
-            Forms\Components\TextInput::make('location')
-                ->required()
-                ->maxLength(255),
-            Forms\Components\FileUpload::make('featured_image')
-                ->image()
-                ->imageEditor()
-                ->directory('event_images'),
-            Forms\Components\FileUpload::make('gallery')
-                    ->image()
-                    ->imageEditor()
-                    ->multiple()
-                    ->directory('event_gallery_images'),
-                Group::make()->schema([
-                    Forms\Components\DatePicker::make('events_at')
-                        ->required(),
-                    Forms\Components\Select::make('status')
+                ])->columnSpan(['lg' => 2]),
+
+                Forms\Components\Group::make()->schema([
+        
+                    Forms\Components\Section::make('Category')->schema([  
+                        Forms\Components\TextInput::make('location')
                         ->required()
+                        ->maxLength(255),  
+                        Forms\Components\CheckboxList::make('categories')
+                        ->relationship('categories', 'name')
+                        ->columns(1)
+                        ->gridDirection('row'),
+                          
+                    ]),
+                 Forms\Components\Section::make('Status')->schema([ 
+               
+                    Forms\Components\Select::make('status')
+                        ->selectablePlaceholder(false)
                         ->options([
                         'Upcoming' => 'Upcoming',
                         'Complete' => 'Complete',
-                    ]),
-                ])->columnSpan(1)->Columns(2),
-           
-             ]),
-           
-            ])->Columns(1);
+                        ]),
+                    Forms\Components\DatePicker::make('events_at')
+                    ->default(now())
+                    ->native(true),
+                    Forms\Components\Toggle::make('is_active')
+                    ->label('is_active')
+                    ->onIcon('heroicon-m-eye')
+                    ->offIcon('heroicon-m-eye-slash')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->inline(false),
+                ]),
+            ]),
+    ])->columns(3);
     }
 
     public static function table(Table $table): Table
@@ -105,6 +123,10 @@ class EventResource extends Resource
                 ->circular()
                 ->stacked()
                 ->limitedRemainingText(),
+                Tables\Columns\IconColumn::make('is_active')
+                ->boolean()
+                ->trueColor('success')
+                ->falseColor('danger'),
                 Tables\Columns\TextColumn::make('events_at')
                     ->date()
                     ->sortable(),

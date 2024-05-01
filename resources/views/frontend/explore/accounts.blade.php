@@ -63,91 +63,91 @@
                     <th>Reporting year</th>
                     <th>Date received</th>
                     <th>Received</th>
-                    <th>Download</th>
+                    {{-- <th>Download</th> --}}
                </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2022</td>
                     <td>06 March 2023</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2022</td>
                     <td>Not Required</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2021</td>
                     <td>09 March 2022</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2021</td>
                     <td>Not Required</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2021</td>
                     <td>20 July 2020</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2021</td>
                     <td>Not Required</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2020</td>
                     <td>20 July 2020</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2020</td>
                     <td>Not Required</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2019</td>
                     <td>29 December 2019</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2019</td>
                     <td>29 December 2019</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
                 <tr>
                     <td>Annual return</td>
                     <td>30 June 2018</td>
                     <td>29 January 2019</td>
                     <td>On time</td>
-                    <td><a href="#">download</a></td>
+                    {{-- <td><a href="#">download</a></td> --}}
                 </tr>
                 <tr>
                     <td>Accounts and TAR</td>
                     <td>30 June 2018</td>
                     <td>29 January 2019</td>
                     <td>-</td>
-                    <td>-</td>
+                    {{-- <td>-</td> --}}
                 </tr>
              
             </table>
@@ -158,7 +158,7 @@
 
     <div>         
     <p>Explore more details about our charity:</p>
-     <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary">More details</a>
+     <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/4011615/charity-overview" class="btn btn-secondary" target="_blank">More details</a>
      <p></p>
     </div>
   </div>
@@ -170,8 +170,8 @@
             <p></p>
             <p></p>
     
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
-                <div style="flex: 1; text-align: center;">
+            <div>
+                {{-- <div style="flex: 1; text-align: center;">
                     <a href="{{route('accounts.bar')}}">
                         <div id="curve_chart" style="width: 400px; height: 220px; margin: auto; text-align: center;"></div>
                     </a>
@@ -179,12 +179,12 @@
                         <p>Explore more details about our charity:</p>
                         <a href="{{route('accounts.bar')}}" class="btn btn-secondary">More details</a>
                     </div>
-                </div>
+                </div> --}}
 
-                <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+                <div style="width: 500px; height: 300px; margin: auto;">
                     <a href="{{route('accounts.pie')}}">
                         <div style="text-align: center;">
-                           <div id="columnchart_material" style="width: 400px; height: 200px;"></div>
+                           <div id="curve_chart"></div>
                         </div>
                     </a>
                     <div>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
     
-                <div style="flex: 1; text-align: center;">
+                {{-- <div style="flex: 1; text-align: center;">
                     <a href="{{route('accounts.line')}}">
                         <div id="columnchart_material2" style="width: 400px; height: 200px; margin: auto; text-align: center;"></div>
                     </a>
@@ -203,7 +203,7 @@
                         <a href="{{route('accounts.line')}}" class="btn btn-secondary">More details</a>
                     </div>
                     <p></p>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -215,7 +215,7 @@
 
 @push('custom-script')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
@@ -257,41 +257,36 @@
 
     chart.draw(data, options);
   }
-</script>
+</script> --}}
 
 <script type="text/javascript">
-    google.charts.load('current', {'packages':['bar']});
+    google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
-
+  
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ['Year', 'Income', 'Expences'],
-        ['2004', 102, 400],
-        ['2005', 1170, 460],
-        ['2006', 660, 1120],
-        ['2007', 1030, 540],
-        ['2008', 1000, 400],
-        ['2009', 1170, 460],
-        ['2010', 660, 1120],
-        ['2020', 1030, 540],
-        ['2021', 1000, 400],
-        ['2022', 1170, 460],
-        ['2023', 660, 1120]
+        ['Date', 'Total Gross Income(£)', 'Total expenditure(£)','Income from government contracts(£)','Income from government grants(£)'],
+        ['30/06/2018',  26.94 , 27.96, 0,0],
+        ['30/06/2019',  39.20 , 34.39, 0,0],
+        ['30/06/2020',  19.87 , 18.17, 0,0],
+        ['30/06/2021',  24.11 , 26.28, 0,0],
+        ['30/06/2022',  15.81 , 10.24, 0,0],
+        ['30/06/2023',  18.81, 23.01, 0,0],
       ]);
-
+  
       var options = {
-        chart: {
-          title: 'Income and Expences Report',
-          subtitle: '2004-2023',
-        }
+        title: 'financial History',
+        curveType: 'function',
+        legend: { position: 'bottom' }
       };
-
-      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-      chart.draw(data, google.charts.Bar.convertOptions(options));
+      
+  
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+      chart.draw(data, options);
     }
   </script>
-
+{{-- 
   <script type="text/javascript">
     google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart);
@@ -336,7 +331,7 @@
 
       chart.draw(data, google.charts.Bar.convertOptions(options));
     }
-  </script>
+  </script> --}}
 
 @endpush
         @push('custom-style')

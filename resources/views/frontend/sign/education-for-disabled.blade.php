@@ -34,13 +34,11 @@
                 <h3>Alternatively Abled
                 </h3>
                 <p>
-                    Transgender people are found to include all those who have lost a part of the body / affected any part
-                    of the body.
+                    Alternatively abled" is a term used to highlight the abilities and strengths of individuals with disabilities, emphasising their unique talents and skills.
+                    Some of these are dependents (expecting help from others even to perform essential duties) and some are found to be able to do certain occupations, so assistance will be provided to them in the form of permanent livelihood assistance / monthly essential dry food parcels / medical expenses as per their needs. Is being observed
+                    
                 </p>
-                <p>Some of these are dependents (expecting help from others even to perform essential duties) and some are
-                    found to be able to do certain occupations, so assistance will be provided to them in the form of
-                    permanent livelihood assistance / monthly essential dry food parcels / medical expenses as per their
-                    need. Is being observed.
+                <p>
                 </p>
                 <p>
                     <b>Mentally retarded</b> <br>Those who are not able to think / act naturally (based on the results
@@ -81,10 +79,9 @@
                 </p>
                 <p>
                     <b>People with hand / foot dysfunction</b>
-                    <br>In case of inability to function from arms / legs due to birth / accident / war, those with
-                    paralysis need to seek the help of another and those with paralysis of the limbs can transport
-                    themselves in three wheelers specially designed for them. Career opportunities for them should be
-                    arranged according to their physical condition.
+                    <br>In cases of inability to function from arms / legs due to birth / accident / war, 
+                    those with paralysis need to seek the help of others, and those with paralysis of the limbs can transport themselves in three-wheelers specially designed for them. 
+                    Career opportunities for them should be arranged according to their physical condition.
                 </p>
             </div>
 

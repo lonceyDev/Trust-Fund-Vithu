@@ -12,7 +12,13 @@ class AccountPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole(['Admin','Manager']);
+       
+        if( $user->hasPermissionTo('view account')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole(['Admin','Manager']);
         
     }
 
@@ -21,7 +27,12 @@ class AccountPolicy
      */
     public function view(User $user, Account $account)
     {
-        return $user->hasRole(['Admin','Manager']);
+        if( $user->hasPermissionTo('view account')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -30,7 +41,13 @@ class AccountPolicy
      */
     public function create(User $user)
     {
-        return $user->hasRole(['Admin','Manager']);
+        
+        if( $user->hasPermissionTo('create account')){
+            
+            return true;
+        }
+        return false;
+        // return $user->hasRole(['Admin','Manager']);
 
     }
 
@@ -39,7 +56,13 @@ class AccountPolicy
      */
     public function update(User $user, Account $account)
     {
-        return $user->hasRole(['Admin']);
+       
+        if( $user->hasPermissionTo('update account')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin']);
 
     }
 
@@ -48,7 +71,13 @@ class AccountPolicy
      */
     public function delete(User $user, Account $account)
     {
-        return $user->hasRole(['Admin']);
+        
+        if( $user->hasPermissionTo('delete account')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Admin']);
 
     }
 

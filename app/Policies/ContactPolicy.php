@@ -13,7 +13,14 @@ class ContactPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole(['Admin','Manager']);
+       
+        if( $user->hasPermissionTo('view contact')){
+            
+            return true;
+        }
+        return false;
+        //return $user->hasRole(['Super Admin','Admin','Manager']);
+
 
     }
 
@@ -22,7 +29,14 @@ class ContactPolicy
      */
     public function view(User $user, Contact $contact)
     {
-        return $user->hasRole(['Admin','Manager']);
+        
+        if( $user->hasPermissionTo('view contact')){
+            
+            return true;
+        }
+        return false;
+        
+        //return $user->hasRole(['Super Admin','Admin','Manager']);
         
     }
 
@@ -47,7 +61,11 @@ class ContactPolicy
      */
     public function delete(User $user, Contact $contact)
     {
-        //
+        if( $user->hasPermissionTo('delete contact')){
+            
+            return true;
+        }
+        return false;
     }
 
     /**
