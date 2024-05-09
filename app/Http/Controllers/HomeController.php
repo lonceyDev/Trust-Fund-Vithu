@@ -37,7 +37,7 @@ class HomeController extends Controller
             ->take(3)
             ->get();
            // dd($event);
-        $blogs = Post::where('published', '=', '1')
+        $blogs = Post::where('is_active', '=', '1')
             ->latest()
             ->take(3)
             ->get();
