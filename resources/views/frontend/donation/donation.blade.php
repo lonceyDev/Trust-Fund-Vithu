@@ -8,6 +8,7 @@
             <h2>Make An Online Donation, Setup Monthly Payments</h2>
         </div>
         <div class="row donation">
+            @if (false)
             <div class="col-sm-6 col-lg-6">
                 <div class="card mb-3">
                     <div class="row g-0">
@@ -34,8 +35,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-6 col-lg-6">
+            @endif
+            <div class="col-sm-6 col-lg-6 mx-auto">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -65,7 +66,7 @@
         <div class="row pt-2 flags">
             <div class="col-6 col-lg-3">
                 <img src="{{asset('assets/front/img/donation/uk-flag.png')}}" class="img-thumbnail"
-                    alt="Enthuse" data-bs-toggle="modal" data-bs-target="#uk">
+                    alt="" data-bs-toggle="modal" data-bs-target="#uk">
                 <div class="modal fade" id="uk" tabindex="-1" aria-labelledby="ukLabel" aria-hidden="true">
                     <div class="modal-dialog  modal-dialog-centered">
                         <div class="modal-content">
@@ -90,7 +91,7 @@
             </div>
                 <div class="col-6 col-lg-3">
                     <img src="{{asset('assets/front/img/donation/swiss.png')}}" class="img-thumbnail"
-                        alt="Enthuse" data-bs-toggle="modal" data-bs-target="#swiss">
+                        alt="" data-bs-toggle="modal" data-bs-target="#swiss">
                     <div class="modal fade" id="swiss" tabindex="-1" aria-labelledby="swissLabel" aria-hidden="true">
                         <div class="modal-dialog  modal-dialog-centered">
                             <div class="modal-content">
@@ -120,7 +121,7 @@
             </div>
             <div class="col-6 col-lg-3">
                 <img src="{{asset('assets/front/img/donation/lk.png')}}" class="img-thumbnail"
-                    alt="Enthuse" data-bs-toggle="modal" data-bs-target="#lk">
+                    alt="" data-bs-toggle="modal" data-bs-target="#lk">
                 <div class="modal fade" id="lk" tabindex="-1" aria-labelledby="lkLabel" aria-hidden="true">
                     <div class="modal-dialog  modal-dialog-centered">
                         <div class="modal-content">
@@ -149,5 +150,5 @@
 
 </div>
 
-    
+
 @endsection

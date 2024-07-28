@@ -34,8 +34,8 @@
 
                 </p>
                 <p>
-                    Volunteers will be provided special training on the work they need to carry out. 
-                    Boarding and accommodations will be provided throughout their stay to work on the projects. 
+                    Volunteers will be provided special training on the work they need to carry out.
+                    Boarding and accommodations will be provided throughout their stay to work on the projects.
                     In return, volunteers will be expected to work on projects in Sri Lanka ranging from teaching
                      children and young people in schools and colleges to providing coaching and training to develop
                       entrepreneurial skills to members of the local community to participate in cooperative sustainable income-generating projects.
@@ -58,11 +58,11 @@
 
                     </h3>
                     <p>
-                        Charity Checkout provides charities with both credit and debit card and direct debit payment processing facilities. 
+                        Charity Checkout provides charities with both credit and debit card and direct debit payment processing facilities.
                         The company is a registered HMRC Gift Aid agent and also processes Gift Aid on behalf of its charity clients.
 
                     </p>
-                    <a class="common-btn" href="https://vithu.enthuse.com/PoultryFarming#!/" target="_blank"
+                    <a class="common-btn" href="http://paypal.me/vtf2004" target="_blank"
                         rel="noopener noreferrer">Donate</a>
                 </div>
 
