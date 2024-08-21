@@ -1,4 +1,37 @@
 @extends('layouts.front.index_blade')
+@push('custom-style')
+<style>
+    .modal-body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.modal-body p {
+    margin: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-body p strong {
+    font-size: 1.1em;
+    color: #007bff;
+}
+
+.modal-body p::before {
+    /* content: "\2022"; Bullet point */
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+</style>
+    
+@endpush
 @section('content')
 <div class="about-area pt-100 pb-70">
     <div class="container">
@@ -64,86 +97,99 @@
         </div>
         <hr>
         <div class="row pt-2 flags">
-            <div class="col-6 col-lg-3">
-                <img src="{{asset('assets/front/img/donation/uk-flag.png')}}" class="img-thumbnail"
-                    alt="" data-bs-toggle="modal" data-bs-target="#uk">
+            <!-- UK Flag -->
+            <div class="col-12 col-lg-3 d-flex flex-column align-items-center mb-3">
+                <img src="{{asset('assets/front/img/donation/uk-flag.png')}}" class="img-thumbnail mb-2" alt="" data-bs-toggle="modal" data-bs-target="#uk">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uk">Donate Now</button>
                 <div class="modal fade" id="uk" tabindex="-1" aria-labelledby="ukLabel" aria-hidden="true">
-                    <div class="modal-dialog  modal-dialog-centered">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="ukLabel">
-                                    <img src="{{asset('assets/front/img/flags/uk.gif')}}"> UK</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p><strong>HSBC Bank</strong><br>9 Wellesley Road<br>Croydon CR9
-                                    2AA<br><strong>International Bank Account</strong>
-                                    <strong>Number<br></strong><span style="font-size: 16px;">GB26M
-                                        IDL40184192205262<br></span><strong>Branch Identifier
-                                        Code<br></strong>MIDLGB2103W<br><strong>Shortcode:</strong> 40-18-41
-                                    Account<br><strong>Number:</strong> 92205262
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="col-6 col-lg-3">
-                    <img src="{{asset('assets/front/img/donation/swiss.png')}}" class="img-thumbnail"
-                        alt="" data-bs-toggle="modal" data-bs-target="#swiss">
-                    <div class="modal fade" id="swiss" tabindex="-1" aria-labelledby="swissLabel" aria-hidden="true">
-                        <div class="modal-dialog  modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="swissLabel">
-                                        <img src="{{asset('assets/front/img/flags/ch.gif')}}"> Swiss Bank</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        Luzerner Kantonalbank AG <br>
-                                        6003 Luzern<br>
-                                        Name: Vithu Trust Fund<br>
-                                        IBAN: CH33 0077 8205 8509 1200 1<br>
-                                        Account: 60-41-2
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="col-6 col-lg-3">
-               <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer" alt="Paypal">
-                <img src="{{asset('assets/front/img/donation/german.png')}}" class="img-thumbnail"></a>
-
-            </div>
-            <div class="col-6 col-lg-3">
-                <img src="{{asset('assets/front/img/donation/lk.png')}}" class="img-thumbnail"
-                    alt="" data-bs-toggle="modal" data-bs-target="#lk">
-                <div class="modal fade" id="lk" tabindex="-1" aria-labelledby="lkLabel" aria-hidden="true">
-                    <div class="modal-dialog  modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="lkLabel">
-                                    <img src="{{asset('assets/front/img/flags/lk.gif')}}"> Sri Lanka</h5>
+                                    <img src="{{asset('assets/front/img/flags/uk.gif')}}"> UK
+                                </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <p>
-                                    COMMERCIAL BANK <br>
-                                    Name: Vithu Trust Fund (VTF ) Pvt.<br>
-                                    Account: 1000013090<br>
-                                    Branch: 7056 101
+                                    <strong>Account Name:</strong> HSBC Bank<br>
+                                    <strong>International Bank Account Number (IBAN):</strong><br>
+                                    <span style="font-size: 16px;">GB26MIDL40184192205262</span><br>
+                                    <strong>Branch Identifier Code (BIC):</strong> MIDLGB2103W<br>
+                                    <strong>Shortcode:</strong> 40-18-41<br>
+                                    <strong>Account Number:</strong> 92205262<br>
+                                    <strong>Bank Address:</strong> 9 Wellesley Road, Croydon CR9 2AA
                                 </p>
                             </div>
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Swiss Flag -->
+            <div class="col-12 col-lg-3 d-flex flex-column align-items-center mb-3">
+                <img src="{{asset('assets/front/img/donation/swiss.png')}}" class="img-thumbnail mb-2" alt="" data-bs-toggle="modal" data-bs-target="#swiss">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#swiss">Donate Now</button>
+                <div class="modal fade" id="swiss" tabindex="-1" aria-labelledby="swissLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="swissLabel">
+                                    <img src="{{asset('assets/front/img/flags/ch.gif')}}"> Swiss Bank
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <strong>Account Name:</strong> Vithu Trust Fund<br>
+                                    <strong>IBAN:</strong> CH33 0077 8205 8509 1200 1<br>
+                                    <strong>Account Number:</strong> 60-41-2<br>
+                                    <strong>Bank:</strong> Luzerner Kantonalbank AG<br>
+                                    <strong>Location:</strong> 6003 Luzern<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- German Flag with PayPal Link -->
+            <div class="col-12 col-lg-3 d-flex flex-column align-items-center mb-3">
+                <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer" alt="Paypal">
+                    <img src="{{asset('assets/front/img/donation/german.png')}}" class="img-thumbnail mb-2">
+                </a>
+                <a href="https://www.paypal.com/paypalme/vtf2004" target="_blank" rel="noopener noreferrer" alt="Paypal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#german">Donate Now</button>
+                </a>
+            </div>
+        
+            <!-- Sri Lanka Flag -->
+            <div class="col-12 col-lg-3 d-flex flex-column align-items-center mb-3">
+                <img src="{{asset('assets/front/img/donation/lk.png')}}" class="img-thumbnail mb-2" alt="" data-bs-toggle="modal" data-bs-target="#lk">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lk">Donate Now</button>
+                <div class="modal fade" id="lk" tabindex="-1" aria-labelledby="lkLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="lkLabel">
+                                    <img src="{{asset('assets/front/img/flags/lk.gif')}}"> Sri Lanka
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <strong>Account Name:</strong> Vithu Trust Fund (VTF) Pvt.<br>
+                                    <strong>Bank:</strong> COMMERCIAL BANK<br>
+                                    <strong>Account Number:</strong> 1000013090<br>
+                                    <strong>Branch Code:</strong> 7056 101
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 
     </div>
 </div>
